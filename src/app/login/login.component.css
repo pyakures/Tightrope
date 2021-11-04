@@ -1,0 +1,39 @@
+.navbar-brand {
+    padding: 20px;
+    min-width: 1000px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    list-style: none;
+    direction: ltr;
+    float:right;
+    text-align: right;
+    position: absolute;
+    display: inline;
+    font-family: 'Roboto', 'arial', sans-serif;
+    font-size: 20px;
+    right: 20px;
+  
+    
+}
+
+
+ul li{
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: none;
+
+}
+
+a, a:active, a:focus, a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+.Signupbutton {
+    padding: 5px;
+    background-color: #7fba02;
+    color: #ffffff;
+}

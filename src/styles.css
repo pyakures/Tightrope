@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+@font-face {
+    font-family: Roboto;
+    src: url(assets/Roboto/Roboto-Medium.ttf) format("opentype");
+}
+
+.cal-events {
+    display: none !important;
+}
+
+.body {
+    min-width:50%;        /* Suppose you want minimum width of 1000px */
+    width: auto !important;  /* Firefox will set width as auto */
+    width:50%;            /* As IE6 ignores !important it will set width as 1000px; */
+
+}

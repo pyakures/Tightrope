@@ -1,0 +1,33 @@
+
+.Calendar1 {
+    width: 70%;
+    height: auto;
+    font-family: 'Roboto', 'arial', sans-serif;
+    
+}
+
+.col-md-4 {
+
+   border-color: none;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 5px;   
+   
+   
+
+    
+}
+
+
+.btn-primary {
+    background-color: #7fba02;
+    border-color: white;
+    border-radius: 20px;
+    color: #ebebeb;
+
+}
+
+.cal-week-view {
+    background-color: #7fba02;
+}

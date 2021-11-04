@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CalendarView } from 'angular-calendar';
+import { CalendarEvent } from 'angular-calendar';
+import { startOfDay } from 'date-fns';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'Tightrope';
+
+
 }
+
