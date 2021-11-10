@@ -7,27 +7,48 @@
 }
 
 .col-md-4 {
-
    border-color: none;
-   display: block;
    margin-left: auto;
    margin-right: auto;
-   padding: 5px;   
-   
-   
-
-    
+   padding: 5px;
+   float: none;
 }
 
 
 .btn-primary {
-    background-color: #7fba02;
+    background-color: #ebebeb;
     border-color: white;
-    border-radius: 20px;
-    color: #ebebeb;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
 
 }
 
 .cal-week-view {
     background-color: #7fba02;
+}
+
+.currentweek {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.btn-group {
+    margin-left: 20px;
+    padding-left: 0px;
+    padding: 5px; 
+    float: left;
+    display: inline;
+    font-size: 5px;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color: #ebebeb;
+    border-color: white;
+    color:black;
+}
+
+.cal-header{
+    background-color: #7fba02;
+    color:#7fba02;
 }
