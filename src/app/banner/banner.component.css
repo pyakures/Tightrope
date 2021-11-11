@@ -23,7 +23,7 @@
 }
 
 
-/*ul li{
+ul li{
     display: inline;
     padding-left: 20px;
     padding-right: 20px;
@@ -36,9 +36,9 @@ a, a:active, a:focus, a:hover{
     text-decoration: none;
     color: inherit;
 }
-*/
 
-/*.Signupbutton {
+
+.Signupbutton {
     background-color: #7fba02;
     color: white;
     font-size: 1em;
@@ -48,4 +48,3 @@ a, a:active, a:focus, a:hover{
     padding-left: 22px;
     padding-right: 22px;
 }
-*/
