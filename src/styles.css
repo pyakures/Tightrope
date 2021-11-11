@@ -17,3 +17,26 @@
     width:50%;            /* As IE6 ignores !important it will set width as 1000px; */
 
 }
+
+mwl-gauge {
+    width: 200px;
+    height: 200px;
+    display: block;
+    padding: 3px;
+  }
+  mwl-gauge > .gauge > .dial {
+    stroke: #eee;
+    stroke-width: 6;
+    fill: rgba(0, 0, 0, 0);
+  }
+  mwl-gauge > .gauge > .value {
+    stroke: #7fba02;
+    stroke-width: 6;
+    fill: rgba(0, 0, 0, 0);
+  }
+  mwl-gauge > .gauge > .value-text {
+    fill: #7fba02;
+    font-family: 'Roboto', 'arial', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+  }

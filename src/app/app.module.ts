@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { GaugeModule } from 'angular-gauge';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     CalendarComponent,
     BannerComponent,
     SidepanelComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +32,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     ReactiveFormsModule,
     NgbModalModule,
     FlatpickrModule.forRoot(),
+    GaugeModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
