@@ -19,24 +19,32 @@
 }
 
 mwl-gauge {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     display: block;
     padding: 3px;
+
   }
   mwl-gauge > .gauge > .dial {
-    stroke: #eee;
-    stroke-width: 6;
-    fill: rgba(0, 0, 0, 0);
+    stroke: #8B8B8B;
+    stroke-width: 8;
+    fill: rgba(255, 255, 255, 0);
+    border-radius: 20px;
   }
   mwl-gauge > .gauge > .value {
     stroke: #7fba02;
-    stroke-width: 6;
+    stroke-width: 8;
     fill: rgba(0, 0, 0, 0);
   }
   mwl-gauge > .gauge > .value-text {
-    fill: #7fba02;
+    fill: #000000;
     font-family: 'Roboto', 'arial', sans-serif;
     font-weight: bold;
     font-size: 1em;
   }
+
+  /*mwl-calendar-week-view-header {
+    background-color: #7fba02;
+    color: #7fba02;
+  
+  }*/

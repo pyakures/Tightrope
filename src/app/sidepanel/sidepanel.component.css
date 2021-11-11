@@ -4,7 +4,7 @@
     Width: 30%;
     position: fixed;
     right:0;
-    /*background-color: #ebebeb;*/
+    background-color: #ebebeb;
     top:0;
     font-family: 'Roboto', 'arial', sans-serif;
     font-size: 24px;
@@ -12,8 +12,13 @@
 }
 
 .center {
-    margin: auto;
-    width: 50%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
     border: 1px;
     padding: 1px;
+    stroke-linecap: round;
+    resize: both;
 }
+
