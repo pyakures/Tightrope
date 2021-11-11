@@ -55,20 +55,29 @@ a, a:active, a:focus, a:hover{
     position: absolute;
 }
 
+.login-form h2 {
+    color: #7fba02;
+    font-weight: 700;
+    font-size: 2.5em;
+    padding-bottom: 1.25em;
+}
+
 input {
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: hidden;
     font-size: 2em;
+    
     /*background-color: #eee; */
 }
 
   
-input:focus {
+input[type=text]:focus {
     outline: none;
     border-bottom: #7fba02;
     border-bottom-style:solid;
+    padding: 0px;
 }
 
 input[type=submit] {
@@ -78,4 +87,6 @@ input[type=submit] {
     font-weight: 700;
     padding: 0.5em;
     border-radius: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
 }
