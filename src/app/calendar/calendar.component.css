@@ -52,6 +52,10 @@
     transform: translate(-50%, 0);
 }
 
-.cal-month-view .cal-header {
+/*.cal-month-view .cal-header {
     background-color: #7fba02;}
-    
+
+
+.cal-week-view .cal-day-headers .cal-header:first-child {
+    background-color: #7fba02; }
+    */
