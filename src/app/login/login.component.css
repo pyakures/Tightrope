@@ -11,7 +11,7 @@
     text-align: right;
     position: absolute;
     display: inline;
-    font-family: 'Roboto', 'arial', sans-serif;
+    /* font-family: 'Roboto', 'arial', sans-serif; */
     font-size: 20px;
     right: 20px;
   
@@ -36,4 +36,46 @@ a, a:active, a:focus, a:hover{
     padding: 5px;
     background-color: #7fba02;
     color: #ffffff;
+}
+
+.wrapper {
+    height: 100%;
+    position: relative;
+}
+
+.tagline {
+    width: 50%;
+    float: left;
+}
+
+.login-form {
+    width: 50%;
+    top: 30%;
+    left: 55%;
+    position: absolute;
+}
+
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    font-size: 2em;
+    /*background-color: #eee; */
+}
+
+  
+input:focus {
+    outline: none;
+    border-bottom: #7fba02;
+    border-bottom-style:solid;
+}
+
+input[type=submit] {
+    background-color: #7fba02;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 0.5em;
+    border-radius: 5px;
 }
