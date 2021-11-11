@@ -39,7 +39,7 @@ mwl-gauge {
   }
   mwl-gauge > .gauge > .value-text {
     fill: #000000;
-    /*font-family: 'Roboto', 'arial', sans-serif;*/
+    font-family: 'Inter','Roboto', 'arial', sans-serif;
     font-weight: bold;
     font-size: 1em;
   }

@@ -1,4 +1,14 @@
 
+.header-nav {
+
+    padding: 20px;
+    height: 125px;
+}
+
+.header-nav img {
+    height: 40px;
+}
+
 .Calendar1 {
     width: 70%;
     height: auto;
