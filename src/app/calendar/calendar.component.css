@@ -24,9 +24,6 @@
 
 }
 
-.cal-week-view {
-    background-color: #7fba02;
-}
 
 .currentweek {
     padding: 5px;
@@ -48,7 +45,9 @@
     color:black;
 }
 
-.cal-header{
+#newButton {
+    color: white;
+    border-radius: 100px;
     background-color: #7fba02;
-    color:#7fba02;
+    transform: translate(-50%, 0);
 }
