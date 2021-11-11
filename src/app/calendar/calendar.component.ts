@@ -54,14 +54,14 @@ export class CalendarComponent{
 
   addEvent(): void {
     var titlegg:any=window.prompt("Title: ");
-    //var starttime:any= window.prompt("Start Date: ");
+    var starttime:any= window.prompt("Start Date: ");
     //window.prompt(starttime);
     this.events = [
       ...this.events,
       {
         
         title: titlegg,
-        start: startOfDay(new Date()),
+        start: startOfDay(new Date(starttime)),
         end: endOfDay(new Date()),
         draggable: true,
         resizable: {

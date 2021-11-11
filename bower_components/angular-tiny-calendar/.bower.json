@@ -1,0 +1,37 @@
+{
+  "name": "angular-tiny-calendar",
+  "homepage": "https://github.com/camilloaddis/angular-tiny-calendar",
+  "authors": [
+    "Camillo Addis <addiscamillo@gmail.com>"
+  ],
+  "description": "A (very) small calendar directive, which can also handle events.",
+  "main": "tiny-calendar.min.js",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "calendar",
+    "tiny",
+    "events",
+    "schedule",
+    "angular-calendar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "0.0.2",
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "25f24e7e22697bc0dc41ba16056ad90a612c5e26"
+  },
+  "_source": "https://github.com/camilloaddis/angular-tiny-calendar.git",
+  "_target": "^0.0.2",
+  "_originalSource": "angular-tiny-calendar",
+  "_direct": true
+}

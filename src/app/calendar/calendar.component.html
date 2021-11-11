@@ -1,7 +1,11 @@
 <app-banner></app-banner>
 <app-sidepanel></app-sidepanel>
 
+
 <div class="Calendar1">
+  <button class="btn btn-primary float-right" ID="newButton" (click)="addEvent()">
+    +
+  </button>
     <div class="buttons">
 
             <span class="btn-group">
@@ -70,9 +74,7 @@
         </mwl-calendar-day-view>
 
     </div>
-    <button class="btn btn-primary float-right" (click)="addEvent()">
-        Add new
-      </button>
+    
 
 
       <!--<form [formGroup]="calform">
