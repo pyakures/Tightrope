@@ -32,11 +32,12 @@ a, a:active, a:focus, a:hover{
     color: inherit;
 }
 
-.Signupbutton {
-    padding: 5px;
+/*.Signupbutton {
+    padding: 10px;
     background-color: #7fba02;
     color: #ffffff;
-}
+
+}*/
 
 .wrapper {
     height: 100%;
@@ -49,7 +50,7 @@ a, a:active, a:focus, a:hover{
     padding-left: 10%;
     position: absolute;
     top: 25%;
-    padding-right: 5%;
+    padding-right: 1%;
 }
 
 .logo-icon {
@@ -58,7 +59,7 @@ a, a:active, a:focus, a:hover{
 }
 
 .tagline h1 {
-    font-size: 4em;
+    font-size: 5vw;
     font-weight: 700;
 }
 
