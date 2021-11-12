@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { GaugeModule } from 'angular-gauge';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { GaugeModule } from 'angular-gauge';
     BannerComponent,
     SidepanelComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
