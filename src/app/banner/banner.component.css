@@ -18,7 +18,7 @@
     /* font-family: 'Roboto', 'arial', sans-serif; */
     font-size: 20px;
     right: 20px;
-  
+    font-weight: 700;
     
 }
 
@@ -32,9 +32,17 @@ ul li{
 }
 
 
-a, a:active, a:focus, a:hover{
+a {
     text-decoration: none;
     color: inherit;
+}
+
+a:active, a:focus, a:hover {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: solid 3px;
+    border-color: #7fba02;
+    padding-bottom: 10px;
 }
 
 
@@ -52,7 +60,7 @@ a, a:active, a:focus, a:hover{
     padding-right: 25px;
 }
 
-.Signupbutton a, a:active, a:focus, a:hover {
+.Signupbutton:active .Signupbutton:focus, .Signupbutton:hover {
     background-color: #7fba02;
     color: white;
     font-size: 1em;
