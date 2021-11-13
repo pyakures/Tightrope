@@ -22,3 +22,33 @@
     resize: both;
 }
 
+.sidecal {
+    background-color: #ebebeb !important;
+    font-size: 10px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width:max-content;
+    border-color: #ebebeb !important;
+    color: black;
+
+
+}
+
+.dp-calendar-day{
+    background: #ebebeb !important;
+}
+
+
+
+.dp-day-calendar-container{
+    background: #ebebeb !important;
+}
+
+.dp-weekdays {
+    font-size: 10px !important;
+}
+div.dp-calendar-nav-container{
+    display: none;
+}
