@@ -16,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { GaugeModule } from 'angular-gauge';
 import { SignupComponent } from './signup/signup.component';
-import { DpDatePickerModule } from 'ng2-date-picker';
+//import { DpDatePickerModule } from 'ng2-date-picker';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { DpDatePickerModule } from 'ng2-date-picker';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    DpDatePickerModule,
+    //DpDatePickerModule,
     NgbModalModule,
     FlatpickrModule.forRoot(),
     GaugeModule.forRoot(),
