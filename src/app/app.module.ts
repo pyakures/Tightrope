@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { GaugeModule } from 'angular-gauge';
 import { SignupComponent } from './signup/signup.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 //import { DpDatePickerModule } from 'ng2-date-picker';
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SignupComponent } from './signup/signup.component';
     SidepanelComponent,
     LoginComponent,
     SignupComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
