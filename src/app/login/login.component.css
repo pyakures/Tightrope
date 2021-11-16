@@ -55,6 +55,12 @@ a, a:active, a:focus, a:hover{
 .logo-icon {
     width: 50%;
     padding-bottom: 20px;
+    transition: transform .7s ease-in-out;
+}
+
+
+.logo-icon:hover {
+  transform: rotate(360deg);
 }
 
 .tagline h1 {
