@@ -6,7 +6,7 @@
     right:0;
     background-color: #ebebeb;
     top:0;
-    font-family: 'Roboto', 'arial', sans-serif;
+    /* font-family: 'Roboto', 'arial', sans-serif; */
     font-size: 24px;
     color: #7fba02;
 }
@@ -20,6 +20,11 @@
     padding: 1px;
     stroke-linecap: round;
     resize: both;
+}
+
+h4 {
+    text-align: center;
+    padding-bottom: 0px;
 }
 
 .sidecal {
@@ -52,3 +57,29 @@
 div.dp-calendar-nav-container{
     display: none;
 }
+
+::ng-deep dp-day-calendar .dp-day-calendar-container {
+    background-color: none;
+}
+
+
+
+
+
+
+
+/*
+dp-day-calendar{display:inline-block}
+dp-day-calendar .dp-day-calendar-container{background:#FFFFFF}
+dp-day-calendar .dp-calendar-wrapper{box-sizing:border-box;border:1px solid #000000}
+dp-day-calendar .dp-calendar-wrapper .dp-calendar-weekday:first-child{border-left:none}
+dp-day-calendar .dp-weekdays{font-size:15px;margin-bottom:5px}
+dp-day-calendar .dp-calendar-weekday{box-sizing:border-box;display:inline-block;width:30px;text-align:center;border-left:1px solid #000000;border-bottom:1px solid #000000}
+dp-day-calendar .dp-calendar-day{box-sizing:border-box;width:30px;height:30px;cursor:pointer}
+dp-day-calendar .dp-selected{background:#106CC8;color:#fff}dp-day-calendar .dp-prev-month,dp-day-calendar .dp-next-month{opacity:.5}
+dp-day-calendar .dp-hide-near-month .dp-prev-month,dp-day-calendar .dp-hide-near-month .dp-next-month{visibility:hidden}
+dp-day-calendar .dp-week-number{position:absolute;font-size:9px}dp-day-calendar.dp-material .dp-calendar-weekday{height:25px;width:30px;line-height:25px;color:#7a7a7a;border:none}
+dp-day-calendar.dp-material .dp-calendar-wrapper{border:1px solid #E0E0E0}dp-day-calendar.dp-material .dp-calendar-month,dp-day-calendar.dp-material .dp-calendar-day{box-sizing:border-box;background:#FFFFFF;border-radius:50%;border:none;outline:none}
+dp-day-calendar.dp-material .dp-calendar-month:hover,dp-day-calendar.dp-material .dp-calendar-day:hover{background:#E0E0E0}
+dp-day-calendar.dp-material .dp-selected{background:#106CC8;color:#fff}
+dp-day-calendar.dp-material .dp-selected:hover{background:#106CC8}dp-day-calendar.dp-material .dp-current-day{border:1px solid #106CC8} */
