@@ -10,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class SidepanelComponent implements OnInit {
 
   constructor() { }
+  monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  thisMonth = this.monthNames[(new Date()).getMonth()];
+
+
 
   config = {
     firstDayOfWeek: 'su',

@@ -93,6 +93,16 @@
     color: white;
 }
 
+::ng-deep .cal-week-view .cal-day-headers .cal-header:not(:last-child){
+    border:none;
+}
+
+::ng-deep .cal-month-view .cal-header {
+    background-color: #7fba02;
+    color: white;
+}
+
+
 
 mwldroppable .cal-header .cal-past .cal-weekend {
     background-color: #7fba02;

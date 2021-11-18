@@ -63,7 +63,16 @@ h4 {
 
 }
 
+::ng-deep dp-day-calendar.dp-material .dp-current-day{
+    border: 1px solid #7fba02 !important;
+    background-color: #7fba02 !important;
+    color: white;
+}
 
+
+::ng-deep dp-day-calendar .dp-weekdays{
+    display: none;
+}
 
 
 
