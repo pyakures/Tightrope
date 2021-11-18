@@ -41,28 +41,27 @@ h4 {
 
 }
 
-.dp-calendar-day{
+::ng-deep .dp-calendar-day{
     background: #ebebeb !important;
 }
 
-
-
-.dp-day-calendar-container{
+::ng-deep .dp-day-calendar-container{
     background: #ebebeb !important;
 }
 
 .dp-weekdays {
     font-size: 10px !important;
 }
-div.dp-calendar-nav-container{
+::ng-deep div.dp-calendar-nav-container{
     display: none;
 }
 
-::ng-deep dp-day-calendar .dp-day-calendar-container {
-    background-color: none;
+
+::ng-deep dp-day-calendar.dp-material .dp-calendar-wrapper{
+
+    border: 1px solid #ebebeb !important;
+
 }
-
-
 
 
 
