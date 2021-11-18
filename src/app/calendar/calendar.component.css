@@ -76,8 +76,23 @@
 
 ::ng-deep .cal-week-view .cal-day-headers {
     background-color: #7fba02;
-    border-color: none;
+    color: white;
 }
+
+::ng-deep .cal-week-view .cal-header.cal-today {
+    background-color: white;
+    color: #7fba02;
+    border: 1px #7fba02;
+}
+
+::ng-deep .cal-week-view .cal-day-headers span {
+    opacity: 100%;
+}
+
+::ng-deep .cal-week-view .cal-header.cal-weekend span {
+    color: white;
+}
+
 
 mwldroppable .cal-header .cal-past .cal-weekend {
     background-color: #7fba02;
