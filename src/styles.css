@@ -29,6 +29,21 @@
 
 }
 
+body {
+  animation: fadeInAnimation ease-in-out 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode:inherit;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
 mwl-gauge {
     width: 250px; /*220px*/
     height: 250px; /*220px*/ 
