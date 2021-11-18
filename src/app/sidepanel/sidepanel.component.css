@@ -22,6 +22,11 @@
     resize: both;
 }
 
+h4 {
+    text-align: center;
+    padding-bottom: 0px;
+}
+
 .sidecal {
     background-color: #ebebeb !important;
     font-size: 10px;
