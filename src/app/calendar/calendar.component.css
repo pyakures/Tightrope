@@ -28,10 +28,11 @@
 
 
 .btn-primary {
-    background-color: #ebebeb;
-    border-color: white;
+    background-color: white;
+    border-color: #7fba02;
+    border-width: 2px;
     border-radius: 10px;
-    color: black;
+    color: #7fba02;
     font-size: 15px;
 
 }
@@ -52,9 +53,10 @@
 }
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    background-color: #ebebeb;
-    border-color: white;
-    color:black;
+    background-color: #7fba02;
+    border-color: #7fba02;
+    color:white;
+    border-width: 2px;
 }
 
 #newButton {
@@ -71,3 +73,15 @@
 .cal-week-view .cal-day-headers .cal-header:first-child {
     background-color: #7fba02; }
     */
+
+mwl-calendar-week-view mwl-calendar-week-view-header div .cal-week-view .cal-day-headers {
+    background-color: #7fba02 !important;
+}
+
+mwldroppable .cal-header .cal-past .cal-weekend {
+    background-color: #7fba02;
+}
+
+.cal-week-view * {
+    background-color: #7fba02;
+}

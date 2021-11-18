@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 p {
     text-align: center;
@@ -59,3 +60,12 @@ p {
   .button:hover {
     background-color: #555;
   }
+=======
+h1 {
+    text-align: center;
+    padding: 1.25em;
+    font-size: 5em;
+    color: #7fba02;
+    font-weight: 700;
+}
+>>>>>>> cb07618a81274e6ee5a999701670edba39b95d4a
