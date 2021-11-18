@@ -74,8 +74,12 @@
     background-color: #7fba02; }
     */
 
-.Calendar1[_ngcontent-abi-c76] .cal-week-view .cal-day-headers {
+mwl-calendar-week-view mwl-calendar-week-view-header div .cal-week-view .cal-day-headers {
     background-color: #7fba02 !important;
+}
+
+mwldroppable .cal-header .cal-past .cal-weekend {
+    background-color: #7fba02;
 }
 
 .cal-week-view * {
