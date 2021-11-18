@@ -62,9 +62,16 @@ p {
 
 h1 {
     text-align: center;
-    padding: 1.25em;
+    padding: 1em;
     font-size: 5em;
     color: #7fba02;
     font-weight: 700;
 }
 
+h3 {
+  text-align: center;
+  /*padding: 1em;*/
+  font-size: 4em;
+  color: #8b8b8b;
+  font-weight: 700;
+}
