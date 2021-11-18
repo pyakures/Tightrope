@@ -17,6 +17,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { GaugeModule } from 'angular-gauge';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AboutComponent } from './about/about.component';
 //import { DpDatePickerModule } from 'ng2-date-picker';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
