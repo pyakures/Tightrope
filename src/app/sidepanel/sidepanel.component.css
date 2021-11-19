@@ -91,6 +91,33 @@
     color: grey;
     
 }
+
+.lastweek{
+    font-size: 0.75em;
+    color: black;
+    text-align: center;
+    border: none;
+
+}
+
+button {
+    background-color: #7fba02;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    margin: 5px;
+  
+
+}
+
+.moodbuttons{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
 /*
 dp-day-calendar{display:inline-block}
 dp-day-calendar .dp-day-calendar-container{background:#FFFFFF}
