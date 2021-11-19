@@ -23,7 +23,6 @@
 }
 
 .sidecal {
-    background-color: #ebebeb !important;
     font-size: 10px;
     position: absolute;
     bottom: 3em;
@@ -31,8 +30,8 @@
     transform: translate(-50%, 0%);
     height: auto;
     width:max-content;
-    border-color: #ebebeb !important;
     color: black;
+
 
 
 }
@@ -54,6 +53,7 @@
 
     border: 1px solid #ebebeb !important;
     font-size: 1.5em;
+
 
 }
 
