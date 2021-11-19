@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Time } from '@angular/common';
+import { DayCalendarComponent } from 'ng2-date-picker';
 
 @Component({
   selector: 'app-calendar',
@@ -43,8 +44,9 @@ export class CalendarComponent{
   ]
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     //window.alert(events.entries);
-   
     //this.openAppointmentList(date)
+    this.viewDate= date;
+    this.setView(CalendarView.Day);
 
   }
 
