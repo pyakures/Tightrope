@@ -145,3 +145,29 @@ mwldroppable .cal-header .cal-past .cal-weekend {
 .cal-week-view * {
     background-color: #7fba02;
 }
+
+::ng-deep .cal-month-view .cal-day-badge {
+    background-color: #7fba02;
+}
+
+::ng-deep .cal-month-view .cal-day-cell.cal-weekend .cal-day-number{
+    color:#7fba02;
+}
+
+::ng-deep .cal-week-view .cal-event{
+    background-color: white;
+    color: black;
+    border: none;
+    border-left: #7fba02;
+    border-left-style: solid;
+    
+
+}
+
+::ng-deep .cal-week-view .cal-day-column{
+    border: none;
+}
+
+::ng-deep .cal-week-view .cal-time-events{
+    border: none;
+}
