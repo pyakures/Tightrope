@@ -79,6 +79,13 @@ h4 {
     font-weight: bold;
 }
 
+.infotext{
+    color: grey;
+    text-align: center;
+    font-size: 0.6em;
+    
+
+}
 /*
 dp-day-calendar{display:inline-block}
 dp-day-calendar .dp-day-calendar-container{background:#FFFFFF}
