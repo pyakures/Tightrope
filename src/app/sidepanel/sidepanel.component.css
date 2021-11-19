@@ -49,9 +49,6 @@ h4 {
     background: #ebebeb !important;
 }
 
-.dp-weekdays {
-    font-size: 10px !important;
-}
 ::ng-deep div.dp-calendar-nav-container{
     display: none;
 }
@@ -60,6 +57,7 @@ h4 {
 ::ng-deep dp-day-calendar.dp-material .dp-calendar-wrapper{
 
     border: 1px solid #ebebeb !important;
+    font-size: 1.5em;
 
 }
 
@@ -75,6 +73,11 @@ h4 {
 }
 
 
+.currentmonth{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
 
 /*
 dp-day-calendar{display:inline-block}

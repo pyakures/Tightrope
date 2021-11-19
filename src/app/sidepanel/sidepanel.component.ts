@@ -10,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class SidepanelComponent implements OnInit {
 
   constructor() { }
-  monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  thisMonth = this.monthNames[(new Date()).getMonth()];
-
+  monthstring = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  d = new Date();
+  month = this.d.getMonth();
+  year = this.d.getUTCFullYear();
+  monthname = this.monthstring[this.month] + " " + this.year;
+  monthALLCAPS= this.monthname.toUpperCase();
 
 
   config = {
