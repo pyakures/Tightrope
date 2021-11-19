@@ -22,11 +22,6 @@
     resize: both;
 }
 
-h4 {
-    text-align: center;
-    padding-bottom: 0px;
-}
-
 .sidecal {
     background-color: #ebebeb !important;
     font-size: 10px;
@@ -34,6 +29,7 @@ h4 {
     bottom: 3em;
     left: 50%;
     transform: translate(-50%, 0%);
+    height: auto;
     width:max-content;
     border-color: #ebebeb !important;
     color: black;
@@ -85,6 +81,15 @@ h4 {
     font-size: 0.6em;
     
 
+}
+
+#stresslevelarc{
+    transform: translate(-2px, 97px);
+    font-size: 0.6em;
+    text-align: center;
+    padding-bottom: 0px;
+    color: grey;
+    
 }
 /*
 dp-day-calendar{display:inline-block}
