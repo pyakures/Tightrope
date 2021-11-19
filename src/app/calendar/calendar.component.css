@@ -169,3 +169,8 @@ mwldroppable .cal-header .cal-past .cal-weekend {
     background-color: #7fba02;
     color: white;
 }
+
+::ng-deep .cal-week-view .cal-current-time-marker {
+    display: none;
+
+}

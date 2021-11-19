@@ -16,14 +16,8 @@ import { DayCalendarComponent } from 'ng2-date-picker';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent{
-
-  calform= this.newhello.group({
-    name: '',
-    address: ''
-  });
-  
   constructor(
-    private newhello: FormBuilder
+   
   ){}
 
 
@@ -38,7 +32,8 @@ export class CalendarComponent{
 
   events: CalendarEvent[] = [
     {
-      start: startOfDay(new Date()),
+      start: startOfDay(new Date(/*"2021-11-14T03:24:00"*/)),
+      //end: endOfDay(new Date("2021-11-14T04:24:00")),
       title: 'An event with no end date',
     }
   ]
@@ -54,17 +49,18 @@ export class CalendarComponent{
     window.alert("Title: "+event.title +"\nTime: "+event.start);
   }
 
-  addEvent(): void {
-    var titlegg:any=window.prompt("Title: ");
-    //var starttime:any= window.prompt("Start Date: ");
-    //window.prompt(starttime);
+  addEvent(newtitle:string, startdate:string, enddate:string): void {
+    
+    startdate = startdate + ":00Z";
+    enddate = enddate + ":00Z";
+    window.alert(startdate);
     this.events = [
       ...this.events,
       {
         
-        title: titlegg,
-        start: startOfDay(new Date()),
-        end: endOfDay(new Date()),
+        title: newtitle,
+        start: startOfDay(new Date(startdate)),
+        end: endOfDay(new Date(enddate)),
         draggable: true,
         resizable: {
           beforeStart: true,
@@ -72,8 +68,12 @@ export class CalendarComponent{
         },
       },
     ]
+  
   }
 
+  onClickSubmit(data:any){
+    this.addEvent(data.Event, data.StartDate, data.EndDate);
+  }
 
   
 

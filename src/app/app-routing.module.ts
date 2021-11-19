@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AboutComponent } from './about/about.component';
+import { NeweventComponent } from './newevent/newevent.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
 {path:'home',component:CalendarComponent},
 {path:'signup',component:SignupComponent},
 {path:'forgot-password',component:ForgotPasswordComponent},
-{path:'about',component:AboutComponent}
+{path:'about',component:AboutComponent},
+{path: 'newevent',component:NeweventComponent}
 
 
 
