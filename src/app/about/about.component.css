@@ -4,7 +4,40 @@ p {
 }
 
 .intro {
-    background-color: #8b8b8b
+    background-image: linear-gradient(to right, #F6F6F6, #7FBA00);
+    border-radius : 0px  50px 50px 0px ;
+    width: 50%;
+    float: inline-start;
+    padding-left: 10%;
+    position: relative;
+    top: 25%;
+    padding-right: 1%;
+}
+
+.teamStuff{
+
+  float: none;
+  padding-left: 10%;
+  padding-right: 10%;
+  position: static;
+  top: 25%;
+
+}
+
+.teamInfo{
+  width: 50%;
+  float: inline-start;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: absolute;
+}
+.advisorInfo{
+  width: 50%;
+  float: inline-start;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: absolute;
+  left:49%;
 }
 
 /* Three columns side by side */
@@ -64,8 +97,16 @@ h1 {
     text-align: center;
     padding: 1em;
     font-size: 5em;
-    color: #7fba02;
+    color: #7FBA00;
     font-weight: 700;
+}
+
+h4 {
+  text-align: center;
+  padding: 1em;
+  font-size: 5em;
+  color: #F6F6F6;
+  font-weight: 700;
 }
 
 h3 {
