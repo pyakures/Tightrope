@@ -69,6 +69,8 @@
 
 ::ng-deep .buttons {
     padding-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 ::ng-deep .col-md-4 {

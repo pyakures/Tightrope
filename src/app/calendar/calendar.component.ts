@@ -686,16 +686,55 @@ export class CalendarComponent{
 
   addEvent(newtitle:string, startdate:string, enddate:string): void {
     
-    startdate = startdate + ":00Z";
-    enddate = enddate + ":00Z";
-    window.alert(startdate);
+    //startdate = startdate + ":00Z";
+    //enddate = enddate + ":00Z";
+    
+    var hourstringstart:String="";
+    var minutestringstart:String="";
+    var hourstringend:String="";
+    var minutestringend:String="";
+
+    for(let i=0; i< startdate.length; i++){
+
+        if(startdate[i]=='T'){
+          //start 
+          hourstringstart+= startdate[i+1];
+          hourstringstart+= startdate[i+2];
+        }
+        else if(startdate[i]==':')
+        {
+          minutestringstart+= startdate[i+1];
+          minutestringstart+= startdate[i+2];
+        }
+    }
+
+    for(let i=0; i< enddate.length; i++){
+
+      if(enddate[i]=='T'){
+        //start 
+        hourstringend+= enddate[i+1];
+        hourstringend+= enddate[i+2];
+      }
+      else if(enddate[i]==':')
+      {
+        minutestringend+= enddate[i+1];
+        minutestringend+= enddate[i+2];
+      }
+  }
+
+    var timehourstart:number = Number(hourstringstart);
+    var timeminutesstart = Number(minutestringstart);
+
+    var timehourend:number = Number(hourstringend);
+    var timeminutesend = Number(minutestringend);
+
     this.events = [
       ...this.events,
       {
         
         title: newtitle,
-        start: startOfDay(new Date(startdate)),
-        end: endOfDay(new Date(enddate)),
+        start: setHours(setMinutes(new Date(Date.parse(startdate)), timeminutesstart), timehourstart),
+        end: setHours(setMinutes(new Date(Date.parse(enddate)), timeminutesend), timehourend),
         draggable: true,
         resizable: {
           beforeStart: true,
