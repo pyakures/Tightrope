@@ -69,6 +69,8 @@
 
 ::ng-deep .buttons {
     padding-bottom: 1em;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 ::ng-deep .col-md-4 {
@@ -90,7 +92,7 @@
 
 ::ng-deep #dateb {
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.2em;
     vertical-align: middle;
     padding-left: 1em;
     padding-right: 1em;

@@ -64,6 +64,7 @@
         [viewDate]="viewDate" 
         [events]="events"
         (eventClicked)="eventClicked($event)"
+        [dayStartHour]=6
     
         >
         </mwl-calendar-week-view>
@@ -81,7 +82,7 @@
     
 
 
-    <!--form #addNewEvent = "ngForm" (ngSubmit) = "onClickSubmit(addNewEvent.value)" >
+    <form #addNewEvent = "ngForm" (ngSubmit) = "onClickSubmit(addNewEvent.value)" >
 
       <input type = "text" name = "Event" placeholder = "CS425 Midterm" ngModel>
         <br/>
@@ -92,7 +93,7 @@
          <input type = "submit" value = "submit">
   
   
-  </form-->
+  </form>
     
 
     
