@@ -49,7 +49,7 @@ a:active, a:focus, a:hover {
 }
 
 
-.Signupbutton {
+.login-button {
     background-color: white;
     color: #7fba02;
     border-style: solid;
@@ -61,9 +61,10 @@ a:active, a:focus, a:hover {
     border-radius: 50px;
     padding-left: 25px;
     padding-right: 25px;
+    margin-right:-10px;
 }
 
-.Signupbutton:active .Signupbutton:focus, .Signupbutton:hover {
+.login-button:active .login-button:focus, .login-button:hover {
     background-color: #7fba02;
     color: white;
     font-size: 1em;
@@ -72,6 +73,36 @@ a:active, a:focus, a:hover {
     border-style: solid;
     border-width: 3px;
     border-color: #7fba02;
+    border-radius: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.signup-button {
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right:-10px;
+}
+
+.signup-button:active .signup-button:focus, .signup-button:hover {
+    background-color: black;
+    color: white;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 12px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
     border-radius: 50px;
     padding-left: 25px;
     padding-right: 25px;
