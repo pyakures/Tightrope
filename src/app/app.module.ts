@@ -20,6 +20,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AboutComponent } from './about/about.component';
 import { DpDatePickerModule } from 'ng2-date-picker';
 import { NeweventComponent } from './newevent/newevent.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NeweventComponent } from './newevent/newevent.component';
     ForgotPasswordComponent,
     AboutComponent,
     NeweventComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

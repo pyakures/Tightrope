@@ -361,7 +361,7 @@ export class CalendarComponent{
       color: {primary: '#7fba02', secondary: 'white'}
     },
     {
-      title: 'CS 425 Lecture',
+      title: 'CS 425 Project Demo',
       start: setHours(setMinutes(new Date(Date.parse("December 2 2021")), 30), 10),
       end: setHours(setMinutes(new Date(Date.parse("December 2 2021")), 45), 11), 
       color: {primary: '#7fba02', secondary: 'white'}
