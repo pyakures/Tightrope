@@ -1,7 +1,9 @@
 
+/*This code was developed by Mackenzie Zappe */
 p {
     text-align: center;
 }
+
 
 .intro {
     background-image: linear-gradient(to right, #F6F6F6, #7FBA00);
@@ -9,18 +11,19 @@ p {
     width: 50%;
     float: inline-start;
     padding-left: 10%;
-    position: relative;
+    position: absolute;
     top: 25%;
     padding-right: 1%;
+    color: #F6F6F6;
 }
 
 .teamStuff{
 
-  float: none;
+  float: inline-start;
   padding-left: 10%;
   padding-right: 10%;
-  position: static;
-  top: 25%;
+  position: relative;
+  top: 80%;
 
 }
 
@@ -30,6 +33,7 @@ p {
   padding-left: 5%;
   padding-right: 5%;
   position: absolute;
+  top : 90%;
 }
 .advisorInfo{
   width: 50%;
@@ -38,8 +42,11 @@ p {
   padding-right: 5%;
   position: absolute;
   left:49%;
+  top: 90%;
 }
+/*end of custom coding*/
 
+/*This code was developed by an alternate source https://www.w3schools.com/howto/howto_css_team.asp */
 /* Three columns side by side */
 .column {
     float: left;
@@ -92,6 +99,9 @@ p {
   .button:hover {
     background-color: #555;
   }
+/*end of outsourced code*/
+
+/*The following code was developed by Mackenzie Zappe */
 
 h1 {
     text-align: center;
@@ -116,3 +126,5 @@ h3 {
   color: #8b8b8b;
   font-weight: 700;
 }
+
+/*end of custom code*/
