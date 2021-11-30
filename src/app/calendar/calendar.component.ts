@@ -1,3 +1,5 @@
+/*Custom Code Section By Michael Dorado and Sahil Pyakurel*/
+/*Module imports*/
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
 import { CalendarService } from '../calendar.service';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
@@ -9,21 +11,24 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Time } from '@angular/common';
 import { DayCalendarComponent } from 'ng2-date-picker';
 
+/*Defining a calendar component*/
 @Component({
   selector: 'app-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
+/*Calendar Object Class Declaration*/
 export class CalendarComponent{
   constructor(
    
   ){}
 
-
+  /*Outsourced code from https://github.com/mattlewis92/angular-calendar#getting-started*/
   viewDate: Date = new Date();
   view: CalendarView = CalendarView.Week;
   CalendarView = CalendarView;
+  /*End of outsourced code*/
 
 
   setView(view: CalendarView) {
@@ -684,6 +689,7 @@ export class CalendarComponent{
     window.alert("Title: "+event.title +"\nStart Time: "+event.start +"\nEnd Time: "+event.end);
   }
 
+  /*Code By Sahil*/
   addEvent(newtitle:string, startdate:string, enddate:string): void {
     
     //startdate = startdate + ":00Z";
@@ -750,8 +756,5 @@ export class CalendarComponent{
   }
 
   
-
-
-
-  
+/*End of custom code section*/
 } 

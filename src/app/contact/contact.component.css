@@ -1,3 +1,4 @@
+/*Custom code section by Michael Dorado*/
 .comment-form {
     padding-top: 20px;
     width: auto;
@@ -6,6 +7,7 @@
     position: center;
     text-align: center;
 }
+/*Submit button styling*/
 input[type=submit] {
     background-color: #7fba02;
     color: white;
@@ -17,6 +19,7 @@ input[type=submit] {
     padding-right: 25px;
     position: relative;
 }
+/*First name and last name text area*/
 input {
     border-top-style: hidden;
     border-right-style: hidden;
@@ -29,6 +32,7 @@ input {
     border-bottom-style:solid;
     background-color: rgb(128, 128, 128,.1);
 }
+/*Comment form*/
 textarea {
     background-image: linear-gradient(to bottom,rgb(128, 128, 128,.1), #7FBA00);
     height: 300px;
@@ -37,6 +41,7 @@ textarea {
     text-align: center;
     font-size: 2em;
 }
+
 h1 {
     text-align: center;
     padding: .01em;
@@ -60,3 +65,5 @@ h5 {
     position: absolute;
     padding-right: 1%;
 }
+
+/*end of custom code section */

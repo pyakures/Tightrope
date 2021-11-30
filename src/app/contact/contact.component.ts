@@ -1,3 +1,4 @@
+/*Custom code section by Michael Dorado*/
 import { Component, OnInit } from '@angular/core';
 
 @Component({
