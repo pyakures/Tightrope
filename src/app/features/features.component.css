@@ -1,20 +1,73 @@
-h1 {
+.intro h1 {
     text-align: center;
-    padding: 1em;
+
     font-size: 5em;
     color: #7FBA00;
     font-weight: 700;
 }
 
-.mat-form-field + .mat-form-field {
-    margin-left: 8px;
+.intro p {
+    color: black;
+    font-size: 2em;
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    line-height: 1;
+    text-indent: 50px;
   }
 
-.panelTitle{
-    font-size: 2.5em;
-    color: #8b8b8b;
+.wrapper {
+    height: 100%;
+    position: relative;
+    width: 100%;
 }
+
+.info h1{
+    text-align: center;
+    padding: 1em;
+    font-size: 5em;
+    color: white;
+    font-weight: 700;
+}
+
+.info{
+    background-color:#7FBA00;
+    height: min-content;
+}
+
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+    padding: 1em;
+  }
+
+.mat-accordion{
+    padding:1em;
+
+}
+
 .panelDescription{
-    font-size: 2em;
+    font-size: 3em;
     color: #8b8b8b;
+    text-align: center;
+
+}
+
+.visual{
+    
+    align-items: center;
+    width: 50%;
+    padding-left: 10%;
+    padding-top: 5%;
+}
+
+.written{
+    width: 40%;
+    top: 30%;
+    left: 50%;
+    position: absolute;
+    padding-top: 5%;
+}
+
+p{
+    font-size: 2em;
 }

@@ -1,86 +1,108 @@
 <app-banner></app-banner>
 <router-outlet></router-outlet>
 
-<h1 class="page_heading">Features</h1>
 
+<div id = "wrapper">
+<div class="intro">
+    <h1 class="page_heading">What makes Tightrope Different?</h1>
+    <p>This will describe the premise of Tightrope and what makes it different. </p>
+</div>
+<div class="info">
+    <h1>Features</h1>
+</div>
 <mat-accordion>
     <!--Feature 1-->
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-        <mat-panel-title class="panelTitle">
-          Event Classifications
-        </mat-panel-title>
+      <mat-expansion-panel-header >
         <mat-panel-description class="panelDescription">
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        Event Classifications
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <div class="visual">
+        <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+      </div>
+      <div class="written">
+        <p>I'm visible because I am open</p>
+      </div>
+      
     </mat-expansion-panel>
 
     <!--Feature 2-->
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
-        <mat-panel-title class="panelTitle">
-        Stress Forecasting
-        </mat-panel-title>
         <mat-panel-description class="panelDescription">
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        Stress Forecasting
         </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <div class="visual">
+            <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
     </mat-expansion-panel>
     <!--Feature 3-->
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-        <mat-panel-title class="panelTitle">
-        Stress Survey
-        </mat-panel-title>
         <mat-panel-description class="panelDescription">
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        Stress Survey
         </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <div class="visual">
+            <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
     </mat-expansion-panel>
     <!--Feature 4-->
     <mat-expansion-panel (opened)="panelOpenState = true"
         (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
-        <mat-panel-title class="panelTitle">
-        Stress Gauge and Summary
-        </mat-panel-title>
+
         <mat-panel-description class="panelDescription">
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        Stress Gauge and Summary
         </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <div class="visual">
+            <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
     </mat-expansion-panel>
     <!--Feature 5-->
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-        <mat-panel-title class="panelTitle">
-        Mental Wellness Streak
-        </mat-panel-title>
         <mat-panel-description class="panelDescription">
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        Mental Wellness Streak
         </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <div class="visual">
+            <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
     </mat-expansion-panel>
     <!--Feature 6-->
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
-        <mat-panel-title class="panelTitle">
-        Event Recommendation
-        </mat-panel-title>
         <mat-panel-description class="panelDescription">
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        Event Recommendation
         </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <div class="visual">
+            <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
 </mat-expansion-panel>
 </mat-accordion>
+</div>
