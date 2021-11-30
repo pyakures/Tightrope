@@ -1,6 +1,7 @@
 import { NgModule,Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -21,6 +22,9 @@ import { AboutComponent } from './about/about.component';
 import { DpDatePickerModule } from 'ng2-date-picker';
 import { NeweventComponent } from './newevent/newevent.component';
 import { ContactComponent } from './contact/contact.component';
+import { FeaturesComponent } from './features/features.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +38,8 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     NeweventComponent,
     ContactComponent,
+    FeaturesComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,8 @@ import { ContactComponent } from './contact/contact.component';
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
-    NgbModule
+    NgbModule,
+    MatExpansionModule,
   ],
   providers: [
     CalendarService
