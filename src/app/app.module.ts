@@ -1,6 +1,5 @@
 import { NgModule,Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
+import { BrowserModule } from '@angular/platform-browser'; 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +23,9 @@ import { DpDatePickerModule } from 'ng2-date-picker';
 import { NeweventComponent } from './newevent/newevent.component';
 import { ContactComponent } from './contact/contact.component';
 import { FeaturesComponent } from './features/features.component';
-import { MatExpansionModule } from '@angular/material/expansion';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +44,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
@@ -58,6 +58,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     }),
     NgbModule,
     MatExpansionModule,
+    BrowserAnimationsModule,
 
   ],
   providers: [

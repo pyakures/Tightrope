@@ -1,31 +1,108 @@
 <app-banner></app-banner>
 <router-outlet></router-outlet>
-  
 
-<h1 class="page_heading">Features</h1>
+
+<div id = "wrapper">
+<div class="intro">
+    <h1 class="page_heading">What makes Tightrope Different?</h1>
+    <p>This will describe the premise of Tightrope and what makes it different. </p>
+</div>
+<div class="info">
+    <h1>Features</h1>
+</div>
 <mat-accordion>
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          This is the expansion title
-        </mat-panel-title>
-        <mat-panel-description>
-          This is a summary of the content
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
+    <!--Feature 1-->
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      <mat-expansion-panel-header >
+        <mat-panel-description class="panelDescription">
+        Event Classifications
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <div class="visual">
+        <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+      </div>
+      <div class="written">
+        <p>I'm visible because I am open</p>
+      </div>
+      
     </mat-expansion-panel>
-  </mat-accordion>
-  
+
+    <!--Feature 2-->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+        <mat-panel-description class="panelDescription">
+        Stress Forecasting
+        </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="visual">
+            <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
+    </mat-expansion-panel>
+    <!--Feature 3-->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-description class="panelDescription">
+        Stress Survey
+        </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="visual">
+            <img src="../../assets/Tightrope-Mockup-WeekRate.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
+    </mat-expansion-panel>
+    <!--Feature 4-->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+
+        <mat-panel-description class="panelDescription">
+        Stress Gauge and Summary
+        </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="visual">
+            <img src="../../assets/Tightrope-Mockup-StressSummary.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
+    </mat-expansion-panel>
+    <!--Feature 5-->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-description class="panelDescription">
+        Mental Wellness Streak
+        </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="visual">
+            <img src="../../assets/Tightrope-Mockup-Streaks.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
+    </mat-expansion-panel>
+    <!--Feature 6-->
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-description class="panelDescription">
+        Event Recommendation
+        </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="visual">
+            <img src="../../assets/Tightrope-Mockup-Recommendation.png" alt="Demitri" style="width:65%">
+          </div>
+          <div class="written">
+            <p>I'm visible because I am open</p>
+          </div>
+</mat-expansion-panel>
+</mat-accordion>
+</div>
