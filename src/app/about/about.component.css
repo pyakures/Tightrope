@@ -71,7 +71,7 @@
   }
   
   .title {
-    color: #F6F6F6;
+    color: #8b8b8b;
   }
   
   .button {
@@ -128,9 +128,11 @@ h3 {
 .intro p {
   color: black;
   font-size: 2em;
-  text-align: center;
+  text-align: left;
   width: 50%;
   margin: auto;
+  line-height: 1;
+  text-indent: 50px;
 }
 
 /*end of custom code*/
