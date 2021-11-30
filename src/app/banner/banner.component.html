@@ -1,4 +1,6 @@
 <router-outlet></router-outlet>
+<!--This code was developed by Demitri Bannoura-->
+<!--This defines the container of the navbar-->
 <nav class="navbar">
 
     <!-- logo -->
@@ -12,19 +14,26 @@
   -->
 
       <div class="navbar-brand">
+        <!--Link to the img files for the logos-->
         <a class="navbar-item" routerLink='../home' >
           <img style="height: 50px ; width: auto ;" src= "../../assets/Tightrope-Logo-Green.png" alt="Tightrope">
         </a> 
 
         <ul class="navbar-menu">
+          <!--Routing to the about page-->
           <li> <a routerLink='../about'>About</a></li>
+          <!--Routing to the features page-->
           <li><a href= '../features'>Features</a></li>
+          <!--Routing to the contact page-->
           <li><a href= "../contact/">Contact</a></li>
+          <!--Routing for the signup button-->
           <li ><a routerLink='../signup' class="signup-button">Join Now</a></li>
+          <!--Routing for the login button-->
           <li ><a routerLink='../login' class="login-button">Login</a></li>
         </ul>
       </div> 
   
 
 </nav>
+<!--End of custom code section-->
 

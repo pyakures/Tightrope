@@ -1,12 +1,16 @@
+/*This code was developed by Demitri Bannoura*/
+/*Spacing on the logo in the upper nav bar*/
 .navbar-brand {
     padding: 20px;
 }
 
+/*Spacing on the logo in the upper nav bar*/
 .navbar-brand {
     padding: 20px;
     min-width: 100%;
 }
 
+/*Alignment of elements of the Navbar*/
 .navbar-menu {
     list-style-type: none;
     list-style: none;
@@ -15,7 +19,6 @@
     text-align: right;
     position: absolute;
     display: inline;
-    /* font-family: 'Roboto', 'arial', sans-serif; */
     font-size: 20px;
     right: 20px;
     font-weight: 700;
@@ -36,6 +39,7 @@ a {
     color: inherit;
 }
 
+/*CSS for the hovering coloring*/
 a:active, a:focus, a:hover {
     text-decoration: none;
     color: inherit;
@@ -44,11 +48,12 @@ a:active, a:focus, a:hover {
     padding-bottom: 10px;
 }
 
+/*Underlines elements in the nav bar when hovered over*/
 .navbar-item:active, .navbar-item:focus, .navbar-item:hover {
     border-bottom: none;
 }
 
-
+/*Styling of the login button*/
 .login-button {
     background-color: white;
     color: #7fba02;
@@ -64,6 +69,7 @@ a:active, a:focus, a:hover {
     margin-right:-10px;
 }
 
+/*Changes the color of the login button when hovered over, defines CSS stylings of the button as well*/
 .login-button:active .login-button:focus, .login-button:hover {
     background-color: #7fba02;
     color: white;
@@ -78,7 +84,7 @@ a:active, a:focus, a:hover {
     padding-right: 25px;
 }
 
-
+/*Is the "Join Now" button, this defines the CSS of the button*/
 .signup-button {
     background-color: white;
     color: black;
@@ -94,6 +100,7 @@ a:active, a:focus, a:hover {
     margin-right:-10px;
 }
 
+/*Specifications for the "Join Now" button when it is hovered over*/
 .signup-button:active .signup-button:focus, .signup-button:hover {
     background-color: black;
     color: white;
@@ -107,3 +114,4 @@ a:active, a:focus, a:hover {
     padding-left: 25px;
     padding-right: 25px;
 }
+/*End of custom code section*/
