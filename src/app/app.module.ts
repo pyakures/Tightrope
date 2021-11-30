@@ -1,5 +1,6 @@
 import { NgModule,Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +26,6 @@ import { ContactComponent } from './contact/contact.component';
 import { FeaturesComponent } from './features/features.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +43,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
@@ -57,6 +58,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     }),
     NgbModule,
     MatExpansionModule,
+
   ],
   providers: [
     CalendarService
