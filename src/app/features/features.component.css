@@ -1,3 +1,11 @@
+
+/* CSS for the intro section */
+.intro{
+    margin-top: 4em;
+    color: #7FBA00;
+    margin-bottom: 3em;
+}
+
 .intro h1 {
     text-align: center;
 
@@ -23,12 +31,14 @@
     padding-bottom: .25em;
 
 }
+/* End of intro section */
 
-.wrapper {
-    height: 100%;
-    position: relative;
-    width: 100%;
+/* CSS for the Feature title section */
+.info{
+    background-color:#7FBA00;
+    height: min-content;
 }
+
 
 .info h1{
     text-align: center;
@@ -39,17 +49,9 @@
 
 }
 
-.info{
-    background-color:#7FBA00;
-    height: min-content;
-}
+/* End of Feature title section */
 
-.intro{
-    margin-top: 4em;
-    color: #7FBA00;
-    margin-bottom: 3em;
-}
-
+/*CSS for the Collapsible accordian section*/
 .mat-form-field + .mat-form-field {
     margin-left: 8px;
     padding: 1em;
@@ -73,19 +75,34 @@
     width: 50%;
     padding-left: 10%;
     padding-top: 5%;
+    padding-bottom:5%;
+
 }
 
 .written{
     width: 40%;
-    top: 30%;
+    top: 10%;
     left: 50%;
     position: absolute;
-    padding-top: 5%;
+    padding-bottom:5%;
+    overflow: hidden;
+
 }
 
-p{
+.collapsible p{
+    color: black;
     font-size: 2em;
+    text-align: left;
+    margin: auto;
+    line-height: 1;
+    text-indent: 50px;
+    padding-bottom: .25em;
+
+
 }
+/*End of Collapsible accordian section*/
+
+/*CSS for Fundamental Principle Cards*/
 
 .row{
     margin-bottom: 4em;
@@ -149,3 +166,4 @@ p{
 .card-back {
     transform: rotateY(180deg);
 }
+/*End of Fundamental Principle Cards*/

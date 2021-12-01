@@ -1,8 +1,10 @@
 <app-banner></app-banner>
 <router-outlet></router-outlet>
 
+<!--November 30 2021-->
+<!--Created by Mackenzie Zappe-->
 
-<div id = "wrapper">
+<!--Overview of makes application stand out-->
 <div class="intro">
     <h1 class="page_heading">What makes Tightrope Different?</h1>
     <p>Yes, there are a variety of scheduler applications that manage the day-to-day operations of people's lives. 
@@ -14,7 +16,8 @@
     <font color=#7FBA00>Education</font>, and <font color=#7FBA00>Mindfulness</font>.
     </p>
     <h2>By employing foundational principles, <i>Tightrope</i> aims to support indivuduals in unlocking their true potential by promoting a healthy lifestyle.</h2>
-  </div>
+</div>
+<!--Fundamental Principle Cards-->
 <div class="row">
     <div class ="column">
     <div class="card">
@@ -22,7 +25,7 @@
           <div class="card-front">
             <h1>Intentionality</h1>
           </div>
-          <!-- Decorate card back side -->
+          <!-- card back side -->
           <div class="card-back">
               <p>Understand the cause and effects of your decisions.</p>
           </div>
@@ -35,7 +38,7 @@
             <div class="card-front">
               <h1>Education</h1>
             </div>
-            <!-- Decorate card back side -->
+            <!--card back side -->
             <div class="card-back">
                 <p>Know how to support your mental wellness with tools.</p>
             </div>
@@ -49,7 +52,7 @@
             <div class="card-front">
               <h1>Mindfulness</h1>
             </div>
-            <!-- Decorate card back side -->
+            <!--card back side -->
             <div class="card-back">
                 <p>Be conscious and aware of your mental health.</p>
             </div>
@@ -58,10 +61,13 @@
       </div>
     </div>
   </div>
-
+<!--Features heading w/ color-->
 <div class="info">
     <h1>Features</h1>
 </div>
+<!--Accordion style collapsible content-->
+<!--employs mat-extension module -->
+<div class="collapsible">
 <mat-accordion>
     <!--Feature 1-->
     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -72,11 +78,13 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="visual">
-        <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+        <img src="../../assets/placehold.png" alt="Event Classifications" style="width:65%">
       </div>
       <div class="written">
         <p><i>Tightrope</i> initially appears as a regular scheduler, equiped with adding, editing, and deleting events.
-          Additionally, the events then can be categorized into leisure vs. work with an associated stress level for that event.</p>
+          In addition to these basic functionalities, the events then can be categorized into leisure vs. work with an associated stress level for that event.</p>
+        <p>This distintion is a unique way to categorize events in which users can then focus on being intentional during their leisure time 
+        and have a quick view as to the quantitative balance of leisure vs. work activities. </p>
       </div>
       
     </mat-expansion-panel>
@@ -90,7 +98,7 @@
         </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="visual">
-            <img src="../../assets/placehold.png" alt="Demitri" style="width:65%">
+            <img src="../../assets/placehold.png" alt="Stress Forecasting" style="width:65%">
           </div>
           <div class="written">
             <p>I'm visible because I am open</p>
@@ -105,11 +113,13 @@
         </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="visual">
-            <img src="../../assets/Tightrope-Mockup-WeekRate.png" alt="Demitri" style="width:65%">
+            <img src="../../assets/Tightrope-Mockup-WeekRate.png" alt="Stress Survey" style="width:65%">
           </div>
           <div class="written">
-            <p>The application optimizes the user's schedule by presenting a stress survey. The user can use the stress survey to reflect on their schedule.
+            <p>The application optimizes the user's schedule by presenting a stress survey. The user can use the stress survey to reflect on their past schedule.
               The data collected is then used to optimize future schedules for the user.</p>
+               <p>The key portion of this feature is that the surevey is developed with user simplicity and availability in mind. 
+              We know that nobody wants to fill out a 30 part questionaire every day, so we balanced the cost of convience with the cost of accuracy to develop our survey frequency and questions.</p>
           </div>
     </mat-expansion-panel>
     <!--Feature 4-->
@@ -122,11 +132,13 @@
         </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="visual">
-            <img src="../../assets/Tightrope-Mockup-StressSummary.png" alt="Demitri" style="width:65%">
+            <img src="../../assets/Tightrope-Mockup-StressSummary.png" alt="Stress Gauge" style="width:65%">
           </div>
           <div class="written">
-            <p>The application then is able to determine a summary of stress for the user for the current day, week, or month that is then 
-              displayed graphically as the stress gauge. </p>
+            <p><i>Tightrope</i> compiles a summary of stress for the user for the current day, week, or month that is then 
+              displayed graphically as the stress gauge. The summary will count the number of events that are stressful/mindful,the average hours of 'work' for the period, and isolate the most stressful segments for the period.</p>
+              <p>The visual effect of these calculated numbers will educate the users on their current work:life ratio and help them quantify the stress or emtions felt
+              during the designated period. </p>
           </div>
     </mat-expansion-panel>
     <!--Feature 5-->
@@ -141,7 +153,10 @@
             <img src="../../assets/Tightrope-Mockup-Streaks.png" alt="Demitri" style="width:65%">
           </div>
           <div class="written">
-            <p>I'm visible because I am open</p>
+            <p>The Mental Wellness Streak feature tracks the number of consecutive mindful events that are completed by the user. The mindful events are designated by each 
+              user as leisure looks different for each individual. </p>
+              <p>The purpose of the Streak feature is to motivate users to continue their mindful practices with consistency and external motivations. This extra motivation
+              will promote the incoporation of mindful practices into the everyday lives of the users. </p>
           </div>
     </mat-expansion-panel>
     <!--Feature 6-->
@@ -156,7 +171,9 @@
             <img src="../../assets/Tightrope-Mockup-Recommendation.png" alt="Demitri" style="width:65%">
           </div>
           <div class="written">
-            <p>I'm visible because I am open</p>
+            <p>The developers of <i>Tightrope</i> know there is a difference between having leisure time and actively participating in leisurely activities to reduce stress.
+            The caveat is that occationally trying to find a leisurely activity adds to the overall stress of an individual instead of diminishing it.</p>
+            <p>This is where the Event Recommendation feature comes in.</p>
           </div>
 </mat-expansion-panel>
 </mat-accordion>

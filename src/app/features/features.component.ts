@@ -11,5 +11,6 @@ export class FeaturesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /* initiates Accordion div to be closed*/
   panelOpenState = false;
 }
