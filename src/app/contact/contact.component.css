@@ -10,6 +10,7 @@ input, textarea {
 
     border: #8b8b8b;
     border-style: solid;
+    border-radius: 10px;
     font-size: 1.5em;
     padding: 0.5em;
     width: 100%;
