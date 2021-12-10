@@ -677,6 +677,8 @@ export class CalendarComponent{
   ]
 
 
+  /*Custom Code By Sahil*/
+  //function that opens the day view of the calendar while clicked on the date
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     //window.alert(events.entries);
     //this.openAppointmentList(date)
@@ -689,7 +691,8 @@ export class CalendarComponent{
     window.alert("Title: "+event.title +"\nStart Time: "+event.start +"\nEnd Time: "+event.end);
   }
 
-  /*Code By Sahil*/
+  /*Custom Code By Sahil*/
+  //function that takes the input form the from, parses the information like name and data, uses those vraiables to create a new event
   addEvent(newtitle:string, startdate:string, enddate:string): void {
     
     //startdate = startdate + ":00Z";
@@ -751,6 +754,7 @@ export class CalendarComponent{
   
   }
 
+  //passes the form input values upon submitting it
   onClickSubmit(data:any){
     this.addEvent(data.Event, data.StartDate, data.EndDate);
   }
