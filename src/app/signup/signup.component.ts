@@ -1,3 +1,4 @@
+//Auto generated code by Angular
 import { Component, OnInit } from '@angular/core';
 
 @Component({

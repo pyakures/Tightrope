@@ -1,4 +1,4 @@
-//auto generated angular code
+//Custom Code by Sahil Pyakurel
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class SidepanelComponent implements OnInit {
 
   constructor() { }
-  //a method to return the current month to the side panel
+  //a method to return the current month to the side panel by Sahil Pyakurel
   monthstring = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   d = new Date();
   month = this.d.getMonth();

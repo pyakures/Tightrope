@@ -1,4 +1,5 @@
-/*custom code for styling*/
+/*custom code for styling made by Sahil Pyakurel and Michael Dorado*/
+/*Define the side banner area*/
 .sidebanner {
     height: 100%;
     Width: 30%;
@@ -10,7 +11,7 @@
     font-size: 24px;
     color: #7fba02;
 }
-
+/*Text centering*/
 .center {
     position: absolute;
     top: 15%;
@@ -22,6 +23,7 @@
     resize: both;
 }
 
+/*Define Space for mini calendar*/
 .sidecal {
     font-size: 10px;
     position: absolute;
@@ -36,6 +38,7 @@
 
 }
 
+/*Display settings for current day sectio*/
 ::ng-deep .dp-calendar-day{
     background: #ebebeb !important;
 }
@@ -67,14 +70,16 @@
 ::ng-deep dp-day-calendar .dp-weekdays{
     display: none;
 }
+/*End of section*/
 
-
+/*mini calendar stylings*/
 .currentmonth{
     font-size: 1.5em;
     text-align: center;
     font-weight: bold;
 }
 
+/*mini calendar stylings*/
 .infotext{
     color: grey;
     text-align: center;
@@ -83,6 +88,7 @@
 
 }
 
+/*Stress Gauge stylings*/
 #stresslevelarc{
     transform: translate(-2px, 97px);
     font-size: 0.6em;
@@ -92,6 +98,7 @@
     
 }
 
+/*mini calendar stylings*/
 .lastweek{
     font-size: 0.75em;
     color: black;
@@ -100,6 +107,7 @@
 
 }
 
+/*Button stylings*/
 button {
     background-color: #7fba02;
     height: 45px;
@@ -113,6 +121,7 @@ button {
 
 }
 
+/*Button stylings*/
 .moodbuttons{
     position: absolute;
     left: 50%;

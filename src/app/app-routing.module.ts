@@ -10,7 +10,7 @@ import { NeweventComponent } from './newevent/newevent.component';
 import { FeaturesComponent } from './features/features.component';
 
 
-
+//Rougting done by all members of the team manually
 const routes: Routes = [
 {path:'login',component:LoginComponent},
 {path:'home',component:CalendarComponent},

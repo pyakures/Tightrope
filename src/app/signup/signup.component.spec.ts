@@ -1,3 +1,4 @@
+//Auto generated code by Angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignupComponent } from './signup.component';
