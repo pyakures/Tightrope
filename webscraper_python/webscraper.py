@@ -28,6 +28,11 @@ def find_events(categories = '', city='Reno'):
 
     """
     Usage: find_events(categories = '{categories list}', city='{city name}')
+
+    Must have a config file that specififes the ticketmaster_api_key.
+
+    This may be shared upon request.
+
     """
 
     # Set up essential variables
