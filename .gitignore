@@ -43,3 +43,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Webscaper Config
+config.py
+__pycache__
+.ipynb_checkpoints
