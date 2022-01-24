@@ -1,0 +1,9 @@
+Basic format for the current event record
+{
+    "UserID":"mdorado1",
+    "EventName":"Bowling",
+    "StartDate":"2022-2-1 14:30",
+    "EndDate":"2022-2-1 16:30",
+    "Description":"This is a description",
+    "Lesiure":"True"
+}
