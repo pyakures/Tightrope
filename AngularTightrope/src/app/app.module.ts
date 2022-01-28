@@ -24,6 +24,9 @@ import { ContactComponent } from './contact/contact.component';
 import { FeaturesComponent } from './features/features.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SharedService } from './shared.service';
+
+import{HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -58,10 +61,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     NgbModule,
     MatExpansionModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
   ],
   providers: [
-    CalendarService
+    CalendarService,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })
