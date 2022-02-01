@@ -11,3 +11,4 @@ class EventsSerializer(serializers.ModelSerializer):
                     'EndDate',
                     'Description',
                     'Lesiure')
+    

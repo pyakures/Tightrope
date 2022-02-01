@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'eventApp.apps.EventappConfig',
+    'accounts.apps.AccountsConfig',
+    'public.apps.PublicConfig',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -53,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_auto_logout.middleware.auto_logout',
 ]
 
 ROOT_URLCONF = 'tightropeAPI.urls'
@@ -127,3 +131,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+AUTO_LOGOUT = {'IDLE_TIME': 600}  # logout after 10 minutes of downtime
+
+#LOGIN_REDIRECT_URL = "/"

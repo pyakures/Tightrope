@@ -4,23 +4,23 @@
 
 
 
-<div id="wrapper">
-  <div class="tagline">
-    <img class="logo-icon" src="../../assets/Tightrope-Logo-Icon.png" />
-    <h1>Stress less and get s#!t done.</h1>
+  <div id="wrapper">
+    <div class="tagline">
+      <img class="logo-icon" src="../../assets/Tightrope-Logo-Icon.png" />
+      <h1>Stress less and get s#!t done.</h1>
+    </div>
+    <div class="login-form">
+      <h2>Welcome back.</h2>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <!--<form action="localhost:4200/home">-->
+        <!-- label for="email">Email</label><br -->
+        <input type="email" id="email" name="email" placeholder="Email address" autofocus formControlName="username"><br>
+        <!-- label for="password">Password</label --><br>
+        <input type="password" id="password" name="password" placeholder="Password" formControlName="password"><br><br><br>
+        <input type="submit" value="Login">
+      </form><br><br>
+      <!-- a routerLink="../calendar/calendar" routerLinkActive="active" >Login</a -->
+      <a routerLink='/forgot-password' class="secondary-link">Forgot password&nbsp;&nbsp;❯</a>
+    </div>
   </div>
-  <div class="login-form">
-    <h2>Welcome back.</h2>
-    <form action="localhost:4200/home">
-      <!-- label for="email">Email</label><br -->
-      <input type="email" id="email" name="email" placeholder="Email address" autofocus><br>
-      <!-- label for="password">Password</label --><br>
-      <input type="password" id="password" name="password" placeholder="Password" href="http://localhost:4200/home"><br><br><br>
-      <input type="submit" value="Login" routerLink='../home'>
-    </form><br><br>
-    <!-- a routerLink="../calendar/calendar" routerLinkActive="active" >Login</a -->
-    <a routerLink='/forgot-password' class="secondary-link">Forgot password&nbsp;&nbsp;❯</a>
-  </div>
-</div>
-
 <!--End of custom code-->
