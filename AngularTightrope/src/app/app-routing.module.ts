@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AboutComponent } from './about/about.component';
 import { NeweventComponent } from './newevent/newevent.component';
 import { FeaturesComponent } from './features/features.component';
+import { EditeventComponent } from './editevent/editevent.component';
 
 
 //Rougting done by all members of the team manually
@@ -20,6 +21,7 @@ const routes: Routes = [
 {path: 'newevent',component:NeweventComponent},
 {path: 'contact', component:ContactComponent},
 {path: 'features', component:FeaturesComponent},
+{path: 'editevent', component:EditeventComponent},
 {path: '', redirectTo: '/login', pathMatch: 'full'} //this is routing the main page of our website to the login page, this is temporary as i am not sure what we are going to be adding on the main page yet
 
 
