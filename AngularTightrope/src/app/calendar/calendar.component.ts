@@ -12,6 +12,7 @@ import { Time } from '@angular/common';
 import { DayCalendarComponent } from 'ng2-date-picker';
 import { AuthService } from '../service/auth.service';
 import {Router} from '@angular/router';
+import { templateJitUrl } from '@angular/compiler';
 
 /*Defining a calendar component*/
 @Component({
@@ -50,7 +51,7 @@ export class CalendarComponent{
   }
 
   eventClicked({ event }: { event: CalendarEvent }): void {
-    window.alert("Title: "+event.title +"\nStart Time: "+event.start +"\nEnd Time: "+event.end);
+    //WHAT HAPPENS WHEN AN EVENT IS CLICKED
   }
 
   /*Custom Code By Sahil*/
