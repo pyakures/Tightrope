@@ -8,3 +8,72 @@
 .header-nav img {
     height: 40px;
 }
+
+h1{
+    padding-left: 100px;
+    font-size: 25px;
+}
+
+.neweventForm{
+    padding-left: 100px;
+}
+
+input{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    padding: 0px;
+    font-size: 35px;
+    font-weight: 500;
+    color: grey;
+}
+
+input::placeholder{
+    padding: 0px;
+    font-size: 35px;
+    font-weight: 500;
+    color: grey;
+
+}
+
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    outline: none;
+    border-bottom: #7fba02;
+    border-bottom-style:solid;
+    padding: 0px;
+    font-size: 35px;
+    font-weight: 500;
+    color: grey;
+}
+
+input[type=submit] {
+    background-color: #7fba02;
+    color: white;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+
+.EventName::placeholder{
+    color: #7fba02;
+    font-size: 50px;
+    font-weight: 500;
+    
+}
+
+.EventName{
+    color:#7fba02;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.EventName:focus {
+    outline: none;
+    border-bottom: #7fba02;
+    border-bottom-style:solid;
+    font-weight: 500;
+}

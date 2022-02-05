@@ -1,10 +1,31 @@
 <!--Custom Code by Sahil-->
+<title>Add Event</title>
 <div class="header-nav">
     <a class="navbar-item" routerLink='../login' >
       <img src= "../../assets/Tightrope-Logo-Green.png" alt="Tightrope">
     </a> 
   </div>
   <app-sidepanel></app-sidepanel>
+  <div class="neweventwrapper">
+    <h1>Add a new event</h1><br>
+    <form class="neweventForm">
+      <input class="EventName" type="name" placeholder="Event Name"> <br>
+      <input type="text" placeholder="Date"
+        onfocus="(this.type='date')"><br>
+      <input type="text" placeholder="Start Time"
+          onfocus="(this.type='time')"><br>
+      <input type="text" placeholder="End Time"
+        onfocus="(this.type='time')"><br>
+      <input type="text" placeholder="Location"><br>
+      <input type="text" placeholder="Web Meeting Link"><br>
+      <input type="text" placeholder="Notes"><br><br><br>
+      <input type="submit" value="SAVE"><br><br>
+    </form>
+
+    
+  </div>
+  
+
 
 
 <!--End of custom code -->

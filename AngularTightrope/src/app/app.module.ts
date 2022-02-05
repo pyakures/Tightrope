@@ -27,6 +27,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SharedService } from './shared.service';
 
 import{HttpClientModule} from '@angular/common/http';
+import { EditeventComponent } from './editevent/editevent.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import{HttpClientModule} from '@angular/common/http';
     NeweventComponent,
     ContactComponent,
     FeaturesComponent,
+    EditeventComponent,
 
   ],
   imports: [

@@ -8,7 +8,7 @@
 
 
 <div class="Calendar1">
-  <button class="btn btn-primary float-right" ID="newButton" > <!-- This is not working right now becuase I have created a form and achieved the same thing with that.-->
+  <button class="btn btn-primary float-right" ID="newButton" routerLink='../newevent' > <!-- This is not working right now becuase I have created a form and achieved the same thing with that.-->
     +
   </button>
     <div class="buttons">
@@ -83,7 +83,7 @@
     </div>
     
 
-    <!--Input form that passes the varibales upon submitting-->
+    <!--Input form that passes the varibales upon submitting. Temp code for later refrence.>
     <form #addNewEvent = "ngForm" (ngSubmit) = "onClickSubmit(addNewEvent.value)" >
 
       <input type = "text" name = "Event" placeholder = "CS425 Midterm" ngModel>
@@ -95,7 +95,7 @@
          <input type = "submit" value = "submit">
     <button type="button" (click)='logout()'>Logout</button>
   
-  </form>
+  </form-->
     
 
     
