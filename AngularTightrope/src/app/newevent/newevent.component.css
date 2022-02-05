@@ -23,6 +23,10 @@ input{
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: hidden;
+    padding: 0px;
+    font-size: 35px;
+    font-weight: 500;
+    color: grey;
 }
 
 input::placeholder{
@@ -33,12 +37,6 @@ input::placeholder{
 
 }
 
-input{
-    padding: 0px;
-    font-size: 35px;
-    font-weight: 500;
-    color: grey;
-}
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
     outline: none;
