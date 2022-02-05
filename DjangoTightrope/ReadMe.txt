@@ -1,4 +1,24 @@
-The following documentation describes how Michael built the Django end from scrath. 
+FOR SIMPLICITY: I'm adding a list of what to do to set django up on your local machine.
+
+macOS:
+    1. Ensure python is installed:
+        python --version
+        a. this should be version 3.9 or greater. If it shows as 2.x, you may have python3 installed. Simply do:
+            python3 --version
+        if this is the case, you can either change it using another guide or you can do all python commands using python3 instead of python.
+    2. Navigate to the DjangoTightrope folder and activate the virtual environment:
+        source venv/bin/activate
+    3. Navigate to the tightropeAPI folder and install the requirements using pip:
+        pip install -r requirements.txt
+    4. Start the Django project using:
+        python manage.py runserver
+
+This should get the server up and running. If you need more specific help, contact Cooper or Michael.
+
+
+
+
+The following documentation describes how Michael built the Django end from scratch. 
 This process is not nessecary for every team member, but if you are having issues
 with compatability or virtual env, this documentation may be useful:
 
@@ -68,11 +88,3 @@ with compatability or virtual env, this documentation may be useful:
     Now we create the views withihn eventApp. csrf_exempt allows for access.
 
     Then we route the API methods by creating a new urls.py file within eventApp. Include these new urls in the main url file of the tightropeAPI.
-
-
-    
-    
-
-    
-
-    
