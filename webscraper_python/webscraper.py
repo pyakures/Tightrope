@@ -54,3 +54,7 @@ def find_events(categories = '', city='Reno'):
     for page in pages:
         for event in page:
             print(event.name)
+            print(event.local_start_time)
+    return pages
+
+find_events()

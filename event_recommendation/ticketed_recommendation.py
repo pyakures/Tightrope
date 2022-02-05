@@ -27,6 +27,9 @@ TIME_THRESHOLD = datetime.timedelta(hours=1)
 
 
 def ticketed_recommendation_finder(calendar, categories):
+    #   only keep events that are in the next week
+    calendar = {key: value for key, value in calendar.items() if value.start_time.date() <= datetime.datetime.now().date() + datetime.timedelta(days=7)}
+    
     #   sort the events by start time THIS MIGHT HAVE TO HAVE ALREADY BEEN DONE IF WE'RE ONLY GETTING THE WEEKS WORTH 
     dict(sorted(calendar.items(), key=lambda item: item[START_TIME_ID]))
 
@@ -34,8 +37,9 @@ def ticketed_recommendation_finder(calendar, categories):
     previous_event = None
     for event in calendar:
         if event.id != 1: 
+            #checks to see if previous_event is the last on that date.
             if event.start_time.date() != previous_event.start_time.date():
-                #checks to see if previous_event is the last on that date.
+                
                 return
         previous_event = event
 

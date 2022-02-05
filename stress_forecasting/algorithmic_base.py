@@ -30,18 +30,25 @@ survey_weight =  1
 def predict_stress(events, surveydata):
 
     # Currently, I believe events are passed in as a dictionary, so split it into stressful and leisure events
-    stress_events = events['stress']
-    leisure_events = events['leisure']
+    stress_events = {}
+    leisure_events = {}
+    for event in events:
+        if event['type'] == 'work':
+            stress_events.append(event)
+        elif event['type'] == 'leisure':
+            leisure_events.append(event)
 
     # Get total number of stressful and leisure events 
-    stress_total = sum(stress_events.values())
-    leisure_total = sum(leisure_events.values())
+    stress_total = stress_events.count()
+    leisure_total = leisure_events.count()
 
     # Calculate max stress level
     max_stress_level = stress_total * max_stress_report
 
     # Calculate current stress level
-    reported_sum = sum(stress_events['stress_level'])
+    reported_sum = 0
+    for event in stress_events:
+        reported_sum += event['stress_level']
 
     # Calculate leisure event stress reduction
     leisure_calculation = leisure_total * leisure_event_weight
