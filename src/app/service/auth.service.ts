@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  api_url: string = 'http://localhost:8000/';
+  api_url: string = 'https://tightropeapp.herokuapp.com/';
   constructor(private http: HttpClient) { }
 
   //A service to check with the Backend API for if a user exists in the backend database
