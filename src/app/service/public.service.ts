@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PublicService {
-  apiURL = "https://tightropeapi.herokuapp.com/"
+  apiURL = "https://tightropeapp.herokuapp.com/"
   constructor(private http:HttpClient) { }
 
   //Can use this in any part of the app this is a way to access the login API URL

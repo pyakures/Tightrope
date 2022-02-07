@@ -8,7 +8,7 @@ import {Observable } from  'rxjs';
 export class SharedService {
 
 //Django API URL - will need to reroute w/ Heroku
-readonly APIUrl = "https://tightropeapi.herokuapp.com/"
+readonly APIUrl = "http://127.0.0.1:8000/"
 
   constructor(private http:HttpClient) { }
 
