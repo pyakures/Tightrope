@@ -137,11 +137,11 @@ input[type=submit] {
     input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
         left: 50px;
         right: 50px;
-        width: auto;
+        width: 100%;
     }
     input{
         font-size: 1.5em;
-        width: 80%;
+        width: 100%;
     }
 
     .login-form h2{
