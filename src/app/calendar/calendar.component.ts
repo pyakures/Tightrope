@@ -1,6 +1,6 @@
 /*Custom Code Section By Michael Dorado and Sahil Pyakurel*/
 /*Module imports*/
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener } from '@angular/core';
 import { CalendarService } from '../calendar.service';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
 import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes } from 'date-fns';
@@ -129,5 +129,13 @@ export class CalendarComponent{
     this.AuthReRoute.navigate(['/login'])
   }
   
+  public getScreenWidth: any;
+  ngOnInit(){
+    if(window.innerWidth < 800){
+      this.setView(CalendarView.Day);
+    }
+  }
+
+
 /*End of custom code section*/
 } 

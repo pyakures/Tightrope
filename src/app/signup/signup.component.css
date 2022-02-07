@@ -139,5 +139,9 @@ input[type=submit] {
         right: 50px;
         width: auto;
     }
+    input{
+        font-size: 1.5em;
+    }
+ 
     
  }

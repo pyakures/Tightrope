@@ -6,6 +6,10 @@
 .sidebarbutton{
     display: none;
 }
+.logoimage{
+    height: 50px;
+    width: auto;
+}
 
 /*Spacing on the logo in the upper nav bar*/
 .navbar-brand {
@@ -135,5 +139,9 @@ a:active, a:focus, a:hover {
      .navbar-menu{
          display: none;
      }
+     .navbar img{
+        width: 40%;
+        height: auto;
+    }
 
  }
