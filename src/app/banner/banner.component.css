@@ -128,6 +128,7 @@ a:active, a:focus, a:hover {
      .sidebarbutton{
          display: inline;
          float: right;
+         transform: translate(0, -25px);
          background-color: white;
          color: #7fba02;
          border: none;
