@@ -3,6 +3,9 @@
 .navbar-brand {
     padding: 20px;
 }
+.sidebarbutton{
+    display: none;
+}
 
 /*Spacing on the logo in the upper nav bar*/
 .navbar-brand {
@@ -115,3 +118,22 @@ a:active, a:focus, a:hover {
     padding-right: 25px;
 }
 /*End of custom code section*/
+
+@media only screen and (max-width: 800px){
+
+     .sidebarbutton{
+         display: inline;
+         float: right;
+         background-color: white;
+         color: #7fba02;
+         border: none;
+         font-weight: 700;
+         font-size: 2.5em;
+         padding: 0px;
+     }    
+    
+     .navbar-menu{
+         display: none;
+     }
+
+ }

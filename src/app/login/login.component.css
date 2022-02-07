@@ -84,6 +84,10 @@ a, a:active, a:focus, a:hover{
     padding-bottom: 1.25em;
 }
 
+.signuptext{
+    display: none;
+}
+
 input {
     border-top-style: hidden;
     border-right-style: hidden;
@@ -128,3 +132,26 @@ input[type=submit] {
     padding-left: 22px;
     padding-right: 22px;
 }
+
+@media only screen and (max-width: 800px){
+    .tagline{
+        display: none;
+    }
+    .login-form{
+        left: 50px;
+        width: auto;
+        left: 50px;
+    }
+    input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
+        left: 50px;
+        right: 50px;
+        width: auto;
+    }
+    .signuptext{
+        display: block;
+        color: #8B8B8B;
+        font-weight: 500;
+
+    }
+ 
+ }

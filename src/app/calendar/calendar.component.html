@@ -3,21 +3,26 @@
   <a class="navbar-item" routerLink='../login' >
     <img src= "../../assets/Tightrope-Logo-Green.png" alt="Tightrope">
   </a> 
+  <button class="sidebarbutton" >
+    &#9776;
+  </button>
+  
 </div>
-<app-sidepanel></app-sidepanel>
+<app-sidepanel class="sidepannelview"></app-sidepanel>
 
 
 <div class="Calendar1">
   <button class="btn btn-primary float-right" ID="newButton" routerLink='../newevent' > <!-- This is not working right now becuase I have created a form and achieved the same thing with that.-->
     +
   </button>
+  
     <div class="buttons">
 
             <span class="btn-group">
                 <button class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">
                     Month
                 </button>
-                <button class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
+                <button id="weekcalendar" class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
                     Week
                 </button>
                 <button class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">

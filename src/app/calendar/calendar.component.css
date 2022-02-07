@@ -1,9 +1,15 @@
 /*Custom Code by Sahil Pyakurel and Michael Dorado
  These codes are custom for styling*/
+
 .header-nav {
 
     padding: 20px;
     height: 125px;
+
+}
+
+.sidebarbutton{
+    display: none;
 }
 
 .header-nav img {
@@ -174,5 +180,33 @@ mwldroppable .cal-header .cal-past .cal-weekend {
 
 ::ng-deep .cal-week-view .cal-current-time-marker {
     display: none;
+
+}
+
+@media only screen and (max-width: 800px){
+   .Calendar1{
+       width: 100%;
+   }
+
+   .col-md-4{
+    text-align: center;
+}
+    /*#weekcalendar{
+        display: none;
+    }*/
+    .sidebarbutton{
+        display: inline;
+        float: right;
+        background-color: white;
+        color: #7fba02;
+        border: none;
+        font-weight: 700;
+        font-size: 2.5em;
+        padding: 0px;
+    }
+    .sidepannelview{
+        display: none;
+    }
+    
 
 }
