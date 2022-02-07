@@ -191,9 +191,9 @@ mwldroppable .cal-header .cal-past .cal-weekend {
    .col-md-4{
     text-align: center;
 }
-    /*#weekcalendar{
+    #weekcalendar{
         display: none;
-    }*/
+    }
     .sidebarbutton{
         display: inline;
         float: right;

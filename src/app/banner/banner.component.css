@@ -140,8 +140,8 @@ a:active, a:focus, a:hover {
          display: none;
      }
      .navbar img{
-        width: 40%;
-        height: auto;
+        width: auto;
+        height: 40px;
     }
 
  }

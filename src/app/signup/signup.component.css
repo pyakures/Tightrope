@@ -141,7 +141,13 @@ input[type=submit] {
     }
     input{
         font-size: 1.5em;
+        width: 80%;
     }
+
+    .login-form h2{
+        font-size: 2em;
+    }
+ 
  
     
  }
