@@ -47,8 +47,7 @@
 .temp-slider {
     border-bottom: 10px;
     border-radius: 20px;
-    border-color: white;
-    background-color: white;
+    background-color: #ebebeb;
     height: 0.9em;
     width: 50%;
     margin-bottom: 1.7em;
