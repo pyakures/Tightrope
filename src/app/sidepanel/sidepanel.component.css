@@ -1,5 +1,18 @@
 /*custom code for styling made by Sahil Pyakurel and Michael Dorado*/
 /*Define the side banner area*/
+.account-link {
+    float: right;
+    padding-top: 1em;
+    padding-right: 1.5em;
+}
+
+.account-link a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
 .sidebanner {
     height: 100%;
     Width: 30%;
