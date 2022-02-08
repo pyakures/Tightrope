@@ -6,6 +6,7 @@
     <div class="center"> 
         <h4 id="stresslevelarc">Stress Level</h4>
         
+        <div class="stress-guage">
         <!--Imported gauge element-->
         <mwl-gauge
             [max]="100"
@@ -16,6 +17,21 @@
             [animationDuration]="1"
         > 
         </mwl-gauge>
+
+        <div class="stress-summary-panel">
+            <h1>Stress Summary</h1>
+            <h3>Stressful Events This Week</h3>
+            <div class="temp-slider"></div>
+            <h3>Average Work Time Per Day</h3>
+            <div class="temp-slider"></div>
+            <h3>Mindfullness Events Completed</h3>
+            <div class="temp-slider"></div>
+            <h3>Most Stressfull Days This Week</h3>
+            <p>Tuesday, Thursday</p>
+        </div>
+        </div>
+
+        
 
         <p  class="infotext">You've got a 4 week streak of doing three or more relaxing activities. <br>Way to go!</p>
         <br>

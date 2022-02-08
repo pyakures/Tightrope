@@ -1,5 +1,4 @@
-/*custom code for styling made by Sahil Pyakurel and Michael Dorado*/
-/*Define the side banner area*/
+/* code below done by Demitri Bannoura */
 .account-link {
     float: right;
     padding-top: 1em;
@@ -13,6 +12,51 @@
     font-size: 0.85em;
 }
 
+.stress-guage .stress-summary-panel {
+    visibility: hidden;
+    width: 20em;
+    background-color: #7fba02;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: -2em 1em 11em -2em black;
+    padding: 1em;
+    /* Position the tooltip */
+    position: absolute;
+    top: -0.5em;
+    left: -22em;
+    height: 20em;
+    transition: 0.1s;
+}
+
+.stress-guage:hover .stress-summary-panel, .stress-guage:focus .stress-summary-panel {
+    visibility: visible;
+}
+
+.stress-summary-panel h1 {
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+.stress-summary-panel h3 {
+    font-weight: bold;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.temp-slider {
+    border-bottom: 10px;
+    border-radius: 20px;
+    border-color: white;
+    background-color: white;
+    height: 0.9em;
+    width: 50%;
+    margin-bottom: 1.7em;
+}
+
+
+/*custom code for styling made by Sahil Pyakurel and Michael Dorado*/
+/*Define the side banner area*/
 .sidebanner {
     height: 100%;
     Width: 30%;
@@ -23,6 +67,7 @@
     /* font-family: 'Roboto', 'arial', sans-serif; */
     font-size: 24px;
     color: #7fba02;
+    z-index: 1;
 }
 /*Text centering*/
 .center {
