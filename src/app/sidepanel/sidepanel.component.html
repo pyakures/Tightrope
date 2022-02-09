@@ -1,8 +1,14 @@
 <!--Custom code by Sahil and Michael-->
 <div class="sidebanner">
-    <div class="account-link">
-        <a routerLink='/account'>My Account <!--img class="user_icon" src= "../../assets/user-icon-temp.jpg"--></a>
-        <button type="button" (click)='logout()' class="logout_button">Logout</button>
+    <div ngbDropdown class="account-link">
+        <a class="usernameDropdown" id="dropdownMenu2" ngbDropdownToggle>
+            <img class="user_icon" src= "../../assets/user-icon-temp.jpg"> Jane Smith
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenu2">
+            <a ngbDropdownItem routerLink='/account'>My Account</a>
+            <a ngbDropdownItem (click)='logout()'>Logout</a>
+        </div>
+        
     </div>
     <div class="center"> 
         <h4 id="stresslevelarc">Stress Level</h4>

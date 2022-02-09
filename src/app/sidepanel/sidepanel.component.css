@@ -11,8 +11,6 @@
     font-weight: 500;
     font-size: 0.85em;
     padding-right: 0.7em;
-    border-right: solid 2px;
-    border-color: black;
 }
 
 .user_icon {
@@ -123,6 +121,22 @@
 
 }
 
+::ng-deep .dropdown-menu{
+    background-color: white;
+    border-radius: 10px;
+    
+}
+::ng-deep .dropdown-item{
+    font-size: 1.25em !important;
+}
+
+::ng-deep .dropdown-item:hover {
+    background-color: #7fba02;
+    color: white !important;
+   
+
+}
+
 /*Display settings for current day sectio*/
 ::ng-deep .dp-calendar-day{
     background: #ebebeb !important;
@@ -204,6 +218,15 @@ button {
     margin: 5px;
   
 
+}
+
+.usernameDropdown {
+    height: 45px;
+    width: 45px;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    margin: 5px;
 }
 
 /*Button stylings*/
