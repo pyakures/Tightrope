@@ -8,7 +8,18 @@
   <app-sidepanel class="sidepannelview"></app-sidepanel>
   <div class="neweventwrapper">
     <h1>Event Details</h1><br>
-    <p>temp!</p>
+    <form class="neweventForm">
+      <input class="EventName" type="name" placeholder="Graphic Design Consultation"> <br>
+      <input type="text" placeholder="October 27, 2021 10:30am"
+        onfocus="(this.type='datetime-local')"><br>
+      <input type="text" placeholder="October 27, 2021 1:00pm"
+          onfocus="(this.type='datetime-local')"><br>
+      <input type="text" placeholder="Pennington Engineering Building"><br>
+      <input type="text" placeholder="https://zoom.us/j/1234567"><br>
+      <textarea placeholder="Bring two portfolio copies" aria-setsize="2"></textarea><br>
+      <input type="submit" value="Save"> 
+      <input type="button" class="buttonDelete" value="Delete">
+    </form>
     
   </div>
   
