@@ -11,7 +11,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Time } from '@angular/common';
 import { DayCalendarComponent } from 'ng2-date-picker';
 import { AuthService } from '../service/auth.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 
 /*Defining a calendar component*/
@@ -52,6 +52,7 @@ export class CalendarComponent{
 
   eventClicked({ event }: { event: CalendarEvent }): void {
     //WHAT HAPPENS WHEN AN EVENT IS CLICKED
+    this.AuthReRoute.navigate(['../editevent']);
   }
 
   /*Custom Code By Sahil*/

@@ -33,10 +33,13 @@
     left: -22em;
     height: 20em;
     transition: 0.1s;
+    z-index: 2;
+    
 }
 
 .stress-guage:hover .stress-summary-panel, .stress-guage:focus .stress-summary-panel {
     visibility: visible;
+    z-index: 2;
 }
 
 .stress-summary-panel h1 {
