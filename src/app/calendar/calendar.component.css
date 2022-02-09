@@ -64,17 +64,42 @@
     border-width: 2px;
 }
 
-#newButton {
+.add_event_area {
+    position: relative;
+    float: right;
+}
+
+.add_event_button {
     color: white;
     border-radius: 50%;
+    border: none;
     height: 50px;
     width: 50px;
     text-align: center;
     background-color: #7fba02;
     transform: translate(-50%, 0);
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.7em;
 }
+
+.add_event_button_text {
+    visibility: hidden;
+    position: absolute;
+    right: 5em;
+    width:10em;
+    margin-top: -2.2em;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #7fba02;
+    text-align: right;
+}
+
+.add_event_area:hover .add_event_button_text, .add_event_area:focus .add_event_button_text {
+    visibility: visible;
+}
+  
+
+
 
 ::ng-deep .buttons {
     padding-bottom: 1em;
