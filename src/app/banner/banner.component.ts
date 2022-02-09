@@ -10,6 +10,8 @@ export class BannerComponent implements OnInit {
 
   constructor() { }
 
+  public isMenuCollapsed = true;
+
   ngOnInit(): void {
   }
 

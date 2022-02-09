@@ -3,9 +3,21 @@
 .navbar-brand {
     padding: 20px;
 }
+
 .sidebarbutton{
-    display: none;
+
+    right: 5px;
+    float: right;
+    background-color: white;
+    color: #7fba02;
+    border: none;
+    font-weight: 700;
+    font-size: 2.5em;
+    padding: 0px;
 }
+
+
+
 .logoimage{
     height: 50px;
     width: auto;
@@ -17,17 +29,12 @@
     min-width: 100%;
 }
 
-/*Alignment of elements of the Navbar*/
-.navbar-menu {
-    list-style-type: none;
-    list-style: none;
-    direction: ltr;
-    float:right;
-    text-align: right;
+
+.navbar-nav {
+    right: 0px;
+    align-items: center;
     position: absolute;
-    display: inline;
     font-size: 20px;
-    right: 20px;
     font-weight: 700;
     margin-top: 10px;
 }
@@ -58,7 +65,8 @@ a:active, a:focus, a:hover {
 /*Underlines elements in the nav bar when hovered over*/
 .navbar-item:active, .navbar-item:focus, .navbar-item:hover {
     border-bottom: none;
-}
+ }
+
 
 /*Styling of the login button*/
 .login-button {
@@ -121,22 +129,19 @@ a:active, a:focus, a:hover {
     padding-left: 25px;
     padding-right: 25px;
 }
+
+.navigationmenu{
+    transform: translate(0px, -30px);
+}
+
+
 /*End of custom code section*/
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 991px){
 
-     .sidebarbutton{
-         display: inline;
-         float: right;
-         transform: translate(0, -25px);
-         background-color: white;
-         color: #7fba02;
-         border: none;
-         font-weight: 700;
-         font-size: 2.5em;
-         padding: 0px;
-     }    
-    
+    .signup-button, .login-button{
+        display: none;
+    }
      .navbar-menu{
          display: none;
      }
