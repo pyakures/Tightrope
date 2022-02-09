@@ -1,5 +1,7 @@
 //Custom Code by Sahil Pyakurel
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidepanel',
@@ -10,7 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidepanelComponent implements OnInit {
 
-  constructor() { }
+  //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
+  constructor(private authService: AuthService, private AuthReRoute: Router){}
+
+  //constructor() { }
   //a method to return the current month to the side panel by Sahil Pyakurel
   monthstring = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   d = new Date();
@@ -28,6 +33,13 @@ export class SidepanelComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+    //Call /service/AuthService logout function
+    logout() {
+      this.authService.logout();
+      //Reroute to the login page
+      this.AuthReRoute.navigate(['/login'])
+    }
 
 }
 
