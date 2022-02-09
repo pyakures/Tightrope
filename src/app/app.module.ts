@@ -28,6 +28,7 @@ import { SharedService } from './shared.service';
 
 import{HttpClientModule} from '@angular/common/http';
 import { EditeventComponent } from './editevent/editevent.component';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { EditeventComponent } from './editevent/editevent.component';
     ContactComponent,
     FeaturesComponent,
     EditeventComponent,
+    AccountComponent,
 
   ],
   imports: [

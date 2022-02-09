@@ -12,6 +12,13 @@
     font-size: 0.85em;
 }
 
+.user_icon {
+    height: 1.5em;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
 .stress-guage .stress-summary-panel {
     visibility: hidden;
     width: 20em;
