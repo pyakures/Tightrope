@@ -96,6 +96,10 @@ input[type=button] {
     font-weight: 500;
 }
 
+textarea, textarea:focus {
+    font-size: 25px;
+}
+
 @media only screen and (max-width: 800px){
   
     .sidepannelview{

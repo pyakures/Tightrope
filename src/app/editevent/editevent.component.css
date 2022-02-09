@@ -63,8 +63,8 @@ input[type=submit] {
 }
 
 input[type=button] {
-    background-color: #ebebeb;
-    color: black;
+    background-color: #ec2222;
+    color: white;
     font-size: 1.3em;
     font-weight: 700;
     padding: 12px;
@@ -74,7 +74,6 @@ input[type=button] {
     margin-right: 1em;
     width: text;
 }
-
 
 .EventName::placeholder{
     color: #7fba02;
@@ -94,6 +93,10 @@ input[type=button] {
     border-bottom: #7fba02;
     border-bottom-style:solid;
     font-weight: 500;
+}
+
+textarea, textarea:focus, textarea::placeholder {
+    font-size: 25px;
 }
 
 @media only screen and (max-width: 800px){
