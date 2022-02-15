@@ -58,6 +58,69 @@
     z-index: 2;
 }
 
+.streak-area h1 {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.streak-area h2 {
+    font-size: 0.7em;
+    text-align: center;
+    color: black;
+    font-weight: 400;
+}
+
+.streak-number {
+    font-weight: 700;
+}
+
+.activities-area {
+    width: 100%;
+    text-align: center;
+    margin-top: 0em;
+    position: relative;
+}
+/*
+.activities-area a {
+    background-color: #7fba02;
+    color: white;
+    text-decoration: none;
+    min-width: max-content;
+    padding: 0.5em;
+    font-size: 0.65em;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+*/
+.edit-activities {
+    background-color: none;
+    color: #8b8b8b;
+    text-decoration: none;
+    border-bottom: dotted 1px;
+    margin-bottom: 5em;
+    font-size: 0.65em;
+    margin-top: 1em;
+    width: max-content;
+    display: inline;
+    margin: auto;
+    
+}
+
+.view-local-events {
+    background-color: #7fba02;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+    font-size: 0.65em;
+    border-radius: 10px;
+    width: 100%;
+    letter-spacing: 1px;
+    display: inline;
+    margin-top: 10em;
+}
+
 .stress-summary-panel h1 {
     font-weight: bold;
     padding-bottom: 0.5em;
@@ -113,7 +176,7 @@
     bottom: 3em;
     left: 50%;
     transform: translate(-50%, 0%);
-    height: auto;
+    /*height: auto;*/
     width:max-content;
     color: black;
 

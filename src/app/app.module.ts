@@ -29,6 +29,7 @@ import { SharedService } from './shared.service';
 import{HttpClientModule} from '@angular/common/http';
 import { EditeventComponent } from './editevent/editevent.component';
 import { AccountComponent } from './account/account.component';
+import { StreakComponent } from './streak/streak.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { AccountComponent } from './account/account.component';
     FeaturesComponent,
     EditeventComponent,
     AccountComponent,
+    StreakComponent,
 
   ],
   imports: [

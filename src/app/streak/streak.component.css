@@ -1,0 +1,14 @@
+.header-nav {
+
+    padding: 20px;
+    height: 125px;
+
+}
+
+.sidebarbutton{
+    display: none;
+}
+
+.header-nav img {
+    height: 40px;
+}
