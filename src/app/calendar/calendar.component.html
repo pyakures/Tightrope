@@ -90,6 +90,30 @@
     </div>
     
 
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Event User</th>
+          <th>Event Name</th>
+          <th>Event Start Time</th>
+          <th>Event End Time</th>
+          <th>Event Location</th>
+          <th>Event Stress</th>
+          <th>Event Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dataItem of EventsList">
+            <td>{{dataItem.EventName}}</td>
+            <td>{{dataItem.EventStartTime}} </td>
+            <td>{{dataItem.EventEndTime}}</td>
+            <td>{{dataItem.EventLocation}} </td>
+            <td>{{dataItem.EventStress}}</td>
+            <td>{{dataItem.EventNotes}} </td>
+        </tr>
+      </tbody>
+    </table>
+
     <!--Input form that passes the varibales upon submitting. Temp code for later refrence.>
     <form #addNewEvent = "ngForm" (ngSubmit) = "onClickSubmit(addNewEvent.value)" >
 
