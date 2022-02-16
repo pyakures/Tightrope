@@ -13,6 +13,7 @@ import { DayCalendarComponent } from 'ng2-date-picker';
 import { AuthService } from '../service/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
+import {SharedService} from 'src/app/shared.service';
 
 /*Defining a calendar component*/
 @Component({
@@ -22,15 +23,18 @@ import { templateJitUrl } from '@angular/compiler';
   styleUrls: ['./calendar.component.css']
 })
 /*Calendar Object Class Declaration*/
-export class CalendarComponent{
+export class CalendarComponent implements OnInit {
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
-  constructor(private authService: AuthService, private AuthReRoute: Router){}
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
 
   /*Outsourced code from https://github.com/mattlewis92/angular-calendar#getting-started*/
   viewDate: Date = new Date();
   view: CalendarView = CalendarView.Week;
   CalendarView = CalendarView;
   /*End of outsourced code*/
+
+  /*End of outsourced code*/
+  EventsList: any[] = [];
 
 
   setView(view: CalendarView) {
@@ -39,6 +43,8 @@ export class CalendarComponent{
 
   events: CalendarEvent[] = []
 
+
+  
 
   /*Custom Code By Sahil*/
   //function that opens the day view of the calendar while clicked on the date
@@ -135,8 +141,18 @@ export class CalendarComponent{
     if(window.innerWidth < 800){
       this.setView(CalendarView.Day);
     }
+    
+    this.refreshEventList();
   }
 
 
 /*End of custom code section*/
+  //attempt at integration
+  refreshEventList(){
+    this.service.getEventList().subscribe(data=>{
+      this.EventsList=data;
+
+  }); 
+}
+
 } 
