@@ -32,6 +32,12 @@ export class SidepanelComponent implements OnInit {
     
   };
 
+  currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+  firstName = this.currentUser.userFirstName;
+  lastName = this.currentUser.userLastName;
+  fullName= this.firstName + " " + this.lastName;
+
+
   
   ngOnInit(): void {
     }
