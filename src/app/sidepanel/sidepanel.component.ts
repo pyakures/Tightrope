@@ -24,15 +24,20 @@ export class SidepanelComponent implements OnInit {
   monthname = this.monthstring[this.month] + " " + this.year;
   monthALLCAPS= this.monthname.toUpperCase();
 
-
+  
+ 
   config = {
     firstDayOfWeek: 'su',
     monthFormat: 'MMM, YYYY',
     
   };
 
+  firstName = JSON.parse(localStorage.getItem('userFirstName') as string);
+  lastName = JSON.parse(localStorage.getItem('userLastName') as string);
+  fullName= this.firstName + " " +this.lastName;
   ngOnInit(): void {
-  }
+    }
+  
 
     //Call /service/AuthService logout function
     logout() {
