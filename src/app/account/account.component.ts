@@ -11,6 +11,7 @@ export class AccountComponent implements OnInit {
   firstName = this.currentUser.userFirstName;
   lastName = this.currentUser.userLastName;
   fullName= this.firstName + " " + this.lastName;
+  Useremail= this.currentUser.email;
 
   constructor() { }
 
