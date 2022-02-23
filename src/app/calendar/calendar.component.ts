@@ -24,6 +24,8 @@ import {SharedService} from 'src/app/shared.service';
 })
 /*Calendar Object Class Declaration*/
 export class CalendarComponent implements OnInit {
+  events: CalendarEvent[] = [];
+  EventsList:any=[];
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
 
@@ -33,17 +35,20 @@ export class CalendarComponent implements OnInit {
   CalendarView = CalendarView;
   /*End of outsourced code*/
 
-  /*End of outsourced code*/
-  EventsList: any[] = [];
 
+  
+  
 
   setView(view: CalendarView) {
     this.view = view;
   }
-
-  events: CalendarEvent[] = []
-
-
+  ngOnInit():void{
+    //On page start up, call all events of the user and put them in the "EventsList" variable
+    this.refreshEventList();
+    if(window.innerWidth < 800){
+      this.setView(CalendarView.Day);
+    } 
+  }
   
 
   /*Custom Code By Sahil*/
@@ -53,7 +58,6 @@ export class CalendarComponent implements OnInit {
     //this.openAppointmentList(date)
     this.viewDate= date;
     this.setView(CalendarView.Day);
-
   }
 
   eventClicked({ event }: { event: CalendarEvent }): void {
@@ -137,22 +141,18 @@ export class CalendarComponent implements OnInit {
   }
   
   public getScreenWidth: any;
-  ngOnInit(){
-    if(window.innerWidth < 800){
-      this.setView(CalendarView.Day);
-    }
-    
-    this.refreshEventList();
-  }
 
 
 /*End of custom code section*/
-  //attempt at integration
-  refreshEventList(){
-    this.service.getEventList().subscribe(data=>{
-      this.EventsList=data;
-
-  }); 
+  //Method will pull of Events pertaining to a user from the user table
+  refreshEventList():void{
+    //Grab the current user out of local storage, parse the package into strings and assign it to the currentUser var
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    //use the "service" module to access the event api, using the currentUser object and the email aspect of that object, then put the data into the events list
+    //The subscribe function is a little out of my current knowledge, but know this, it works
+    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data});
+    //Replace the line above this one with the one below this one to see the contents of the EventsList in the browsers inspect console 
+    //this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data,console.log(this.EventsList)}); 
 }
 
 } 
