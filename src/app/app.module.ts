@@ -30,9 +30,7 @@ import{HttpClientModule} from '@angular/common/http';
 import { EditeventComponent } from './editevent/editevent.component';
 import { AccountComponent } from './account/account.component';
 import { StreakComponent } from './streak/streak.component';
-import { ExampleComponent } from './example/example.component';
-import { ShowEventsComponent } from './example/show-events/show-events.component';
-import { EidtEventsComponent } from './example/eidt-events/eidt-events.component';
+
 
 
 @NgModule({
@@ -51,9 +49,7 @@ import { EidtEventsComponent } from './example/eidt-events/eidt-events.component
     EditeventComponent,
     AccountComponent,
     StreakComponent,
-    ExampleComponent,
-    ShowEventsComponent,
-    EidtEventsComponent,
+
 
   ],
   imports: [
