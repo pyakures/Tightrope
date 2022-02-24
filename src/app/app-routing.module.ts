@@ -11,7 +11,8 @@ import { FeaturesComponent } from './features/features.component';
 import { EditeventComponent } from './editevent/editevent.component';
 import { AccountComponent } from './account/account.component';
 import { StreakComponent } from './streak/streak.component';
-
+import { StresssurveyComponent } from './stresssurvey/stresssurvey.component';
+import { QuestionsComponent } from './stresssurvey/questions/questions.component';
 
 //Rougting done by all members of the team manually
 const routes: Routes = [
@@ -26,6 +27,8 @@ const routes: Routes = [
 {path: 'editevent', component:EditeventComponent},
 {path: 'account', component:AccountComponent},
 {path: 'streak', component:StreakComponent},
+{path: 'stresssurvey', component:StresssurveyComponent},
+{path: 'questions', component:QuestionsComponent},
 {path: '', redirectTo: '/login', pathMatch: 'full'}, //this is routing the main page of our website to the login page, this is temporary as i am not sure what we are going to be adding on the main page yet
 
 
