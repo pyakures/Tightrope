@@ -6,6 +6,8 @@ import {Observable } from  'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
+
+  sharedid:any;
 //Django API URL - will need to reroute w/ Heroku
 readonly APIUrl = "https://tightropeapi.herokuapp.com/"
 
