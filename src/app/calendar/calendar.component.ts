@@ -27,6 +27,7 @@ export class CalendarComponent implements OnInit {
   events: CalendarEvent[] = [];
   EventsList:any=[];
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
+  //SharedService is for accessing the methods in that file - must be .service to denote appropriate method
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
 
   /*Outsourced code from https://github.com/mattlewis92/angular-calendar#getting-started*/
@@ -35,21 +36,40 @@ export class CalendarComponent implements OnInit {
   CalendarView = CalendarView;
   /*End of outsourced code*/
 
-
-  
-  
+ //Test EventsList
+  eventsTest = [
+    {eventID: 1, eventName: "test"}
+  ]
 
   setView(view: CalendarView) {
     this.view = view;
+
   }
+
   ngOnInit():void{
     //On page start up, call all events of the user and put them in the "EventsList" variable
     this.refreshEventList();
     if(window.innerWidth < 800){
       this.setView(CalendarView.Day);
     } 
+
+
   }
-  
+    //Method will pull of Events pertaining to a user from the user table
+    refreshEventList():void{
+      //Grab the current user out of local storage, parse the package into strings and assign it to the currentUser var
+      var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+      //use the "service" module to access the event api, using the currentUser object and the email aspect of that object, then put the data into the events list
+      //The subscribe function is a little out of my current knowledge, but know this, it works
+      //this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data});
+      //Replace the line above this one with the one below this one to see the contents of the EventsList in the browsers inspect console 
+      this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data;console.log(this.EventsList)}); 
+
+
+    
+  }
+
+
 
   /*Custom Code By Sahil*/
   //function that opens the day view of the calendar while clicked on the date
@@ -76,6 +96,7 @@ export class CalendarComponent implements OnInit {
     var minutestringstart:String="";
     var hourstringend:String="";
     var minutestringend:String="";
+
 
     for(let i=0; i< startdate.length; i++){
 
@@ -144,15 +165,6 @@ export class CalendarComponent implements OnInit {
 
 
 /*End of custom code section*/
-  //Method will pull of Events pertaining to a user from the user table
-  refreshEventList():void{
-    //Grab the current user out of local storage, parse the package into strings and assign it to the currentUser var
-    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    //use the "service" module to access the event api, using the currentUser object and the email aspect of that object, then put the data into the events list
-    //The subscribe function is a little out of my current knowledge, but know this, it works
-    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data});
-    //Replace the line above this one with the one below this one to see the contents of the EventsList in the browsers inspect console 
-    //this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data,console.log(this.EventsList)}); 
-}
+
 
 } 
