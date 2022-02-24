@@ -18,7 +18,7 @@ import {SharedService} from 'src/app/shared.service';
 /*Defining a calendar component*/
 @Component({
   selector: 'app-calendar',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
@@ -68,7 +68,7 @@ export class CalendarComponent implements OnInit {
     //The subscribe function is a little out of my current knowledge, but know this, it works
     //this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data});
     //Replace the line above this one with the one below this one to see the contents of the EventsList in the browsers inspect console 
-    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data;console.log(this.EventsList); console.log(this.EventsList[0].EventName)
+    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data;console.log(this.EventsList)
     
     }); 
 
