@@ -11,42 +11,51 @@
 
   <div class="content-wrapper">
     <a class="back-link" routerLink='../home'>❮ Back to calendar</a>
+    <h3>For the following questions please choose from the following alternatives:</h3>
+    <div class="question-intro">
+    <h3>(0 - never)&emsp;(1 - almost never)&emsp;(2 - sometimes)&emsp;(3 - fairly often)&emsp;(4 - very often)</h3>
 
-    <h1>Questions</h1><br>
+    </div>
+
+    <!-- All input fields for each survey question -->
+    <div class="questions-wrapper">
+
     <label for="q1">Question 1 </label><br>
     <p>In the last month, how often have you been upset because of something that happened unexpectedly?</p>
-    <div><input type="number" id="q1" name="q1" [(ngModel)]="q1" min="0" max="4"></div>
+    <input type="number" id="q1" name="q1" [(ngModel)]="q1" min="0" max="4"><br>
     <label for="q2">Question 2</label><br>
     <p>In the last month, how often have you felt that you were unable to control the
         important things in your life?</p>
-    <div><input type="number" id="q2" name="q2" [(ngModel)]="q2" min="0" max="4"></div>
+    <input type="number" id="q2" name="q2" [(ngModel)]="q2" min="0" max="4"><br>
     <label for="q3">Question 3</label><br>
     <p>In the last month, how often have you felt nervous and stressed?</p>
-    <div><input type="number" id="q3" name="q3" [(ngModel)]="q3" min="0" max="4"></div>
+    <input type="number" id="q3" name="q3" [(ngModel)]="q3" min="0" max="4"><br>
     <label for="q4">Question 4</label><br>
     <p>In the last month, how often have you felt confident about your ability to handle your personal problems?</p>
-    <div><input type="number" id="q4" name="q4" [(ngModel)]="q4" min="0" max="4"></div>
+    <input type="number" id="q4" name="q4" [(ngModel)]="q4" min="0" max="4"><br>
     <label for="q5">Question 5</label><br>
     <p>In the last month, how often have you felt that things were going your way?</p>
-    <div><input type="number" id="q5" name="q5" [(ngModel)]="q5" min="0" max="4"></div>
+    <input type="number" id="q5" name="q5" [(ngModel)]="q5" min="0" max="4"><br>
     <label for="q6">Question 6</label><br>
     <p>In the last month, how often have you found that you could not cope with
             all the things that you had to do?</p>
-    <div><input type="number" id="q6" name="q6" [(ngModel)]="q6" min="0" max="4"></div>
+    <input type="number" id="q6" name="q6" [(ngModel)]="q6" min="0" max="4"><br>
     <label for="q7">Question7</label><br>
     <p>In the last month, how often have you been able to control irritations in
             your life?</p>
-    <div><input type="number" id="q7" name="q7" [(ngModel)]="q7" min="0" max="4"></div>
+    <input type="number" id="q7" name="q7" [(ngModel)]="q7" min="0" max="4"><br>
     <label for="q8">Question 8</label><br>
     <p>In the last month, how often have you felt that you were on top of things?</p>
-    <div><input type="number" id="q8" name="q8" [(ngModel)]="q8" min="0" max="4"></div>
+    <input type="number" id="q8" name="q8" [(ngModel)]="q8" min="0" max="4"><br>
     <label for="q9">Question9</label><br>
     <p>In the last month, how often have you been angered because of things that
             happened that were outside of your control?</p>
-    <div><input type="number" id="q9" name="q9" [(ngModel)]="q9" min="0" max="4"></div>
+    <input type="number" id="q9" name="q9" [(ngModel)]="q9" min="0" max="4"><br>
     <label for="q10">Question 10</label><br>
     <p>In the last month, how often have you felt difficulties were piling up so high that
             you could not overcome them?</p>
-     <div><input type="number" id="q10" name="q10" [(ngModel)]="q10" min="0" max="4"></div>
- 
-    <button type="button" (click)="setValue()">Submit</button>
+    <input type="number" id="q10" name="q10" [(ngModel)]="q10" min="0" max="4"><br>
+    </div>
+
+    <!-- Submit Button Calls setvalue() -->
+    <button type="button" (click)="setValue()" class="change-button">Submit</button>

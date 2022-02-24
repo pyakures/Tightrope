@@ -70,3 +70,47 @@
     margin-top: 1em;
 }
 
+
+.questions-wrapper{
+    margin-top: 2em;
+    column-count: 2;
+}
+
+.questions-wrapper input{
+    margin-bottom: 2em;
+    width: 10%;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #7fba02;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+
+}
+.questions-wrapper input:focus{
+    margin-bottom: 2em;
+    width: 10%;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: gray;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+    
+
+}
+.questions-wrapper label{
+    font-size: 2em;
+    color: #7fba02;
+
+}
+
+.questions-wrapper p{
+    font-size: 1.1em;
+    color: black;
+
+}
+
+

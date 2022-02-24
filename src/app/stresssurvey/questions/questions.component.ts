@@ -1,5 +1,8 @@
+//Mackenzie Zappe
+//2/23/2022
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-questions',
@@ -7,6 +10,9 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/f
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
+  constructor( private AuthReRoute: Router){}
+
+  //Initialize question values at 0
   q1: number = 0;
   q2: number = 0;
   q3: number = 0;
@@ -17,6 +23,10 @@ export class QuestionsComponent implements OnInit {
   q8: number = 0;
   q9: number = 0;
   q10: number = 0;
+
+  //Function Calculates Perceived Stress Score according to the resource pdf
+  //Once Survey is complete, user is routed to home screen w Calendar
+  //Q4,5,6,8 are inverted per the PSS scoring 
   setValue() {
     var q1 = this.q1;
     var q2 = this.q2;
@@ -31,7 +41,11 @@ export class QuestionsComponent implements OnInit {
 
 
     var sum = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
+    //For now the sum is exported to the console log
     console.log('Sum: ',sum);
+
+    //Reroute to home 
+    this.AuthReRoute.navigate(['/home'])
   }
   ngOnInit(): void {
   }
