@@ -22,7 +22,7 @@ import {SharedService} from 'src/app/shared.service';
 })
 export class NeweventComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService) { }
   
   ngOnInit(): void {
     

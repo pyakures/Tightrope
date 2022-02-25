@@ -21,18 +21,18 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   //Must pass all required data fields, not including the 
   //auto generated "EventID" field, which will populate when added
   //Should have a UserEmail, EventName, StartDate, EndDate, EventType, StressLevel, and Notes
-  addEvent(userEmail:any){
-    return this.http.post<any[]>(this.APIUrl + 'events/', userEmail)
+  addEvent(val:any){
+    return this.http.post<any[]>(this.APIUrl + 'events/' + val, val)
   } 
   //Edit event w put event
   //Must pass all required data fields including eventID
-  updateEvent(userEmail:any){
-    return this.http.put<any[]>(this.APIUrl + 'events/', userEmail)
+  updateEvent(val:any){
+    return this.http.put<any[]>(this.APIUrl + 'events/' + val, val)
   }
   //Delete event w delete
   //Must pass all required data fields including eventID
-  deleteEvent(userEmail:any){
-    return this.http.delete<any[]>(this.APIUrl + 'events/',userEmail)
+  deleteEvent(val:any){
+    return this.http.delete<any[]>(this.APIUrl + 'events/' + val, val)
   } 
 
   getStressPredict(userEmail:any){
