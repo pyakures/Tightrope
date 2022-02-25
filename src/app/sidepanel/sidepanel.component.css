@@ -1,8 +1,9 @@
 /* code below done by Demitri Bannoura */
 .account-link {
-    float: right;
     padding-top: 1em;
     padding-right: 1em;
+    width: 100%;
+    text-align: right;
 }
 
 .account-link a {
@@ -35,6 +36,20 @@
     border-color: #7fba02;
 }
 
+.stress-guage mwl-gauge {
+    width: 65%;
+    margin: 0 auto;
+    padding-top: 0em;
+}
+
+/*Stress Gauge stylings*/
+#stresslevelarc{
+    transform: translate(0px, 100px);
+    font-size: 0.7em;
+    text-align: center;
+    color: grey;
+}
+
 .stress-guage .stress-summary-panel {
     visibility: hidden;
     width: 20em;
@@ -45,8 +60,8 @@
     padding: 1em;
     /* Position the tooltip */
     position: absolute;
-    top: -0.5em;
-    left: -22em;
+    top: 2em;
+    left: -15em;
     height: 20em;
     transition: 0.1s;
     z-index: 2;
@@ -61,6 +76,8 @@
 .streak-area h1 {
     font-size: 0.9em;
     text-align: center;
+    width: 70%;
+    margin: auto;
 }
 
 .streak-area h2 {
@@ -68,11 +85,54 @@
     text-align: center;
     color: black;
     font-weight: 400;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 1em;
 }
 
 .streak-number {
     font-weight: 700;
 }
+
+.streak-area .week-streak-info {
+    font-weight: 600;
+    font-size: 0.8em;
+    width: 75%;
+    margin: auto;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin: auto;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #7fba02;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #7fba02;
+    cursor: pointer;
+  }
 
 .activities-area {
     width: 100%;
@@ -155,8 +215,14 @@
     font-size: 24px;
     color: #7fba02;
     z-index: 1;
+    stroke-linecap: round;
 }
 /*Text centering*/
+.center {
+    width: 75%;
+    margin: auto;
+}
+/*
 .center {
     position: absolute;
     top: 15%;
@@ -166,7 +232,7 @@
     padding: 1px;
     stroke-linecap: round;
     resize: both;
-}
+} */
 
 /*Define Space for mini calendar*/
 .sidecal {
@@ -249,15 +315,7 @@
 
 }
 
-/*Stress Gauge stylings*/
-#stresslevelarc{
-    transform: translate(-2px, 97px);
-    font-size: 0.7em;
-    text-align: center;
-    padding-bottom: 0px;
-    color: grey;
-    
-}
+
 
 /*mini calendar stylings*/
 .lastweek{

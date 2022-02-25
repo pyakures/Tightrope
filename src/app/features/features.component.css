@@ -1,9 +1,10 @@
 
 /* CSS for the intro section */
 .intro{
-    margin-top: 4em;
+    border-radius : 0px  50px 50px 0px ;
+    margin-top: 5em;
     color: #7FBA00;
-    margin-bottom: 3em;
+    text-align: center;
 }
 
 .intro h1 {
@@ -13,22 +14,22 @@
     color: #7FBA00;
     font-weight: 700;
 }
-.intro h2{
-    padding-top: .5em;
+
+h2{
+    padding-top: 3em;
     text-align:center;
     font-size: 2em;
     color: #8b8b8b;
     font-weight: 500;
+    width: 50%;
+    margin: auto;
 }
 .intro p {
     color: black;
-    font-size: 2em;
-    text-align: left;
+    font-size: 1.5em;
     width: 50%;
     margin: auto;
-    line-height: 1;
-    text-indent: 50px;
-    padding-bottom: .25em;
+    padding: 1em;
 
 }
 /* End of intro section */
@@ -105,7 +106,9 @@
 /*CSS for Fundamental Principle Cards*/
 
 .row{
-    margin-bottom: 4em;
+    width: 75%;
+    margin: auto;
+    margin-top: 5em;
 }
 
 .column {
@@ -118,10 +121,11 @@
 
 .row h1{
     font-size: 2em;
-    color: black;
+    color: white;
     font-weight: 700;
     margin: auto;
     text-align:center;
+    vertical-align: middle;
     
 }
 .row p{
@@ -131,18 +135,17 @@
     width: 60%;
     margin: auto;
     line-height: 1;
-
+    color: white;
 
 }
 .card {
-    
+    background-color: #7FBA00;
     width: 250px;
     height: 250px;
     perspective: 1000px;
-    left: 33%;
-    padding-bottom: 5%;
-    border: 10px dotted;
+    border: none;
     border-color:#8b8b8b #7FBA00 #8b8b8b #7FBA00 ;
+    margin: auto;
     
     
 }
@@ -151,17 +154,25 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
 
-
 }
+
+
 .card:hover .card-inner {
     transform: rotateY(180deg);
 }
+
+.card:hover .card-front {
+    animation: fade-out 1s timing-function delay iteration-count direction fill-mode;
+}
+
 .card-front{
     backface-visibility: hidden;
 }
+
 .card-back {
     position: absolute;
     backface-visibility: hidden;
+    top: 50%;
 }
 .card-back {
     transform: rotateY(180deg);
