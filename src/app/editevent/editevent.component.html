@@ -46,7 +46,7 @@
     <!-- I cant get date/time to update -->
     <input type="text" id="StartDate_u" name="StartDate_u" [(ngModel)]="StartDate_u"placeholder="{{StartDate}}"
     onfocus="(this.type='datetime-local')"><br>
-    {{StartDate_u}}
+    
     <input type="text" id="EndDate_u" name="EndDate_u" [(ngModel)]="EndDate_u"placeholder="{{EndDate}}"
     onfocus="(this.type='datetime-local')"><br>
     <!-- gets users input for event location -->
@@ -58,8 +58,9 @@
     <input type="text" id="Notes_u" name="Notes_u" [(ngModel)]="Notes_u" placeholder="{{Notes}}"><br>
     </form>
     <!-- Submit form with save button -->
-    <button type="button" (click)="updateValue()" class="change-button">Submit</button>
-
+    <button type="button" (click)="updateValue()" class="change-button">Save</button>
+    <button type="button" class="buttonDelete" (click)="deleteCurrentEvent()">Delete</button>
+      <button type="button" class="cancelButton" routerLink='../home' >Cancel</button>
   </div>
   
 
