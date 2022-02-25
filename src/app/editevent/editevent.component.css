@@ -76,12 +76,27 @@ input[type=submit] {
 
 }
 
-input[type=button] {
+.buttonDelete {
     background-color: #ec2222;
     color: white;
     font-size: 1.3em;
     font-weight: 700;
     padding: 12px;
+    border: none;
+    border-radius: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 1em;
+    width: text;
+}
+
+.cancelButton {
+    background-color: #ebebeb;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 12px;
+    border: none;
     border-radius: 50px;
     padding-left: 25px;
     padding-right: 25px;

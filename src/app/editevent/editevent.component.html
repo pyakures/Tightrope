@@ -15,8 +15,9 @@
         onfocus="(this.type='datetime-local')"><br>
       <input type="text" placeholder="{{EndDate}}"
           onfocus="(this.type='datetime-local')"><br>
+      <label for="location">Location: &nbsp;</label>
       <input type="text" placeholder="{{Location}}"><br>
-      <label for="stress">Stress Level: </label>
+      <label for="stress">Stress Level: &nbsp;</label>
 
       <select [(ngModel)]='levelofstress' name="first">
         <option value="0">No Stress</option>
@@ -25,17 +26,21 @@
         <option value="3">High Stress</option>
       </select><br>
 
-      <label for="category">Type: </label>
+      <label for="category">Type:  &nbsp;</label>
       <select [(ngModel)]='typeofevent' name="first">
         <option value="0">Work</option>
         <option value="1" selected="selected">Leisure</option>
         <option value="2">Mindfullness</option>
       </select><br>
+
       <textarea placeholder="{{Notes}}" aria-setsize="2"></textarea><br>
       <input type="submit" value="Save"> 
-      <input type="button" class="buttonDelete" value="Delete">
+      <button type="button" class="buttonDelete" (click)="deleteCurrentEvent()">Delete</button>
+      <button type="button" class="cancelButton" routerLink='../home' >Cancel</button>
     </form>
+
     
+
   </div>
   
 

@@ -18,7 +18,7 @@ h1{
     padding-left: 100px;
 }
 
-input, textarea{
+input, textarea, label{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -28,6 +28,19 @@ input, textarea{
     font-weight: 500;
     color: grey;
     margin-bottom: 0.75em;
+}
+
+select{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 500;
+    color: grey;
+    margin-bottom: 0.75em;
+
 }
 
 input::placeholder, textarea::placeholder{

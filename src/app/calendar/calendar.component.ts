@@ -3,7 +3,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener } from '@angular/core';
 import { CalendarService } from '../calendar.service';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
-import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes } from 'date-fns';
+import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes, setDate } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
@@ -94,7 +94,7 @@ export class CalendarComponent implements OnInit {
     this.AuthReRoute.navigate(['../editevent']);
   }
 
-  /*Custom Code By Sahil*/
+  /*Custom Code By Sahil
   //function that takes the input form the from, parses the information like name and data, uses those vraiables to create a new event
   addEvent(newtitle:string, startdate:string, enddate:string): void {
     
@@ -157,8 +157,9 @@ export class CalendarComponent implements OnInit {
       },
     ]
   
-  }
-
+  }*/
+  
+  //saves events from the API to local event calendar
   refreshPagewithEvents():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getEvents(currentUser.email).subscribe(data=>{
@@ -204,15 +205,16 @@ export class CalendarComponent implements OnInit {
     
         var timehourend:number = Number(hourstringend);
         var timeminutesend = Number(minutestringend);
+        
     
         this.events = [
           ...this.events,
           {
             id: this.EventsList[i].EventID,
             title: this.EventsList[i].EventName,
-            start: setHours(setMinutes(new Date(Date.parse(this.EventsList[i].StartDate)), timeminutesstart), timehourstart),
-            end: setHours(setMinutes(new Date(Date.parse(this.EventsList[i].EndDate)), timeminutesend), timehourend),
-            draggable: true,
+            start: setHours(new Date(Date.parse(this.EventsList[i].StartDate)), timehourstart),
+            end: setHours(new Date(Date.parse(this.EventsList[i].EndDate)), timehourend),
+            draggable: false,
             resizable: {
               beforeStart: true,
               afterEnd: true,
@@ -229,10 +231,11 @@ export class CalendarComponent implements OnInit {
 
   }
 
+  /*
   //passes the form input values upon submitting it
   onClickSubmit(data:any){
     this.addEvent(data.Event, data.StartDate, data.EndDate);
-  }
+  }*/
 
   //Call /service/AuthService logout function
   logout() {
