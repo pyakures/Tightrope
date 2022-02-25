@@ -11,8 +11,8 @@
         
     </div>
     <div class="center"> 
-        <h4 id="stresslevelarc">Stress Level</h4>
         
+        <h4 id="stresslevelarc">Stress Level</h4>
         <div class="stress-guage">
         <!--Imported gauge element-->
         <mwl-gauge
@@ -24,6 +24,7 @@
             [animationDuration]="1"
         > 
         </mwl-gauge>
+        
 
         <div class="stress-summary-panel">
             <h1>Stress Summary</h1>
@@ -42,7 +43,9 @@
         
         <div class="streak-area">
             <h1>Nice work! 👍</h1>
-            <h2>You've got a <span class="streak-number">4 week </span>streak of completing three or more mindfulness activities per week!</h2>
+            <h2>You've got a <span class="streak-number">4 week </span> mindfulness streak going!</h2>
+            <input type="range" min="0" max="3" value="1" class="slider">
+            <h1>1 / 3 mindfulness events completed this week</h1>
         </div>
 
         <div class="activities-area">
