@@ -180,6 +180,18 @@
     margin-top: 10em;
 }
 
+.stress-survey{
+    background-color: #7fba02;
+    color: white;
+    text-decoration: none;
+    padding: 0.7em 1em 0.7em 1em;
+    font-size: 0.65em;
+    border-radius: 30px;
+    width: 100%;
+    display: inline;
+    margin-top: 10em;
+}
+
 .stress-summary-panel h1 {
     font-weight: bold;
     padding-bottom: 0.5em;

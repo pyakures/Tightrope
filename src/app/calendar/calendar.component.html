@@ -90,31 +90,7 @@
     </div>
     
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Event User</th>
-          <th>Event Name</th>
-          <th>Event Start Time</th>
-          <th>Event End Time</th>
-          <th>Event Location</th>
-          <th>Event Stress</th>
-          <th>Event Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let dataItem of EventsList">
-            <td>{{dataItem.EventName}}</td>
-            <td>{{dataItem.EventStartTime}} </td>
-            <td>{{dataItem.EventEndTime}}</td>
-            <td>{{dataItem.EventLocation}} </td>
-            <td>{{dataItem.EventStress}}</td>
-            <td>{{dataItem.EventNotes}} </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!--Input form that passes the varibales upon submitting. Temp code for later refrence.>
+    <!--Input form that passes the varibales upon submitting. Temp code for later reference.>
     <form #addNewEvent = "ngForm" (ngSubmit) = "onClickSubmit(addNewEvent.value)" >
 
       <input type = "text" name = "Event" placeholder = "CS425 Midterm" ngModel>
@@ -127,7 +103,33 @@
     <button type="button" (click)='logout()'>Logout</button>
   
   </form-->
-    
+
+  <!--table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Event ID</th>
+            <th>Event Name</th>
+            <th>Event Type</th>
+            <th>Event Location</th>
+            <th>Event Notes</th>
+            <th>Event StartDate</th>
+            <th>Event EndDate</th>
+            <th>Event StressLevel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of EventsList">
+            <td>{{event.EventID}}</td>
+            <td>{{event.EventName}}</td>
+            <td> {{event.EventType}}</td>
+            <td>{{event.Location}}</td>
+            <td>{{event.Notes}}</td>
+            <td>{{event.StartDate}}</td>
+            <td>{{event.EndDate}}</td>
+            <td>{{event.StressLevel}}</td>
+        </tr>
+    </tbody>
+</table-->
 
     
 </div> 

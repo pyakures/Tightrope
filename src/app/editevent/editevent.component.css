@@ -19,7 +19,7 @@ h1{
 }
 
 
-input, textarea{
+input, textarea, label{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -29,6 +29,19 @@ input, textarea{
     font-weight: 500;
     color: grey;
     margin-bottom: 0.75em;
+}
+
+select{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 500;
+    color: grey;
+    margin-bottom: 0.75em;
+
 }
 
 input::placeholder, textarea::placeholder{
@@ -63,12 +76,27 @@ input[type=submit] {
 
 }
 
-input[type=button] {
+.buttonDelete {
     background-color: #ec2222;
     color: white;
     font-size: 1.3em;
     font-weight: 700;
     padding: 12px;
+    border: none;
+    border-radius: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 1em;
+    width: text;
+}
+
+.cancelButton {
+    background-color: #ebebeb;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 12px;
+    border: none;
     border-radius: 50px;
     padding-left: 25px;
     padding-right: 25px;

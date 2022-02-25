@@ -30,6 +30,10 @@ import{HttpClientModule} from '@angular/common/http';
 import { EditeventComponent } from './editevent/editevent.component';
 import { AccountComponent } from './account/account.component';
 import { StreakComponent } from './streak/streak.component';
+import { StresssurveyComponent } from './stresssurvey/stresssurvey.component';
+import { QuestionsComponent } from './stresssurvey/questions/questions.component';
+import { InitialMindfulComponent } from './signup/initial-mindful/initial-mindful.component';
+
 
 
 @NgModule({
@@ -48,6 +52,10 @@ import { StreakComponent } from './streak/streak.component';
     EditeventComponent,
     AccountComponent,
     StreakComponent,
+    StresssurveyComponent,
+    QuestionsComponent,
+    InitialMindfulComponent,
+
 
   ],
   imports: [

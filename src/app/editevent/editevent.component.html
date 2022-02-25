@@ -8,20 +8,39 @@
   <app-sidepanel class="sidepannelview"></app-sidepanel>
 
   <div class="wrapper">
-    <h1>Event Details</h1><br>
+    <h1>Edit Event</h1><br>
     <form class="neweventForm"> 
-      <input class="EventName" type="name" placeholder="Graphic Design Consultation"> <br>
-      <input type="text" placeholder="October 27, 2021 10:30am"
+      <input class="EventName" type="name" placeholder="{{Eventname}}"> <br>
+      <input type="text" placeholder="{{StartDate}}"
         onfocus="(this.type='datetime-local')"><br>
-      <input type="text" placeholder="October 27, 2021 1:00pm"
+      <input type="text" placeholder="{{EndDate}}"
           onfocus="(this.type='datetime-local')"><br>
-      <input type="text" placeholder="Pennington Engineering Building"><br>
-      <input type="text" placeholder="https://zoom.us/j/1234567"><br>
-      <textarea placeholder="Bring two portfolio copies" aria-setsize="2"></textarea><br>
+      <label for="location">Location: &nbsp;</label>
+      <input type="text" placeholder="{{Location}}"><br>
+      <label for="stress">Stress Level: &nbsp;</label>
+
+      <select [(ngModel)]='levelofstress' name="first">
+        <option value="0">No Stress</option>
+        <option value="1" selected="selected">Low Stress</option>
+        <option value="2">Medium Stress</option>
+        <option value="3">High Stress</option>
+      </select><br>
+
+      <label for="category">Type:  &nbsp;</label>
+      <select [(ngModel)]='typeofevent' name="first">
+        <option value="0">Work</option>
+        <option value="1" selected="selected">Leisure</option>
+        <option value="2">Mindfullness</option>
+      </select><br>
+
+      <textarea placeholder="{{Notes}}" aria-setsize="2"></textarea><br>
       <input type="submit" value="Save"> 
-      <input type="button" class="buttonDelete" value="Delete">
+      <button type="button" class="buttonDelete" (click)="deleteCurrentEvent()">Delete</button>
+      <button type="button" class="cancelButton" routerLink='../home' >Cancel</button>
     </form>
+
     
+
   </div>
   
 

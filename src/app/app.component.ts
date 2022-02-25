@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(private pService: PublicService) { }
 
   ngOnInit(): void {
-    this.showMessage()
+    //this.showMessage()
   }
 
   showMessage(){
