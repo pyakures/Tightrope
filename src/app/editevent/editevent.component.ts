@@ -34,6 +34,8 @@ export class EditeventComponent implements OnInit {
   Location:any;
   StartDate:any;
   EndDate:any;
+  levelofstress:any;
+  typeofevent:any;
 
 
 
@@ -57,6 +59,8 @@ export class EditeventComponent implements OnInit {
           this.EndDate = date.toUTCString();
           this.Notes = this.EventsList[i].Notes;
           this.Location = this.EventsList[i].Location;
+          this.levelofstress = this.EventsList[i].StressLevel;
+          this.typeofevent = this.EventsList[i].EventType;
         }
       }
     
@@ -65,5 +69,7 @@ export class EditeventComponent implements OnInit {
     
 
   }
+
+ 
 
 }

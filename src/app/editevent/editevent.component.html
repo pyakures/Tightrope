@@ -16,7 +16,21 @@
       <input type="text" placeholder="{{EndDate}}"
           onfocus="(this.type='datetime-local')"><br>
       <input type="text" placeholder="{{Location}}"><br>
-      <!--input type="text" placeholder="https://zoom.us/j/1234567"><br-->
+      <label for="stress">Stress Level: </label>
+
+      <select [(ngModel)]='levelofstress' name="first">
+        <option value="0">No Stress</option>
+        <option value="1" selected="selected">Low Stress</option>
+        <option value="2">Medium Stress</option>
+        <option value="3">High Stress</option>
+      </select><br>
+
+      <label for="category">Type: </label>
+      <select [(ngModel)]='typeofevent' name="first">
+        <option value="0">Work</option>
+        <option value="1" selected="selected">Leisure</option>
+        <option value="2">Mindfullness</option>
+      </select><br>
       <textarea placeholder="{{Notes}}" aria-setsize="2"></textarea><br>
       <input type="submit" value="Save"> 
       <input type="button" class="buttonDelete" value="Delete">
