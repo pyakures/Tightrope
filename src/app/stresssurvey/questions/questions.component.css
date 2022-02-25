@@ -48,10 +48,12 @@
     font-size: 2em;
     color: gray;
     margin-top: 2em;
+    margin-bottom: .5em;
 }
 
 .content-wrapper h4 {
     color: black;
+    
 }
 
 .change-button {
@@ -108,9 +110,10 @@
 }
 
 .questions-wrapper p{
-    font-size: 1.1em;
+    font-size: 1.5em;
     color: black;
 
 }
+
 
 
