@@ -38,14 +38,15 @@
 
 .stress-guage mwl-gauge {
     width: 65%;
+    height: max-content;
     margin: 0 auto;
     padding-top: 0em;
 }
 
 /*Stress Gauge stylings*/
 #stresslevelarc{
-    transform: translate(0px, 100px);
-    font-size: 0.7em;
+    transform: translate(0px, 9.5vh);
+    font-size: 1.7vh;
     text-align: center;
     color: grey;
 }
@@ -61,7 +62,7 @@
     /* Position the tooltip */
     position: absolute;
     top: 2em;
-    left: -15em;
+    left: -400px;
     height: 20em;
     transition: 0.1s;
     z-index: 2;
@@ -249,16 +250,15 @@
 /*Define Space for mini calendar*/
 .sidecal {
     font-size: 10px;
-    position: absolute;
-    bottom: 3em;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    /*height: auto;*/
-    width:max-content;
+    height: auto;
+    width: 100%;
     color: black;
-
-
-
+    position:absolute;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 2em;
 }
 
 ::ng-deep .dropdown-menu{
@@ -359,6 +359,7 @@ button {
     border: none;
     font-size: 1.1em;
     margin: 5px;
+    margin-top: 10px;
 }
 
 /*Button stylings*/
