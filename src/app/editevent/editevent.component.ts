@@ -27,7 +27,6 @@ export class EditeventComponent implements OnInit {
 
   }
 
-  id= this.service.sharedid;
 
   Eventname:any;
   Notes:any;
@@ -71,8 +70,11 @@ export class EditeventComponent implements OnInit {
   }
 
   deleteCurrentEvent(){
+
+    
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    window.alert("This has not been implemented yet!");
+    
+    
     
   }
  
