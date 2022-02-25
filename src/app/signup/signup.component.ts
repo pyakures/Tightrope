@@ -13,4 +13,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit(){
+    //needs to creat a new usedr token here
+  }
 }

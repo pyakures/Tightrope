@@ -83,8 +83,7 @@ export class EditeventComponent implements OnInit {
           this.service.deleteEvent(this.EventsList[i]).subscribe(res=>{
             alert(res.toString());});
 
-            this.service.updateEvent(this.EventsList[i]).subscribe(res=>{
-              alert(res.toString());});
+
 
               console.log(this.EventsList);
         }
@@ -97,6 +96,7 @@ export class EditeventComponent implements OnInit {
     
     
   }
- 
+
 
 }
+
