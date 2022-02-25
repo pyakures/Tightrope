@@ -34,4 +34,8 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   deleteEvent(userEmail:any){
     return this.http.delete<any[]>(this.APIUrl + 'events/',userEmail)
   } 
+
+  getStressPredict(userEmail:any){
+    return this.http.get<any[]>(this.APIUrl + 'stresspredict/' + userEmail, userEmail)
+  }
 }

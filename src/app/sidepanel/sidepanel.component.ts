@@ -1,10 +1,23 @@
 //Custom Code by Sahil Pyakurel
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener } from '@angular/core';
+import { CalendarService } from '../calendar.service';
+import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
+import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes, setDate } from 'date-fns';
+import { Subject } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Time } from '@angular/common';
+import { DayCalendarComponent } from 'ng2-date-picker';
 import { AuthService } from '../service/auth.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
+import { templateJitUrl } from '@angular/compiler';
+import {SharedService} from 'src/app/shared.service';
+
 
 @Component({
   selector: 'app-sidepanel',
+  changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './sidepanel.component.html',       
   styleUrls: ['./sidepanel.component.css'], 
   
@@ -13,7 +26,9 @@ import {Router} from '@angular/router';
 export class SidepanelComponent implements OnInit {
 
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
-  constructor(private authService: AuthService, private AuthReRoute: Router){}
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
+
+  stresslevel:any=[];
 
   //constructor() { }
   //a method to return the current month to the side panel by Sahil Pyakurel
@@ -40,6 +55,8 @@ export class SidepanelComponent implements OnInit {
 
   
   ngOnInit(): void {
+
+    this.displayStressLevel();
     }
   
 
@@ -48,6 +65,15 @@ export class SidepanelComponent implements OnInit {
       this.authService.logout();
       //Reroute to the login page
       this.AuthReRoute.navigate(['/login'])
+    }
+
+    displayStressLevel():void{
+      var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+      this.service.getStressPredict(currentUser.email).subscribe(data=>{this.stresslevel=data; 
+      console.log(this.stresslevel)
+        
+    
+    }); 
     }
 
 }
