@@ -49,16 +49,9 @@ readonly APIUrl = 'http://127.0.0.1:8000/'
     return this.http.get<any[]>(this.APIUrl + 'predict/', userEmail)
   }
 
-<<<<<<< Updated upstream
   getStressfullDay(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'stressday/', userEmail)
   }
-
-
-  getProfile(){
-    console.log(localStorage.getItem('token'))
-    return this.http.get<any[]>(this.APIUrl + 'accounts/', httpOptions)
-=======
   //This API will get the current users account information (password is hashed)
   //This will likely not be used by the front end but the following lines of code will allow access to the user profile info
   //
@@ -79,7 +72,6 @@ readonly APIUrl = 'http://127.0.0.1:8000/'
   //Note: "val" must have all of those fields
   //Note: Anyone can add a user to the database, it requires no authorization, hence the unqiue URL
   addProfile(val:any){
-
->>>>>>> Stashed changes
+    return this.http.post<any[]>(this.APIUrl + 'accounts/profileAdd/',val)
   }
 }
