@@ -49,6 +49,7 @@ readonly APIUrl = 'http://127.0.0.1:8000/'
     return this.http.get<any[]>(this.APIUrl + 'predict/', userEmail)
   }
 
+<<<<<<< Updated upstream
   getStressfullDay(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'stressday/', userEmail)
   }
