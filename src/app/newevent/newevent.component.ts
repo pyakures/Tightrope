@@ -13,9 +13,6 @@ import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
 
-//created object model in another file and imported into component
-import { NEW_EVENT } from './newevent.model';
-
 
 @Component({
   selector: 'app-newevent',
@@ -39,52 +36,28 @@ export class NeweventComponent implements OnInit {
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService) { }
   
   ngOnInit(): void {
-    this.getEventInfo();
-
-  }
-  getEventInfo():void{
-    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
-    
-    
-      for(var i=0; i< this.EventsList.length; i++){
-        if(this.EventsList[i].EventID == this.service.sharedid){
-          this.Eventname = this.EventsList[i].EventName;
-          var date = new Date(this.EventsList[i].StartDate);
-          this.StartDate = date.toUTCString();
-          date = new Date(this.EventsList[i].EndDate);
-          this.EndDate = date.toUTCString();
-          this.Notes = this.EventsList[i].Notes;
-          this.Location = this.EventsList[i].Location;
-          this.levelofstress = this.EventsList[i].StressLevel;
-          this.typeofevent = this.EventsList[i].EventType;
-        }
-      }
-    
-    }); 
-
-    
 
   }
   
+
+  
   onSubmit(){
-    var startTest = this.StartDate;
-    console.log('test start date ', startTest);
-    var newevent = new NEW_EVENT(this.Eventname, this.StartDate, this.EndDate, this.Location, this.levelofstress, this.typeofevent, this.Notes);
-    console.log('new event name: ', newevent.EventName);
-    console.log('new event location: ', newevent.Location);
-    console.log('new event notes: ', newevent.Notes);
-    console.log('new event stress: ', newevent.StressLevel);
-    console.log('new event type: ', newevent.EventType);
 
-    this.service.addEvent(newevent).subscribe(res=>{
-      alert(res.toString());});
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
+          this.EventsList[0].EventName = this.Eventname;
+          this.EventsList[0].StartDate = this.StartDate;
+          this.EventsList[0].EndDate = this.EndDate;
+          this.EventsList[0].UserEmail = currentUser.email;
+          this.EventsList[0].EventType = this.typeofevent;
+          this.EventsList[0].Location = this.Location;
+          this.EventsList[0].Notes = this.Notes;
+          this.EventsList[0].StressLevel = this.levelofstress;
 
-    this.getEventInfo();
-
-
-    
-  }
+          this.service.addEvent(this.EventsList[0]).subscribe(res=>{
+            alert(res.toString());});
+        }); 
 
 
+}
 }
