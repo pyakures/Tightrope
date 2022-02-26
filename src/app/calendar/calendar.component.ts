@@ -14,6 +14,8 @@ import { AuthService } from '../service/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
+import { reduceEachLeadingCommentRange } from 'typescript';
+import { colors } from './colors';
 
 /*Defining a calendar component*/
 @Component({
@@ -25,12 +27,14 @@ import {SharedService} from 'src/app/shared.service';
 /*Calendar Object Class Declaration*/
 export class CalendarComponent implements OnInit {
   
+  
 
   events: CalendarEvent[] = [];
   EventsList:any=[];
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
   //SharedService is for accessing the methods in that file - must be .service to denote appropriate method
-  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){
+  }
 
   /*Outsourced code from https://github.com/mattlewis92/angular-calendar#getting-started*/
   viewDate: Date = new Date();
@@ -54,8 +58,11 @@ export class CalendarComponent implements OnInit {
     if(window.innerWidth < 800){
       this.setView(CalendarView.Day);
     } 
-
     this.refreshPagewithEvents();
+
+    
+    
+    
 
 
 
@@ -205,6 +212,15 @@ export class CalendarComponent implements OnInit {
     
         var timehourend:number = Number(hourstringend);
         var timeminutesend = Number(minutestringend);
+
+        var EventColor= colors.halfGreen;
+
+        if(this.EventsList[i].EventType=="1"){
+          var EventColor = colors.green;
+        }
+        else if(this.EventsList[i].EventType=="0"){
+          var EventColor= colors.red;
+        }
         
     
         this.events = [
@@ -212,6 +228,7 @@ export class CalendarComponent implements OnInit {
           {
             id: this.EventsList[i].EventID,
             title: this.EventsList[i].EventName,
+            color: EventColor,
             start: setHours(new Date(Date.parse(this.EventsList[i].StartDate)), timehourstart),
             end: setHours(new Date(Date.parse(this.EventsList[i].EndDate)), timehourend),
             draggable: false,
