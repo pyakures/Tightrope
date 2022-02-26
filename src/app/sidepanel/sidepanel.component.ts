@@ -29,52 +29,76 @@ export class SidepanelComponent implements OnInit {
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
 
   stresslevel:any=[];
+  stressfullDay:any;
+
+  firstName:any;
+  lastName:any;
+  fullName:any;
+  monthALLCAPS:any;
 
   //constructor() { }
-  //a method to return the current month to the side panel by Sahil Pyakurel
-  monthstring = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  d = new Date();
-  month = this.d.getMonth();
-  year = this.d.getUTCFullYear();
-  monthname = this.monthstring[this.month] + " " + this.year;
-  monthALLCAPS= this.monthname.toUpperCase();
 
-  
- 
-  config = {
+   config = {
     firstDayOfWeek: 'su',
     monthFormat: 'MMM, YYYY',
     
   };
 
-  currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-  firstName = this.currentUser.userFirstName;
-  lastName = this.currentUser.userLastName;
-  fullName= this.firstName + " " + this.lastName;
-
-
   
   ngOnInit(): void {
 
     this.displayStressLevel();
-    }
+    this.displayStressfullDay();
+    this.displayCurrentUser();
+    this.displayCurrentMonth();
+
+  }
   
 
-    //Call /service/AuthService logout function
-    logout() {
-      this.authService.logout();
-      //Reroute to the login page
-      this.AuthReRoute.navigate(['/login'])
-    }
+  //Call /service/AuthService logout function
+  logout() {
+    this.authService.logout();
+    //Reroute to the login page
+    this.AuthReRoute.navigate(['/login'])
+  }
 
-    displayStressLevel():void{
-      var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-      this.service.getStressPredict(currentUser.email).subscribe(data=>{this.stresslevel=data; 
-      console.log(this.stresslevel)
-        
+  displayCurrentMonth():void{
+    //a method to return the current month to the side panel by Sahil Pyakurel
+    var monthstring = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var d = new Date();
+    var month = d.getMonth();
+    var year = d.getUTCFullYear();
+    var monthname = monthstring[month] + " " + year;
+    this.monthALLCAPS= monthname.toUpperCase();
     
+  }
+
+  displayCurrentUser():void{
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.firstName = currentUser.userFirstName;
+    this.lastName = currentUser.userLastName;
+    this.fullName= this.firstName + " " + this.lastName;
+
+  }
+
+  displayStressLevel():void{
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getStressPredict(currentUser.email).subscribe(data=>{this.stresslevel=data; 
+    console.log(this.stresslevel)
+      
+  
     }); 
-    }
+    
+  }
+
+  displayStressfullDay():void{
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getStressfullDay(currentUser.email).subscribe(data=>{this.stressfullDay=data; 
+    console.log(this.stressfullDay)
+      
+  
+    }); 
+  }
 
 }
 

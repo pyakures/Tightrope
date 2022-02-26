@@ -46,8 +46,13 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   } 
 
   getStressPredict(userEmail:any){
-    return this.http.get<any[]>(this.APIUrl + 'stresspredict/' + userEmail, userEmail)
+    return this.http.get<any[]>(this.APIUrl + 'predict/', userEmail)
   }
+
+  getStressfullDay(userEmail:any){
+    return this.http.get<any[]>(this.APIUrl + 'stressday/', userEmail)
+  }
+
 
   getProfile(){
     console.log(localStorage.getItem('token'))
