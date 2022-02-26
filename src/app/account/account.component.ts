@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-account',
@@ -13,10 +14,11 @@ export class AccountComponent implements OnInit {
   fullName= this.firstName + " " + this.lastName;
   Useremail= this.currentUser.email;
 
-  constructor() { }
+  constructor(private service:SharedService) { }
 
   ngOnInit(): void {
-    
+    var user = this.service.getProfile()
+    console.log(user)
   }
 
 }
