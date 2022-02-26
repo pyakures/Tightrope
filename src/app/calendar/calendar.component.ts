@@ -27,8 +27,6 @@ import { colors } from './colors';
 /*Calendar Object Class Declaration*/
 export class CalendarComponent implements OnInit {
   
-  
-
   events: CalendarEvent[] = [];
   EventsList:any=[];
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
@@ -46,6 +44,8 @@ export class CalendarComponent implements OnInit {
   eventsTest = [
     {eventID: 1, eventName: "test"}
   ]
+
+  
 
   setView(view: CalendarView) {
     this.view = view;
@@ -214,8 +214,9 @@ export class CalendarComponent implements OnInit {
         var timeminutesend = Number(minutestringend);
 
         var EventColor= colors.halfGreen;
+    
 
-        if(this.EventsList[i].EventType=="1"){
+        if(this.EventsList[i].EventType=="2"){
           var EventColor = colors.green;
         }
         else if(this.EventsList[i].EventType=="0"){

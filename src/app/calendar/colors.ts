@@ -1,7 +1,8 @@
 export const colors: any = {
     red: {
-      primary: '#ad2121',
-      secondary: '#FAE3E3',
+      primary: '#BA9902',
+      //secondary: '#FAE3E3',
+      secondary: '#ffffff',
     },
     blue: {
       primary: '#1e90ff',
@@ -18,5 +19,10 @@ export const colors: any = {
     halfGreen: {
         primary: '#7fba02',
         secondary: '#ffffff',
+        
+    },
+    grey: {
+        primary: '#7fba02',
+        secondary: '#ebebeb',
     }
   };

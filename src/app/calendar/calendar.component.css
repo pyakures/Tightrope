@@ -145,6 +145,13 @@
     border: 1px #7fba02;
 }
 
+::ng-deep .cal-week-view .cal-header.cal-weekend span{
+    
+    color: #7fba02;
+  
+}
+
+
 ::ng-deep .cal-week-view .cal-day-headers span {
     opacity: 100%;
 }
@@ -161,12 +168,11 @@
     background-color: #7fba02;
     color: white;
 }
-
-
-
-mwldroppable .cal-header .cal-past .cal-weekend {
+::ng-deep .cal-month-view .cal-header:hover {
     background-color: #7fba02;
+    color: white;
 }
+
 
 .cal-week-view * {
     background-color: #7fba02;
@@ -182,14 +188,18 @@ mwldroppable .cal-header .cal-past .cal-weekend {
 
 ::ng-deep .cal-week-view .cal-event{
     background-color: white;
+    font-size: 1em;
+    font-weight: bold;
     color: black;
     border: none;
     border-left: #7fba02;
     border-left-style: solid;
     border-left-width: 0.5em;
-    border-radius: 0px;;
+    border-radius: 0px;
+    color: black, white;
 
 }
+
 
 ::ng-deep .cal-week-view .cal-day-column{
     border: none;
@@ -203,6 +213,7 @@ mwldroppable .cal-header .cal-past .cal-weekend {
     background-color: #7fba02;
     color: white;
 }
+
 
 ::ng-deep .cal-week-view .cal-current-time-marker {
     display: none;
