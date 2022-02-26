@@ -84,30 +84,11 @@ export class EditeventComponent implements OnInit {
   }
 
   deleteCurrentEvent(){
-  
-    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
-    
-      for(var i=0; i< this.EventsList.length; i++){
-        if(this.EventsList[i].EventID == this.service.sharedid){
-          console.log(this.EventsList[i]);
-          
-          this.service.deleteEvent(this.service.sharedid).subscribe(res=>{
-            alert(res.toString());});
 
+    this.service.deleteEvent(this.service.sharedid).subscribe(res=>{
+      alert(res.toString());});
 
-
-              console.log(this.EventsList);
-        }
-      }
-    
-    });
-    
     this.AuthReRoute.navigate(['/home']);
- 
-    
-    
-    
   }
 
   updateCurrentEvent(){

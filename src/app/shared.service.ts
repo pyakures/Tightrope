@@ -18,8 +18,8 @@ export class SharedService {
 
   sharedid:any;
 //Django API URL
-//readonly APIUrl = "https://tightropeapi.herokuapp.com/"
-readonly APIUrl = 'http://127.0.0.1:8000/'
+readonly APIUrl = "https://tightropeapi.herokuapp.com/"
+//readonly APIUrl = 'http://127.0.0.1:8000/'
 
   constructor(private http:HttpClient) { }
   //Send a get method (called using the users email)
