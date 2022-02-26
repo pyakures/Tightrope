@@ -92,7 +92,7 @@ export class EditeventComponent implements OnInit {
         if(this.EventsList[i].EventID == this.service.sharedid){
           console.log(this.EventsList[i]);
           
-          this.service.deleteEvent(this.EventsList[i]).subscribe(res=>{
+          this.service.deleteEvent(this.service.sharedid).subscribe(res=>{
             alert(res.toString());});
 
 
