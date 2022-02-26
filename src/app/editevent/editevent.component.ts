@@ -84,9 +84,7 @@ export class EditeventComponent implements OnInit {
   }
 
   deleteCurrentEvent(){
-    
-   
-    var tempstring= this.service.sharedid;
+  
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
     
@@ -106,6 +104,7 @@ export class EditeventComponent implements OnInit {
     });
     
     this.AuthReRoute.navigate(['/home']);
+ 
     
     
     
@@ -140,7 +139,6 @@ export class EditeventComponent implements OnInit {
 
     //Returns user to calendar after submitting changes
     this.AuthReRoute.navigate(['/home']);
-    this.getEventInfo();
   }
 }
 

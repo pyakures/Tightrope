@@ -58,6 +58,8 @@ export class NeweventComponent implements OnInit {
             alert(res.toString());});
         }); 
 
+      this.AuthReRoute.navigate(['/home']);
+      
 
 }
 }
