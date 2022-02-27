@@ -4,6 +4,7 @@
     padding-right: 1em;
     width: 100%;
     text-align: right;
+    margin-bottom: 2em;
 }
 
 .account-link a {
@@ -41,14 +42,18 @@
     height: max-content;
     margin: 0 auto;
     padding-top: 0em;
+    padding-bottom: 0;
 }
 
 /*Stress Gauge stylings*/
 #stresslevelarc{
-    transform: translate(0px, 9.5vh);
-    font-size: 1.7vh;
+    /*transform: translate(0px,10vw);*/
+    font-size: 2vh;
+    margin-bottom: 0em;
+    padding-bottom: 0;
+    font-weight: 500;
     text-align: center;
-    color: grey;
+    color: #8b8b8b;
 }
 
 .stress-guage .stress-summary-panel {
@@ -141,6 +146,63 @@
     margin-top: 0em;
     position: relative;
 }
+
+.icon-group {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.icon-individual {
+    width: 30%;
+    float: left;
+    text-decoration: none;
+    color: black;
+    font-size: 70%;
+    font-weight: 500;
+    margin-right: 5%;
+    line-height: 1.2;
+}
+
+.icon-individual img {
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.streak-message {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.streak-message h5 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.75em;
+}
+
+.streak-message h4 {
+    color: black;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.streak-message a {
+    text-align: center;
+    width: max-content;
+    margin-top: 1em;
+    color: #8b8b8b;
+    font-size: 0.7em;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 2px dotted;
+}
+
 /*
 .activities-area a {
     background-color: #7fba02;
