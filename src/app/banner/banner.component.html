@@ -16,7 +16,7 @@
       <div class="navbar-brand row">
         <!--Link to the img files for the logos-->
         <div >
-          <a class="navbar-item" routerLink='../home' >
+          <a class="navbar-item" (click)="logoclick()" >
             <img class="logoimage" src= "../../assets/Tightrope-Logo-Green.png" alt="Tightrope">
           </a> 
           <button class="navbar-toggler sidebarbutton" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
