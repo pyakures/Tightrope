@@ -5,6 +5,7 @@
 
     padding: 20px;
     height: 125px;
+    width: 70%;
 
 }
 
@@ -14,6 +15,17 @@
 
 .header-nav img {
     height: 40px;
+}
+
+.generate-mindfulness {
+    border: none;
+    background-color: #ebebeb;
+    border-radius: 20px;
+    padding: 0.5em 1em 0.5em 1em;
+    margin-top: 0.4em;
+    float: right;
+    font-weight: 600;
+    color: black;
 }
 
 
