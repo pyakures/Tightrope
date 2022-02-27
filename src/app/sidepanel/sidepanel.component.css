@@ -174,8 +174,10 @@
 }
 
 .streak-message {
-    margin-top: 5vw;
+    padding-top: 15%;
     text-align: center;
+    height: 100%;
+    font-size: 2.5vh;
 }
 
 .streak-message h5 {
@@ -348,6 +350,7 @@ dp-day-calendar {
 ::ng-deep .dp-calendar-day{
     background: #ebebeb !important;
 }
+
 
 ::ng-deep .dp-day-calendar-container{
     background: #ebebeb !important;
