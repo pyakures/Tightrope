@@ -4,7 +4,7 @@
     padding-right: 1em;
     width: 100%;
     text-align: right;
-    margin-bottom: 0em;
+    margin-bottom: 1vw;
 }
 
 .account-link a {
@@ -314,15 +314,17 @@
 /*Define Space for mini calendar*/
 .sidecal {
     font-size: 10px;
-    height: auto;
+    height: 100%;
+    align-self: baseline;
     width: 100%;
     color: black;
-    position:absolute;
     text-align: center;
-    display: inline-flexbox;
+    display: table;
     margin-left: auto;
     margin-right: auto;
     bottom: 2em;
+    padding-top: 10%;
+    
 }
 
 dp-day-calendar {
