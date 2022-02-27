@@ -1,19 +1,62 @@
 //Auto generated code by Angular
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener } from '@angular/core';
+import { CalendarService } from '../calendar.service';
+import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
+import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes } from 'date-fns';
+import { Subject } from 'rxjs';
+import {first} from 'rxjs/operators'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Time } from '@angular/common';
+import { DayCalendarComponent } from 'ng2-date-picker';
+import { AuthService } from '../service/auth.service';
+import {Router, RouterLink} from '@angular/router';
+import { templateJitUrl } from '@angular/compiler';
+import {SharedService} from 'src/app/shared.service';
 
 @Component({
   selector: 'app-signup',
+  changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService) { }
+
+  firstName:any;
+  lastName:any;
+  email:any;
+  password:any;
+  repeatPassword:any;
 
   ngOnInit(): void {
   }
 
-  submit(){
-    //needs to creat a new usedr token here
+  onSubmit(){
+    if(this.password==this.repeatPassword){    
+      let userVar = {username: this.email, first_name: this.firstName, last_name: this.lastName, email: this.email, password: this.password};
+      console.log(userVar);
+      this.service.addProfile(userVar).subscribe(response =>{console.log('server response: ', response);});
+      //alert("Success. Please Login!");
+      //this.AuthReRoute.navigate(['/login']);
+      this.authService.login(this.email, this.password).pipe(first())
+        .subscribe( data => {
+                              console.log(data);
+                            }
+                  )
+      
+      var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+      if(currentUser.email == this.email){    
+        this.AuthReRoute.navigate(['/home'])
+      }
+    }
+    else{
+      alert("Passwords does not match. Please try again!");
+      this.AuthReRoute.navigate(['/signup']);
+    }
+    
+
   }
 }

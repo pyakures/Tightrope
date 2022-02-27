@@ -27,7 +27,7 @@ export class SidepanelComponent implements OnInit {
 
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
-
+  userVar:any;
   stresslevel:any=[];
   stressfullDay:any;
 
@@ -75,9 +75,11 @@ export class SidepanelComponent implements OnInit {
 
   displayCurrentUser():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.firstName = currentUser.userFirstName;
-    this.lastName = currentUser.userLastName;
-    this.fullName= this.firstName + " " + this.lastName;
+    this.service.getProfile(currentUser.token).subscribe(data=>{this.userVar=data;
+      this.firstName = this.userVar.userFirstName;
+      this.lastName = this.userVar.userLastName;
+      this.fullName= this.firstName + " " + this.lastName;
+      });
 
   }
 
