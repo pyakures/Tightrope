@@ -48,7 +48,7 @@
 /*Stress Gauge stylings*/
 #stresslevelarc{
     transform: translate(0px,90px);
-    font-size: 2vh;
+    font-size: 1.8vh;
     margin-bottom: 0em;
     padding-bottom: 0;
     font-weight: 500;
@@ -189,7 +189,7 @@
 .streak-message h4 {
     color: black;
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.15em;
 }
 
 .streak-message a {
