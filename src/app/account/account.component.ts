@@ -13,13 +13,12 @@ export class AccountComponent implements OnInit {
   lastName = this.currentUser.userLastName;
   fullName= this.firstName + " " + this.lastName;
   Useremail= this.currentUser.email;
-  userVar:any;
 
   constructor(private service:SharedService) { }
 
   ngOnInit(): void {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getProfile(currentUser.token).subscribe(data=>{this.userVar=data})
   }
-  OnSubmit():void{console.log(this.userVar)}
+  OnSubmit():void{   
+  }
 }

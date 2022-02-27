@@ -18,8 +18,8 @@ export class SharedService {
 
   sharedid:any;
 //Django API URL
-//readonly APIUrl = "https://tightropeapi.herokuapp.com/"
-readonly APIUrl = 'http://127.0.0.1:8000/'
+readonly APIUrl = "https://tightropeapi.herokuapp.com/"
+//readonly APIUrl = 'http://127.0.0.1:8000/'
 
   constructor(private http:HttpClient) { }
   //Send a get method (called using the users email)
@@ -52,6 +52,7 @@ readonly APIUrl = 'http://127.0.0.1:8000/'
   getStressfullDay(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'stressday/', userEmail)
   }
+
   //This API will get the current users account information (password is hashed)
   //This will likely not be used by the front end but the following lines of code will allow access to the user profile info
   //
@@ -71,7 +72,60 @@ readonly APIUrl = 'http://127.0.0.1:8000/'
   //Required fields (in order (I think)): username, first_name, last_name, email, password
   //Note: "val" must have all of those fields
   //Note: Anyone can add a user to the database, it requires no authorization, hence the unqiue URL
+  //
+  //Additional Notes for Integration: The following lines of code are a way that the user ~could~ be added, this is a hardcoded solution
+  //so it will need to be adapted, but this is confirmed to work by michael (may not work if placed in the ngOnInIt, cause that thing sucks)
+  //
+  //let userVar = {username: 'newUser@test.com', first_name: 'New', last_name: 'User', email: 'newUser@test.com', password:'tightrope'};
+  //this.service.addProfile(userVar).subscribe(response =>{console.log('server response: ', response);});
+  //
+  //Additional Notes on the above lines of code:
+  //The "let" decorator and the subscribe function are key for this API working, not 100% sure why, disassemble those lines of code at your own risk
   addProfile(val:any){
     return this.http.post<any[]>(this.APIUrl + 'accounts/profileAdd/',val)
+  }
+
+  //This API will change a single aspect of a users profile
+  //Required fields in order: token (of the current user), a key value pair of what youd like to change
+  //Options for change: email (set bot the username and email to the passed value), password, first_name, last_name, username (not applicable because username and password will be equal always)
+  //Note: Users must be logged in/authenticated to perform these operations
+  //
+  //Additional Notes for Integration: The following lines of code are a way that the user ~could~ be edited, this is a hardcoded solution
+  //so it will need to be adapted, but this is confirmed to work by michael (may not work if placed in the ngOnInIt, cause that thing sucks)
+  //
+  //To change the email of the current User
+  //let changeVal = {email: 'test@test.com'};
+  //this.service.editProfile(this.currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+  //
+  //To change the password of the current User
+  //let changeVal = {password: 'newpassword'};
+  //this.service.editProfile(this.currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+  //
+  //To change the first_name of the current User
+  //let changeVal = {first_name: 'first Name'};
+  //this.service.editProfile(this.currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+  //
+  //To change the last_name of the current User
+  //let changeVal = {last_name: 'last Name'};
+  //this.service.editProfile(this.currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+  //
+  editProfile(token:string, val:any){
+    httpOptions.headers = httpOptions.headers.set('Authorization','Token ' + token);
+    return this.http.put<any[]>(this.APIUrl + 'accounts/profile/', val, httpOptions)
+  }
+
+  //This API will delete a user from the database
+  //Required Fields: token (of the current user)
+  //Note: it will provide no auto logout feature, so the user must be logged out of the front end by the front end
+  //
+  //Additional Notes for Integration: The following lines of code are a way that the user ~could~ be deleted, this is a hardcoded solution
+  //so it will need to be adapted, but this is confirmed to work by michael (may not work if placed in the ngOnInIt, cause that thing sucks)
+  //
+  //this.service.deleteProfile(this.currentUser.token).subscribe(response =>{console.log('server response: ', response);});
+  //
+  //This one is pretty simple ngl
+  deleteProfile(token:string){
+    httpOptions.headers = httpOptions.headers.set('Authorization','Token ' + token);
+    return this.http.delete<any[]>(this.APIUrl + 'accounts/profile/', httpOptions)
   }
 }
