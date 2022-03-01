@@ -89,6 +89,7 @@ export class EditeventComponent implements OnInit {
       alert(res.toString());});
 
     this.AuthReRoute.navigate(['/home']);
+    this.getEventInfo();
   }
 
   updateCurrentEvent(){
@@ -120,6 +121,7 @@ export class EditeventComponent implements OnInit {
 
     //Returns user to calendar after submitting changes
     this.AuthReRoute.navigate(['/home']);
+    this.getEventInfo();
   }
 }
 
