@@ -30,6 +30,9 @@ export class SidepanelComponent implements OnInit {
   userVar:any;
   stresslevel:any;
   stressfullDay:any;
+  stressfullCount: any; 
+  totalStress: any;
+  totalLeisure: any;
 
   firstName:any;
   lastName:any;
@@ -48,6 +51,11 @@ export class SidepanelComponent implements OnInit {
   ngOnInit(): void {
     this.displayStressLevel();
     this.displayStressfullDay();
+    this.displayStressfullCount();
+    //Displays in minutes atm
+    this.displayTotalStress();
+    //Returns both completed and scheduled (completed first)
+    this.displayMindfulnessCompleted();
     //Calendar display methods 
     this.displayCurrentUser();
     this.displayCurrentMonth();
@@ -86,11 +94,11 @@ export class SidepanelComponent implements OnInit {
   displayStressLevel():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getStressPredict(currentUser.email).subscribe(data=>{this.stresslevel=data; 
-    console.log(this.stresslevel)
-      
-  
-    }); 
-    
+            console.log(this.stresslevel)
+              
+          
+            }); 
+
   }
 
   displayStressfullDay():void{
@@ -102,5 +110,31 @@ export class SidepanelComponent implements OnInit {
     }); 
   }
 
+  displayStressfullCount():void{
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getStressEvents(currentUser.email).subscribe(data=>{this.stressfullCount=data; 
+    console.log(this.stressfullCount)
+      
+  
+    }); 
+  }
+
+  displayTotalStress():void{
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getTotalStress(currentUser.email).subscribe(data=>{this.totalStress=data; 
+    console.log(this.totalStress)
+      
+  
+    }); 
+  }
+
+  displayMindfulnessCompleted():void{
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getMindfulnessCount(currentUser.email).subscribe(data=>{this.totalLeisure=data; 
+    console.log(this.totalLeisure)
+      
+  
+    }); 
+  }
 }
 

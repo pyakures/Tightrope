@@ -45,12 +45,33 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
     return this.http.delete<any[]>(this.APIUrl + 'events/' + val)
   } 
 
+
+  // Comments by Kenzie later
   getStressPredict(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'predict/' + userEmail)
   }
 
   getStressfullDay(userEmail:any){
-    return this.http.get<any[]>(this.APIUrl + 'stressday/' + userEmail)
+    return this.http.get<any[]>(this.APIUrl + 'stressday/'+ userEmail, userEmail)
+  }
+
+  getStressEvents(userEmail:any){
+    return this.http.get<any[]>(this.APIUrl + 'stresscounter/' + userEmail, userEmail)
+  }
+
+  getTotalStress(userEmail:any){
+    return this.http.get<any[]>(this.APIUrl + 'worktime/' + userEmail, userEmail)
+  }
+
+  //returns both Completed leisure activities and then scheduled leisure activities 
+  //completed first then scheduled 
+  getMindfulnessCount(userEmail:any){
+    return this.http.get<any[]>(this.APIUrl + 'mindfulnesscounter/' + userEmail, userEmail)
+  }
+
+
+  postUserMindfulnessPreferences(userEmail:any){
+    return this.http.post<any[]>(this.APIUrl + 'mindfulpreference/' + userEmail, userEmail)
   }
 
   //This API will get the current users account information (password is hashed)
