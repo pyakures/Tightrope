@@ -49,7 +49,7 @@ export class SignupComponent implements OnInit {
       
       var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
       if(currentUser.email == this.email){    
-        this.AuthReRoute.navigate(['/home'])
+        this.AuthReRoute.navigate(['/initialMindful'])
       }
     }
     else{

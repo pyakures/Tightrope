@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import {Router, RouterLink} from '@angular/router';
-
 @Component({
-  selector: 'app-initial-mindful',
-  templateUrl: './initial-mindful.component.html',
-  styleUrls: ['./initial-mindful.component.css']
+  selector: 'app-change-mindful',
+  templateUrl: './change-mindful.component.html',
+  styleUrls: ['./change-mindful.component.css']
 })
-export class InitialMindfulComponent implements OnInit {
-   
+export class ChangeMindfulComponent implements OnInit {
+
   ngOnInit(): void {
-    
   }
   form: FormGroup;
 
@@ -52,5 +50,4 @@ export class InitialMindfulComponent implements OnInit {
     //var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
 
   }
-
 }

@@ -46,9 +46,9 @@ export class SidepanelComponent implements OnInit {
 
   
   ngOnInit(): void {
-
     this.displayStressLevel();
     this.displayStressfullDay();
+    //Calendar display methods 
     this.displayCurrentUser();
     this.displayCurrentMonth();
 
