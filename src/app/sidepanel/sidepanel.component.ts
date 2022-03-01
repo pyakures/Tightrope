@@ -28,7 +28,7 @@ export class SidepanelComponent implements OnInit {
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
   userVar:any;
-  stresslevel:any=[];
+  stresslevel:any;
   stressfullDay:any;
 
   firstName:any;

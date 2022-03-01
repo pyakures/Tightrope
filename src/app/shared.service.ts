@@ -46,7 +46,7 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   } 
 
   getStressPredict(userEmail:any){
-    return this.http.get<any[]>(this.APIUrl + 'predict/', userEmail)
+    return this.http.get<any[]>(this.APIUrl + 'predict/' + userEmail)
   }
 
   getStressfullDay(userEmail:any){
