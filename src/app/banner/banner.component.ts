@@ -34,6 +34,9 @@ export class BannerComponent implements OnInit {
     if(currentUser!= undefined){    
       this.AuthReRoute.navigate(['/home'])
     }
+    else{
+      this.AuthReRoute.navigate(['/login'])
+    }
 
   }
 

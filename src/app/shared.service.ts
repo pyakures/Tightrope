@@ -50,7 +50,7 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   }
 
   getStressfullDay(userEmail:any){
-    return this.http.get<any[]>(this.APIUrl + 'stressday/', userEmail)
+    return this.http.get<any[]>(this.APIUrl + 'stressday/' + userEmail)
   }
 
   //This API will get the current users account information (password is hashed)
