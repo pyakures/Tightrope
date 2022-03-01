@@ -15,17 +15,18 @@
         <h4 id="stresslevelarc">Stress Level</h4>
         <div class="stress-guage">
         <!--Imported gauge element-->
+        
+        <!-- for valie: takes in stresslevel variable and multiplies by 100 to display -->
         <mwl-gauge
             [max]="100"
             [dialStartAngle]="140"
             [dialEndAngle]="40"
-            [value]= "(stresslevel)"
+            [value]= "stresslevel * 100"
             [animated]="true"
             [animationDuration]="1"
         > 
         </mwl-gauge>
         
-
         <div class="stress-summary-panel">
             <h1>Stress Summary</h1>
             <h3>Stressful Events This Week</h3>

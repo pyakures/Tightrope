@@ -46,19 +46,25 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   } 
 
 
-  // Comments by Kenzie later
+  //Returns stress gauge number as a decimal value (ex. 0.25)
+  //Must pass useremail 
   getStressPredict(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'predict/' + userEmail)
   }
 
+  //Returns most stressful day in the week - just one
+  //Returns as a string
   getStressfullDay(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'stressday/'+ userEmail, userEmail)
   }
 
+  //Returns count of stressful events in the week 
+  //Whole value returned
   getStressEvents(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'stresscounter/' + userEmail, userEmail)
   }
 
+  //Returns time worked this week in minutes, long value 
   getTotalStress(userEmail:any){
     return this.http.get<any[]>(this.APIUrl + 'worktime/' + userEmail, userEmail)
   }
@@ -70,6 +76,8 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   }
 
 
+  //supposedly adds event to the user's mindfulness preferences
+  //not functional atm 
   postUserMindfulnessPreferences(userEmail:any){
     return this.http.post<any[]>(this.APIUrl + 'mindfulpreference/' + userEmail, userEmail)
   }

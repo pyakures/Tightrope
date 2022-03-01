@@ -99,6 +99,8 @@ export class SidepanelComponent implements OnInit {
           
             }); 
 
+    
+
   }
 
   displayStressfullDay():void{
@@ -117,6 +119,8 @@ export class SidepanelComponent implements OnInit {
       
   
     }); 
+
+    console.log(this.stressfullCount)
   }
 
   displayTotalStress():void{
