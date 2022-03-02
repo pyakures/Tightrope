@@ -72,7 +72,16 @@
 
 .activity-selection {
     margin-top: 2em;
-    column-count: 2;
     padding-left: 5em;
     width: 60%;
+}
+.checkbox-stuff label{
+    color: black;
+    font-size: 2em;
+    padding-left: 0.4em;
+    padding-top: 0.4em;
+}
+input[type=checkbox]{
+    transform: scale(2);
+
 }

@@ -34,6 +34,8 @@ import { StresssurveyComponent } from './stresssurvey/stresssurvey.component';
 import { QuestionsComponent } from './stresssurvey/questions/questions.component';
 import { InitialMindfulComponent } from './signup/initial-mindful/initial-mindful.component';
 import { ChangeMindfulComponent } from './change-mindful/change-mindful.component';
+import { InitialStresssurveyComponent } from './signup/initial-stresssurvey/initial-stresssurvey.component';
+import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial-questions/initial-questions.component';
 
 
 
@@ -57,6 +59,8 @@ import { ChangeMindfulComponent } from './change-mindful/change-mindful.componen
     QuestionsComponent,
     InitialMindfulComponent,
     ChangeMindfulComponent,
+    InitialStresssurveyComponent,
+    InitialQuestionsComponent,
 
 
   ],

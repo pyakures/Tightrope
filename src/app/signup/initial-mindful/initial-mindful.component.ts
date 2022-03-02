@@ -52,7 +52,7 @@ export class InitialMindfulComponent implements OnInit {
   submit() {
     console.log(this.form.value);
     //Will be implemented once adding a new user functionality is introduced
-    this.AuthReRoute.navigate(['/home']);
+    this.AuthReRoute.navigate(['/initialStresssurvey']);
     //var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.initializeMindfulPreferences();
 

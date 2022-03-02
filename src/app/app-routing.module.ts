@@ -15,6 +15,9 @@ import { StresssurveyComponent } from './stresssurvey/stresssurvey.component';
 import { QuestionsComponent } from './stresssurvey/questions/questions.component';
 import { InitialMindfulComponent } from './signup/initial-mindful/initial-mindful.component';
 import { ChangeMindfulComponent } from './change-mindful/change-mindful.component';
+import { InitialStresssurveyComponent } from './signup/initial-stresssurvey/initial-stresssurvey.component';
+import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial-questions/initial-questions.component';
+
 
 //Rougting done by all members of the team manually
 const routes: Routes = [
@@ -33,6 +36,8 @@ const routes: Routes = [
 {path: 'questions', component:QuestionsComponent},
 {path: 'initialMindful', component: InitialMindfulComponent},
 {path: 'changeMindful', component:ChangeMindfulComponent},
+{path: 'initialStresssurvey', component: InitialStresssurveyComponent},
+{path: 'initialQuestions', component: InitialQuestionsComponent},
 {path: '', redirectTo: '/login', pathMatch: 'full'}, //this is routing the main page of our website to the login page, this is temporary as i am not sure what we are going to be adding on the main page yet
 
 

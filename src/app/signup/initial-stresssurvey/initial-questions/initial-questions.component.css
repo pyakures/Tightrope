@@ -48,10 +48,12 @@
     font-size: 2em;
     color: gray;
     margin-top: 2em;
+    margin-bottom: .5em;
 }
 
 .content-wrapper h4 {
     color: black;
+    
 }
 
 .change-button {
@@ -70,18 +72,48 @@
     margin-top: 1em;
 }
 
-.activity-selection {
+
+.questions-wrapper{
     margin-top: 2em;
-    padding-left: 5em;
-    width: 60%;
+    column-count: 2;
 }
-.checkbox-stuff label{
-    color: black;
-    font-size: 2em;
-    padding-left: 0.4em;
-    padding-top: 0.4em;
-}
-input[type=checkbox]{
-    transform: scale(2);
+
+.questions-wrapper input{
+    margin-bottom: 2em;
+    width: 10%;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #7fba02;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
 
 }
+.questions-wrapper input:focus{
+    margin-bottom: 2em;
+    width: 10%;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: gray;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+    
+
+}
+.questions-wrapper label{
+    font-size: 2em;
+    color: #7fba02;
+
+}
+
+.questions-wrapper p{
+    font-size: 1.5em;
+    color: black;
+
+}
+
+
+

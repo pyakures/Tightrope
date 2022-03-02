@@ -12,104 +12,25 @@
 
   <div class="content-wrapper">
     <a class="back-link" routerLink='../home'>❮ Back to calendar</a>
-        <section>
-            <h1> Choose 3 Preferred Mindful activities</h1>
-          <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-              <!-- loops through list of activities to display them with a checkbox next to it -->
-            <div *ngFor="let activity of activities; let i=index">
-              <input type="checkbox" formArrayName="selectedActivities" [value]="activity.value" (change)="onCheckboxChange($event)" 
-              />
-              <!-- input is entered into form array 'selectedActivities' based on ts description -->
-              <h3>{{ activity.name}}</h3>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-          <a class="secondary-link" routerLink='../home'>❮&nbsp;&nbsp;Skip</a>
-          <!-- debugging prints selected activities to webpage directly  -->
-          <p>{{ form.value | json }}</p>
-        </section> 
+    <h1>Preferred Mindful Activities</h1>
+    <h2>How do you want to practice mindfulness? (Choose 3)</h2>
+    <h4>Description of why having user initialize here</h4>
+    <div class="activity-selection">
+    <section>
+        
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+          <!-- loops through list of activities to display them with a checkbox next to it -->
+        <div class="checkbox-stuff" *ngFor="let activity of activities; let i=index">
+          <input type="checkbox" id="form-checkbox" formArrayName="selectedActivities" [value]="activity.value" (change)="onCheckboxChange($event)">
+          <label for="form-checkbox"> {{ activity.name}}</label>
+          <span class="checkmark"></span>
+          <!-- input is entered into form array 'selectedActivities' based on ts description -->
         </div>
-        
-        <div class="activity-descriptions">
-            <h1> Mindfulness Activities descriptions</h1>
-            <table>
-                <tr>
-                <th>Name</th>
-                <th>Duration</th>
-                <th>How To</th>
-                </tr>
-        
-                <tr>
-                    <th>The Body Scan</th>
-                    <th>5min-30min</th>
-                    <th>1.Sit comfortably on the floor or chair
-                        2.Lay still/move with awareness
-                        3.Start at the toes of both feet to the top of the head - participant notices breathing patterns/ awareness to the weight of each portion of the scan 
-                        *can be guided w a meditation script*
-                        </th>
-                </tr>
-        
-                
-                <tr>
-                    <th>Mindful Seeing</th>
-                    <th>10 min</th>
-                    <th>1.Face a window
-                        2.Look outside - avoid labeling objects by conventional names, instead notice colors/patterns
-                        3.Take note of the Shapes and segment the view
-                        4.Be observant not critical
-                        5.If distracted, gently refocus on viewing shapes/patterns
-                        </th>
-                </tr>
-        
-                <tr>
-                    <th>Mindful Listening (2+ participants)</th>
-                    <th>15 min</th>
-                    <th>1.Each participant identifies one thing they are stressed about and one thing they are excited about
-                        2.Take turns speaking about the events identified in the previous step
-                        3.Notice how it feels to speak about the positive vs negative experience
-                        4.Notice how it feels to listen to the positive/negative experiences
-                        </th>
-                </tr>
-        
-                <tr>
-                    <th>The Self-Compassion Pause</th>
-                    <th>2-5 min</th>
-                    <th>1.Put a hand on your chest/give yourself a hug & breath
-                        2.Acknowledge the emotion as ‘suffering’ without being consumed by the emotion but rather give yourself permission to feel it
-                        3.Vocalize (variation of):
-                        “This is suffering”
-                        “Suffering is part of being human”
-                        Offer compassion to yourself - “I am enough”
-                        </th>
-                </tr>
-        
-                <tr>
-                    <th>Five Senses Exercise</th>
-                    <th>5 min</th>
-                    <th>1.Notice 5 things you see
-                        2.Notice 4 things you feel
-                        3.Notice 3 things you hear
-                        4.Notice 2 things you smell
-                        5.Notice 1 thing you taste
-                        </th>
-                </tr>
-        
-                <tr>
-                    <th>The 3-Step Mindfulness Exercise </th>
-                    <th>5 min</th>
-                    <th>1.Bring awareness to what you’re doing
-                        2.Bring awareness to breathing (6 breaths)
-                        3.Notice the sensations you’re feeling 
-                        4.Expand awareness to the environment (patterns, shapes, textures
-                        </th>
-                </tr>
-        
-                <tr>
-                    <th>3-Minute Breathing Space </th>
-                    <th>3 min</th>
-                    <th>1.Minute 1  - focus on feelings, thoughts,sensations 
-                        2.Minute 2 - keeping awareness of breath
-                        3.Minute 3 - notice the ways in which breathing affects the rest of the body 
-                        </th>
-                </tr>
-            </table>
+        <button class="change-button" type="submit">Submit</button>
+      </form>
+      
+      <!-- debugging prints selected activities to webpage directly  -->
+      <p>{{ form.value | json }}</p>
+    </section> 
+    </div>
+    </div>
