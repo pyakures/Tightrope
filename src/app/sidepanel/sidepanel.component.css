@@ -71,7 +71,7 @@
     height: 20em;
     transition: 0.1s;
     z-index: 2;
-    
+    overflow: auto;
 }
 
 .stress-guage:hover .stress-summary-panel, .stress-guage:focus .stress-summary-panel {
@@ -276,6 +276,58 @@
     height: 0.9em;
     width: 50%;
     margin-bottom: 1.7em;
+}
+
+.stress-summary-panel p {
+    font-size: 0.7em;
+    margin-top: 0px;
+    padding-top: 0;
+    margin-right: 1em;
+    float: left;
+    overflow: auto;
+    width: 15%;
+}
+
+.stress-summary-panel progress {
+    border-radius: 20px;
+    background-color: #7fba02;
+    border: 0px;
+    height: 0.9em;
+    width: 80%;
+    margin-bottom: 1.5em;
+    padding-bottom: 0;
+    overflow: auto;
+}
+
+.stress-summary-panel progress::-webkit-progress-bar {
+    border-radius: 20px;
+    background-color: #7fba02;
+}
+
+.stress-summary-panel progress::-webkit-progress-value {
+    border-radius: 20px;
+    background-color: #ebebeb;
+}
+
+.stress-summary-panel progress::-moz-progress-bar {
+    border-radius: 20px;
+    background-color: #ebebeb
+}
+
+meter {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    --background: #ebebeb;
+}
+
+meter::-webkit-meter-bar {
+    background: none;
+    background-color: #ebebeb;
+}
+
+meter::-moz-meter-bar {
+    -moz-appearance: meterchunk;
+    border-radius: 20px;
 }
 
 
