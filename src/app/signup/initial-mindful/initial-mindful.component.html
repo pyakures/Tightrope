@@ -1,30 +1,16 @@
-<app-banner></app-banner>
-<router-outlet></router-outlet>
+<div class="header-nav">
+    <a class="navbar-item" routerLink='../login' >
+      <img src= "../../assets/Tightrope-Logo-Green.png" alt="Tightrope">
+    </a> 
+    <button class="sidebarbutton" >
+      &#9776;
+    </button>
+    
+  </div>
+  <app-sidepanel class="sidepannelview"></app-sidepanel>
+  <a class="secondary-link" routerLink='../home'>Skip&nbsp;&nbsp;></a>
 
-
-
-
-
-<div class="activity-selection">
-<section>
-    <h1> Choose 3 Preferred Mindful activities</h1>
-  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-      <!-- loops through list of activities to display them with a checkbox next to it -->
-    <div *ngFor="let activity of activities; let i=index">
-      <input type="checkbox" formArrayName="selectedActivities" [value]="activity.value" (change)="onCheckboxChange($event)" 
-      />
-      <!-- input is entered into form array 'selectedActivities' based on ts description -->
-      <h3>{{ activity.name}}</h3>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- debugging prints selected activities to webpage directly  -->
-  <p>{{ form.value | json }}</p>
-</section> 
-</div>
-
-<div class="activity-descriptions">
+  <!-- <div class="activity-descriptions">
     <h1> Mindfulness Activities descriptions</h1>
     <table>
         <tr>
@@ -107,4 +93,24 @@
                 </th>
         </tr>
     </table>
+</div> -->
+<h1> Choose 3 Preferred Mindful activities</h1>
+<div class="activity-selection">
+<section>
+    
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <!-- loops through list of activities to display them with a checkbox next to it -->
+    <div *ngFor="let activity of activities; let i=index">
+      <input type="checkbox" formArrayName="selectedActivities" [value]="activity.value" (change)="onCheckboxChange($event)" 
+      />
+      <!-- input is entered into form array 'selectedActivities' based on ts description -->
+      <h3>{{ activity.name}}</h3>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <!-- debugging prints selected activities to webpage directly  -->
+  <p>{{ form.value | json }}</p>
+</section> 
 </div>
+

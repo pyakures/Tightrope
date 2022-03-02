@@ -33,6 +33,7 @@ import { StreakComponent } from './streak/streak.component';
 import { StresssurveyComponent } from './stresssurvey/stresssurvey.component';
 import { QuestionsComponent } from './stresssurvey/questions/questions.component';
 import { InitialMindfulComponent } from './signup/initial-mindful/initial-mindful.component';
+import { ChangeMindfulComponent } from './change-mindful/change-mindful.component';
 
 
 
@@ -55,6 +56,7 @@ import { InitialMindfulComponent } from './signup/initial-mindful/initial-mindfu
     StresssurveyComponent,
     QuestionsComponent,
     InitialMindfulComponent,
+    ChangeMindfulComponent,
 
 
   ],

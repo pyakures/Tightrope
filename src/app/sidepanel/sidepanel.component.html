@@ -15,32 +15,40 @@
         <h4 id="stresslevelarc">Stress Level</h4>
         <div class="stress-guage">
         <!--Imported gauge element-->
+        
+        <!-- for valie: takes in stresslevel variable and multiplies by 100 to display -->
         <mwl-gauge
             [max]="100"
             [dialStartAngle]="140"
             [dialEndAngle]="40"
-            [value]= "(stresslevel)"
+            [value]= "stresslevel * 100"
             [animated]="true"
             [animationDuration]="1"
         > 
         </mwl-gauge>
         
-
         <div class="stress-summary-panel">
             <h1>Stress Summary</h1>
             <h3>Stressful Events This Week</h3>
-            <div class="temp-slider"></div>
+            <!-- <div class="temp-slider"></div> -->
+            <p>7 events</p>
+            <progress class="stress-summary-meters" value="7" min="0" max="10">2 events</progress>
+            
             <h3>Average Work Time Per Day</h3>
-            <div class="temp-slider"></div>
+            <p>3 hours</p>
+            <progress class="stress-summary-meters" value="3" min="0" max="10">2 events</progress>
+
             <h3>Mindfulness Events Completed</h3>
-            <div class="temp-slider"></div>
+            <p>9 events</p>
+            <progress class="stress-summary-meters" value="9" min="0" max="10">2 events</progress>
+
             <h3>Most Stressful Days This Week</h3>
-            <p>Tuesday, Thursday</p>
+            <h4>{{stressfullDay}}</h4>
             
         </div>
         </div>
 
-        
+        <!--
         <div class="streak-area">
             <h1>Nice work! 👍</h1>
             <h2>You've got a <span class="streak-number">4 week </span> mindfulness streak going!</h2>
@@ -52,6 +60,25 @@
             <a routerLink="/streak" class="edit-activities">Edit Mindfulness Activities ➜</a><br><br>
             <a routerLink="/streak" class="view-local-events">View Upcoming Local Events</a><br><br>
             <a routerLink="/stresssurvey" class="stress-survey">Stress Survey</a>
+        </div>
+    -->
+
+        <div class="icon-group">
+            <a class="icon-individual" routerLink="/stresssurvey">
+                <img src= "../../assets/icons/tr_survey.png"><br>Stress<br>Survey
+            </a>
+            <a class="icon-individual" routerLink="/changeMindful">
+                <img src= "../../assets/icons/tr_mindfulness.png"><br>Mindfulness<br>Events
+            </a>
+            <a class="icon-individual" style="margin-right: 0" routerLink="/streak">
+                <img src= "../../assets/icons/tr_localevents.png"><br>Local<br>Events
+            </a>
+        </div>
+
+        <div class="streak-message">
+            <h5>Weekly Mindfulness Streak</h5>
+            <h4>3 Weeks</h4>
+            <a routerLink="/streak">Change Streak Goal ➜</a>
         </div>
 
         <!--p  class="infotext">You've got a 4 week streak of doing three or more relaxing activities. <br>Way to go!</p>
