@@ -285,7 +285,7 @@
     margin-right: 1em;
     float: left;
     overflow: auto;
-    width: 15%;
+    width: 20%;
 }
 
 .stress-summary-panel progress {
@@ -293,7 +293,7 @@
     background-color: #7fba02;
     border: 0px;
     height: 0.9em;
-    width: 80%;
+    width: 75%;
     margin-bottom: 1.5em;
     padding-bottom: 0;
     overflow: auto;

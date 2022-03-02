@@ -29,18 +29,18 @@
         
         <div class="stress-summary-panel">
             <h1>Stress Summary</h1>
-            <h3>Stressful Events This Week</h3>
+            <h3>Work Events This Week</h3>
             <!-- <div class="temp-slider"></div> -->
             <p>{{stressfullCount}} events</p>
-            <progress class="stress-summary-meters" value="{{stressfullCount}}" min="0" max="20">2 events</progress>
+            <progress class="stress-summary-meters" value="{{stressfullCount}}" min="0" max="10">2 events</progress>
             
             <h3>Average Work Time Per Day</h3>
-            <p>{{totalStress}} minutes</p>
-            <progress class="stress-summary-meters" value="{{totalStress}}" min="0" max="200">2 events</progress>
+            <p>{{totalStress}} hours</p>
+            <progress class="stress-summary-meters" value="{{totalStress}}" min="0" max="10">2 events</progress>
 
-            <h3>Mindfulness Events Completed</h3>
-            <p>9 events</p>
-            <progress class="stress-summary-meters" value="0" min="0" max="10">2 events</progress>
+            <h3>Leisure Events This Week</h3>
+            <p>{{totalLeisure[0]}} events</p>
+            <progress class="stress-summary-meters" value="{{totalLeisure[0]}}" min="0" max="10">2 events</progress>
 
             <h3>Most Stressful Days This Week</h3>
             <h4>{{stressfullDay}}</h4>

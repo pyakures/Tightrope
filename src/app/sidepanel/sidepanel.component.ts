@@ -13,6 +13,7 @@ import { AuthService } from '../service/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
+//import { Console } from 'console';
 
 
 @Component({
@@ -32,6 +33,7 @@ export class SidepanelComponent implements OnInit {
   stressfullDay:any;
   stressfullCount: any; 
   totalStress: any;
+  totalStressTime : any;
   totalLeisure: any;
 
   firstName:any;
@@ -129,7 +131,13 @@ export class SidepanelComponent implements OnInit {
     console.log(this.totalStress)
       
   
+    this.totalStress = Number(this.totalStress/60).toFixed(2);
+    console.log("Stress Time:");
+    console.log(this.totalStress);
     }); 
+
+    
+
   }
 
   displayMindfulnessCompleted():void{
