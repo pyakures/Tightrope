@@ -21,6 +21,14 @@ export const colors: any = {
         secondary: '#ffffff',
         
     },
+    lightBlue: {
+      primary: '#00B7FF',
+      secondary: '#00B7FF',
+    },
+    orange: {
+      primary: '#FF9D00',
+      secondary: '#FF9D00',
+    },
     grey: {
         primary: '#7fba02',
         secondary: '#ebebeb',

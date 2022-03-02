@@ -213,14 +213,14 @@ export class CalendarComponent implements OnInit {
         var timehourend:number = Number(hourstringend);
         var timeminutesend = Number(minutestringend);
 
-        var EventColor= colors.halfGreen;
+        var EventColor= colors.green;
     
 
         if(this.EventsList[i].EventType=="2"){
-          var EventColor = colors.green;
+          var EventColor = colors.lightBlue;
         }
         else if(this.EventsList[i].EventType=="0"){
-          var EventColor= colors.red;
+          var EventColor= colors.orange;
         }
         
     
