@@ -15,6 +15,7 @@ export class InitialMindfulComponent implements OnInit {
   }
   form: FormGroup;
 
+  
   //Display all activity options 1-7
   //Hardcoded inputs at this time
   //Don't change the values for each activity
@@ -28,7 +29,11 @@ export class InitialMindfulComponent implements OnInit {
     { name: '3-Minute Breathing Space', value: 9 },
   ];
 
-  mindfulPreferenceID: any;
+  //array for the input values to be stored
+  //format for easy retrevial for backend s
+  mindfulPreferenceIDs: any = [];
+  test: any;
+  
 
   constructor(fb: FormBuilder, private AuthReRoute: Router, private service:SharedService) {
     this.form = fb.group({
@@ -46,24 +51,34 @@ export class InitialMindfulComponent implements OnInit {
       .findIndex(x => x.value === event.target.value);
       selectedActivities.removeAt(index);
     }
+
+    console.log(selectedActivities);
+    //set selected array values into the mindfulIDs array
+    //isolates values from FormArray object
+    this.mindfulPreferenceIDs = selectedActivities.value;
+    
+    
+    this.test = { mindfulPreferenceIDs: this.mindfulPreferenceIDs};
+    console.log(this.test);
+
   }
 
   //Prints selected activities to the console at this time
-  submit() {
-    console.log(this.form.value);
-    //Will be implemented once adding a new user functionality is introduced
-    this.AuthReRoute.navigate(['/initialStresssurvey']);
+  submit() {   
+    
     //var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.initializeMindfulPreferences();
-
+    //Routes to next step in initiation
+    this.AuthReRoute.navigate(['/initialStresssurvey']);
 
   }
 
-  //TBD 
+  //pushes the new mindfulpreferences to the backend w shared service method
   initializeMindfulPreferences():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.mindfulPreferenceID = 1;
-    this.service.postUserMindfulnessPreferences(currentUser.email).subscribe(res=>{alert(res.toString());});
+    console.log(this.test);
+    //method takes in username and the mindfulPreferenceIDs as arguments (should be just the integer array)
+    this.service.postUserMindfulnessPreferences(currentUser.email, this.test).subscribe(res=>{alert(res.toString());});
       
   }
 

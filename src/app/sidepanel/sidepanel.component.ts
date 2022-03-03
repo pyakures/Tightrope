@@ -54,9 +54,9 @@ export class SidepanelComponent implements OnInit {
     this.displayStressLevel();
     this.displayStressfullDay();
     this.displayStressfullCount();
-    //Displays in minutes atm
+    //Displays in hours with 2 places for decimal
     this.displayTotalStress();
-    //Returns both completed and scheduled (completed first)
+    //Returns array with both completed and scheduled (completed first)
     this.displayMindfulnessCompleted();
     //Calendar display methods 
     this.displayCurrentUser();

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable } from  'rxjs';
+import {Observable, throwError } from  'rxjs';
 import { HttpHeaders } from '@angular/common/http';
-
+import { catchError } from 'rxjs/operators';
 
 //This little variable right here lets us send authentication along side our requests 
 const httpOptions = {
@@ -77,10 +77,35 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
 
 
   //supposedly adds event to the user's mindfulness preferences
-  //not functional atm 
-  postUserMindfulnessPreferences(userEmail:any){
-    return this.http.post<any[]>(this.APIUrl + 'mindfulpreference/' + userEmail, userEmail)
+  //val is the user preference and is a dictionary value: dictionary = {mindfulPrefereneIDs: array_of_integers}
+  postUserMindfulnessPreferences(userEmail:any, val:any){
+    console.log(val)
+    return this.http.post<any[]>(this.APIUrl + 'mindfulpreference/' + userEmail, val)
+    .pipe(
+      catchError((err) => {
+        console.log('error caught in service')
+        console.error(err);
+
+        //Handle the error here
+
+        return throwError(err);    //Rethrow it back to component
+      })
+    )
   }
+
+  //Post initial stress survey data
+  //takes in dictionary for val from survey: dictionary = {Useremail:"", SurveySum:""}
+  postSurveyData(useremail:any, val:any){
+    return this.http.post<any[]>(this.APIUrl + 'stresssurvey/' + useremail, val)
+  }
+
+  //Updates stress survey data
+  //takes in dictionary for val from survey: dictionary = {Useremail:"", SurveySum:""}
+  updateSurveyData(useremail:any, val:any){
+    return this.http.put<any[]>(this.APIUrl + 'stresssurvey/' + useremail, val)
+  }
+
+  
 
   //This API will get the current users account information (password is hashed)
   //This will likely not be used by the front end but the following lines of code will allow access to the user profile info

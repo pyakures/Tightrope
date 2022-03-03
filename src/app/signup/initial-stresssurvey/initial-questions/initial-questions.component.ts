@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shared.service';
+
+
 @Component({
   selector: 'app-initial-questions',
   templateUrl: './initial-questions.component.html',
   styleUrls: ['./initial-questions.component.css']
 })
 export class InitialQuestionsComponent implements OnInit {
-  constructor( private AuthReRoute: Router){}
+  constructor( private AuthReRoute: Router, private service:SharedService){}
 
   //Initialize question values at 0
   q1: number = 0;
@@ -20,6 +23,12 @@ export class InitialQuestionsComponent implements OnInit {
   q9: number = 0;
   q10: number = 0;
 
+  sum: number = 0;
+
+  result: any;
+
+  ngOnInit(): void {
+  }
   //Function Calculates Perceived Stress Score according to the resource pdf
   //Once Survey is complete, user is routed to home screen w Calendar
   //Q4,5,6,8 are inverted per the PSS scoring 
@@ -36,13 +45,32 @@ export class InitialQuestionsComponent implements OnInit {
     var q10 = this.q10;
 
 
-    var sum = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
+    this.sum = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
     //For now the sum is exported to the console log
-    console.log('Sum: ',sum);
+    console.log('Sum: ',this.sum);
+    
+    this.postValue();
 
     //Reroute to home 
     this.AuthReRoute.navigate(['/home'])
   }
-  ngOnInit(): void {
+
+  postValue(){
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.result = { UserEmail : currentUser.email, SurveyValue : this.sum};
+    console.log(this.result);
+    this.service.postSurveyData(currentUser.email, this.result).subscribe(res=>{alert(res.toString());});
+
   }
+
+  skipSurvey(){
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.result = { UserEmail : currentUser.email, SurveyValue : this.sum};
+    console.log(this.result);
+    this.service.postSurveyData(currentUser.email, this.result).subscribe();
+
+    this.AuthReRoute.navigate(['/home']);
+
+  }
+ 
 }

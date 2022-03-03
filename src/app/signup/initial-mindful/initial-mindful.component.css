@@ -85,3 +85,20 @@ input[type=checkbox]{
     transform: scale(2);
 
 }
+
+/* popup stuff test - don't delete
+ .tooltip-wrap {
+    position: relative;
+  }
+  .tooltip-wrap .tooltip-content {
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    background-color: #fff;
+    padding: .5em;
+  }
+  .tooltip-wrap:hover .tooltip-content {
+    display: block;
+  } */

@@ -35,12 +35,14 @@
             <progress class="stress-summary-meters" value="{{stressfullCount}}" min="0" max="10">2 events</progress>
             
             <h3>Average Work Time Per Day</h3>
+            <!-- Upper bound determined by 8 hr work day -->
             <p>{{totalStress}} hours</p>
-            <progress class="stress-summary-meters" value="{{totalStress}}" min="0" max="5">2 events</progress>
+            <progress class="stress-summary-meters" value="{{totalStress}}" min="0" max="8">2 events</progress>
 
-            <h3>Leisure Events This Week</h3>
+            <h3>Completed Leisure Events This Week</h3>
+            <!-- Upper bound determined by number of scheduled leisure events that week -->
             <p>{{totalLeisure[0]}} events</p>
-            <progress class="stress-summary-meters" value="{{totalLeisure[0]}}" min="0" max="5">2 events</progress>
+            <progress class="stress-summary-meters" value="{{totalLeisure[0]}}" min="0" max="{{totalLeisure[1]}}">2 events</progress>
 
             <h3>Most Stressful Days This Week</h3>
             <h4>{{stressfullDay}}</h4>
