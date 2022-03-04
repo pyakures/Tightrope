@@ -58,17 +58,18 @@
 
 .stress-guage .stress-summary-panel {
     visibility: hidden;
-    width: 20em;
+    width: max-content; /* 20em */
     background-color: #7fba02;
     color: #fff;
     border-radius: 15px;
     box-shadow: -2em 1em 11em -2em black;
     padding: 1em;
+    padding-bottom: 0;
     /* Position the tooltip */
     position: absolute;
     top: 2em;
     left: -400px;
-    height: 20em;
+    height: max-content; /* 20em */
     transition: 0.1s;
     z-index: 2;
     overflow: auto;
