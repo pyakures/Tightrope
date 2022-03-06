@@ -106,6 +106,12 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   }
 
   
+  //Local Events Reccomendations
+  //only takes in user's email as a string
+  getLocalEvents(useremail:any){
+    return this.http.get<any[]>(this.APIUrl + 'localevents/' + useremail, useremail)
+  }
+  
 
   //This API will get the current users account information (password is hashed)
   //This will likely not be used by the front end but the following lines of code will allow access to the user profile info

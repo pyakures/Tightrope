@@ -36,6 +36,7 @@ import { InitialMindfulComponent } from './signup/initial-mindful/initial-mindfu
 import { ChangeMindfulComponent } from './change-mindful/change-mindful.component';
 import { InitialStresssurveyComponent } from './signup/initial-stresssurvey/initial-stresssurvey.component';
 import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial-questions/initial-questions.component';
+import { LocalEventsComponent } from './local-events/local-events.component';
 
 
 
@@ -61,6 +62,7 @@ import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial
     ChangeMindfulComponent,
     InitialStresssurveyComponent,
     InitialQuestionsComponent,
+    LocalEventsComponent,
 
 
   ],

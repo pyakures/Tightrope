@@ -1,0 +1,46 @@
+<div class="header-nav">
+    <a class="navbar-item" routerLink='../login' >
+      <img src= "../../assets/Tightrope-Logo-Green.png" alt="Tightrope">
+    </a> 
+    <button class="sidebarbutton" >
+      &#9776;
+    </button>
+    
+  </div>
+  <app-sidepanel class="sidepannelview"></app-sidepanel>
+
+  <div class="content-wrapper">
+    <a class="back-link" routerLink='../home'>❮ Back to calendar</a>
+    <h1>Local Events</h1><br>
+    <h2>What's happening near you?</h2>
+    <h3>Ticketed Events</h3>
+    <h4>Description of event table....</h4><br>
+    <h4>It may take a while for events to load(be patient)</h4>
+
+    <!-- List upcoming events in a table -->
+    <table class="table table-striped">
+        <thead>
+            <th>Event Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Location</th>
+            <th>Event URL</th>
+            <th></th>
+        </thead>
+        <tbody *ngFor="let event of LocalEventsList">
+            <tr *ngFor="let data of event">
+                <td>{{data.EventName}}</td>
+                <td>{{data.StartDate}}</td>
+                <td>{{data.EndDate}}</td>
+                <td>{{data.Location}}</td>
+                <td><button type="button" class="change-button" (click)="LinktoMoreInfo(data.Notes)">More Info</button></td>
+                <td><button type="button" class="change-button" (click)="addLocalEvent(data)">Add To Calendar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
