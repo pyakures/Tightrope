@@ -29,6 +29,7 @@ export class CalendarComponent implements OnInit {
   
   events: CalendarEvent[] = [];
   EventsList:any=[];
+  MindfulEvent: any=[];
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
   //SharedService is for accessing the methods in that file - must be .service to denote appropriate method
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){
@@ -45,6 +46,17 @@ export class CalendarComponent implements OnInit {
     {eventID: 1, eventName: "test"}
   ]
 
+  //Blank event to add generated mindful event to calendar
+  new_Mindful = {
+    EventName: "",
+    EndDate: "",
+    EventType: "",
+    Location: "",
+    Notes: "",
+    StartDate: "",
+    StressLevel: "",
+    UserEmail: ""
+  }
   
 
   setView(view: CalendarView) {
@@ -247,6 +259,25 @@ export class CalendarComponent implements OnInit {
     
 
 
+  }
+
+  generateMindfulEvent(){
+    console.log("generate mindful event selected:");
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    //Pulls mindful info from user preferences for mindful activities
+    this.service.getMindfulEvents(currentUser.email).subscribe(data=>{this.MindfulEvent=data; console.log(this.MindfulEvent);
+    //Parses event data from selected event to the new event so userEmail can be added to the object 
+    //Needs to add information to Mindful event 'Location' attribute 
+    //this.new_Mindful = {EventName: this.MindfulEvent.EventName, EventType: this.MindfulEvent.EventType, EndDate: this.MindfulEvent.EndDate, StartDate: this.MindfulEvent.StartDate,
+    //    Location: "Anywhere", Notes: this.MindfulEvent.Notes, StressLevel: this.MindfulEvent.StressLevel, UserEmail: this.MindfulEvent.UserEnail}  
+    this.MindfulEvent.Location = "anywhere";
+    console.log("mindful event (done)", this.MindfulEvent);
+    //console.log("This new mindful" ,this.new_Mindful);
+    //Adds new local event to user's calendar 
+    this.service.addEvent(this.MindfulEvent).subscribe(res=>{
+          alert(res.toString());});
+      });
+    
   }
 
   /*

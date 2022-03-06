@@ -96,7 +96,7 @@ export class SidepanelComponent implements OnInit {
   displayStressLevel():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getStressPredict(currentUser.email).subscribe(data=>{this.stresslevel=data; 
-            console.log(this.stresslevel)
+           // console.log(this.stresslevel)
               
           
             }); 
@@ -108,7 +108,7 @@ export class SidepanelComponent implements OnInit {
   displayStressfullDay():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getStressfullDay(currentUser.email).subscribe(data=>{this.stressfullDay=data; 
-    console.log(this.stressfullDay)
+    //console.log(this.stressfullDay)
       
   
     }); 
@@ -117,23 +117,23 @@ export class SidepanelComponent implements OnInit {
   displayStressfullCount():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getStressEvents(currentUser.email).subscribe(data=>{this.stressfullCount=data; 
-    console.log(this.stressfullCount)
+    //console.log(this.stressfullCount)
       
   
     }); 
 
-    console.log(this.stressfullCount)
+    //console.log(this.stressfullCount)
   }
 
   displayTotalStress():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getTotalStress(currentUser.email).subscribe(data=>{this.totalStress=data; 
-    console.log(this.totalStress)
+    //console.log(this.totalStress)
       
   
     this.totalStress = Number(this.totalStress/60).toFixed(2);
-    console.log("Stress Time:");
-    console.log(this.totalStress);
+    //console.log("Stress Time:");
+   // console.log(this.totalStress);
     }); 
 
     
@@ -143,7 +143,7 @@ export class SidepanelComponent implements OnInit {
   displayMindfulnessCompleted():void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getMindfulnessCount(currentUser.email).subscribe(data=>{this.totalLeisure=data; 
-    console.log(this.totalLeisure)
+    //console.log(this.totalLeisure)
       
   
     }); 

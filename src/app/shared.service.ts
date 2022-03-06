@@ -33,6 +33,16 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   //Should have a UserEmail, EventName, StartDate, EndDate, EventType, StressLevel, and Notes
   addEvent(val:any){
     return this.http.post<any[]>(this.APIUrl + 'events/' + val, val)
+    .pipe(
+      catchError((err) => {
+        console.log('error caught in service')
+        console.error(err);
+
+        //Handle the error here
+
+        return throwError(err);    //Rethrow it back to component
+      })
+    )
   } 
   //Edit event w put event
   //Must pass all required data fields including eventID
@@ -106,12 +116,17 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   }
 
   
-  //Local Events Reccomendations
+  //Local Events Recommendations
   //only takes in user's email as a string
   getLocalEvents(useremail:any){
     return this.http.get<any[]>(this.APIUrl + 'localevents/' + useremail, useremail)
   }
   
+  //Mindful Event Recommendations
+  //only takes in user's email as a string 
+  getMindfulEvents(useremail:any){
+    return this.http.get<any[]>(this.APIUrl + "mindfulnessrecommender/" + useremail, useremail)
+  }
 
   //This API will get the current users account information (password is hashed)
   //This will likely not be used by the front end but the following lines of code will allow access to the user profile info
