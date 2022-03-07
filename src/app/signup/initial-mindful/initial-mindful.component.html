@@ -114,9 +114,9 @@
       <div class="tooltip-content">
         <table class="activity-descriptions">
           <thead>
-            <tr>Duration</tr>
-            <tr>Description</tr>
-            <tr>link to more info</tr>
+            <tr>Duration: {{activity.duration}}</tr>
+            <tr>Description: {{activity.description}}</tr>
+            <td><button type="button" class="change-button" (click)="LinktoMoreInfo(activity.url)">More Info</button></td>
           </thead>
         </table>
       </div> 

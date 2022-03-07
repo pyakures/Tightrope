@@ -13,24 +13,37 @@
   <div class="content-wrapper">
     <a class="back-link" routerLink='../home'>❮ Back to calendar</a>
     <h1>Preferred Mindful Activities</h1>
-    <h2>How do you want to practice mindfulness? (Choose 3)</h2>
-    <h4>Description of why having user initialize here</h4>
+    <h2>How do you want to practice mindfulness?</h2>
+    <h4>Below are the mindfulness activities you selected on signup.</h4>
+    <br>
+    <h4>Feel free to change your mindfulness activity preferences below.</h4>
     <div class="activity-selection">
     <section>
         
       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
           <!-- loops through list of activities to display them with a checkbox next to it -->
         <div class="checkbox-stuff" *ngFor="let activity of activities; let i=index">
+          <div class="tooltip-wrap">
           <input type="checkbox" id="form-checkbox" formArrayName="selectedActivities" [value]="activity.value" (change)="onCheckboxChange($event)">
+
           <label for="form-checkbox"> {{ activity.name}}</label>
-          <span class="checkmark"></span>
+          <div class="tooltip-content">
+            <table class="activity-descriptions">
+              <thead>
+                <tr>Duration: {{activity.duration}}</tr>
+                <tr>Description: {{activity.description}}</tr>
+                <td><button type="button" class="change-button" (click)="LinktoMoreInfo(activity.url)">More Info</button></td>
+              </thead>
+            </table>
+          </div> 
           <!-- input is entered into form array 'selectedActivities' based on ts description -->
         </div>
+        </div> 
         <button class="change-button" type="submit">Submit</button>
       </form>
       
-      <!-- debugging prints selected activities to webpage directly  -->
-      <p>{{ form.value | json }}</p>
+      <!-- debugging prints selected activities to webpage directly 
+      <p>{{ form.value | json }}</p> -->
     </section> 
     </div>
     </div>
