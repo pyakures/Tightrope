@@ -160,7 +160,7 @@
     border: 1px #7fba02;
 }
 
-::ng-deep .cal-week-view .cal-header.cal-weekend span{
+::ng-deep .cal-week-view .cal-header.cal-weekend.cal-today span{
     
     color: #7fba02 !important;
   
