@@ -162,7 +162,7 @@
 
 ::ng-deep .cal-week-view .cal-header.cal-weekend span{
     
-    color: #7fba02;
+    color: #7fba02 !important;
   
 }
 
