@@ -74,7 +74,7 @@ export class ChangeMindfulComponent implements OnInit {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     console.log(this.test);
     //method takes in username and the mindfulPreferenceIDs as arguments (should be just the integer array)
-    this.service.updateUserMindfulnessPreferences(currentUser.email, this.test).subscribe(res=>{alert(res.toString());});
+    this.service.updateUserMindfulnessPreferences(currentUser.email, this.test).subscribe(res=>{alert("Mindfulness Preferences Updated!")});
       
   }
   //Method allows new window to be opened when 'more-info' button is pressed
