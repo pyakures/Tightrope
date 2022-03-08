@@ -33,14 +33,15 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.f.username.value, this.f.password.value).pipe(first())
         .subscribe( data => {
                               console.log(data);
+                              //Read the currentUser out of local Storage                     
+                              var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+                              //If the users entered info and the currentuser info match, redirect to the homepage
+                              if(currentUser.email == this.f.username.value){    
+                                this.router.navigate(['/home'])
+                                } 
                             }
                   )
-      //Read the currentUser out of local Storage                     
-      var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-      //If the users entered info and the currentuser info match, redirect to the homepage
-      if(currentUser.email == this.f.username.value){    
-        this.router.navigate(['/home'])
-      }
+      
   }
 
   

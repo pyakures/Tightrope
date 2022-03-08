@@ -37,20 +37,25 @@ export class SignupComponent implements OnInit {
   onSubmit(){
     if(this.password==this.repeatPassword){    
       let userVar = {username: this.email, first_name: this.firstName, last_name: this.lastName, email: this.email, password: this.password};
-      console.log(userVar);
-      this.service.addProfile(userVar).subscribe(response =>{console.log('server response: ', response);});
-      //alert("Success. Please Login!");
-      //this.AuthReRoute.navigate(['/login']);
-      this.authService.login(this.email, this.password).pipe(first())
+      this.service.addProfile(userVar).subscribe(response =>{
+        console.log('server response: ', response);
+        
+        this.authService.login(this.email, this.password).pipe(first())
         .subscribe( data => {
                               console.log(data);
+                              var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+                              if(currentUser.email == this.email){    
+                                this.AuthReRoute.navigate(['/initialMindful'])
+                              }
                             }
-                  )
+                  )       
       
-      var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-      if(currentUser.email == this.email){    
-        this.AuthReRoute.navigate(['/initialMindful'])
-      }
+      });
+      //alert("Success. Please Login!");
+      //this.AuthReRoute.navigate(['/login']);
+     
+      
+      
     }
     else{
       alert("Passwords does not match. Please try again!");
