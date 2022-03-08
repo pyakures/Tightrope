@@ -44,7 +44,17 @@ export class NeweventComponent implements OnInit {
   onSubmit(){
 
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
+    var newEvent:any;
+    newEvent = {'UserEmail' : currentUser.email, 
+                'EventName' : this.Eventname, 
+                'StartDate' : this.StartDate, 
+                'EndDate' : this.EndDate, 
+                'Location' : this.Location, 
+                'EventType' : this.typeofevent, 
+                'StressLevel' : this.levelofstress, 
+                'Notes' : this.Notes};
+
+    /*this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
           this.EventsList[0].EventName = this.Eventname;
           this.EventsList[0].StartDate = this.StartDate;
           this.EventsList[0].EndDate = this.EndDate;
@@ -56,8 +66,12 @@ export class NeweventComponent implements OnInit {
 
           this.service.addEvent(this.EventsList[0]).subscribe(res=>{
             alert(res.toString());});
-        }); 
-
+        });*/
+        console.log(newEvent);
+        console.log(currentUser);
+        
+        this.service.addEvent(newEvent).subscribe(res=>{
+            alert(res.toString());});
       this.AuthReRoute.navigate(['/home']);
       
 

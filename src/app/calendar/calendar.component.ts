@@ -271,14 +271,17 @@ export class CalendarComponent implements OnInit {
     //Needs to add information to Mindful event 'Location' attribute 
     //this.new_Mindful = {EventName: this.MindfulEvent.EventName, EventType: this.MindfulEvent.EventType, EndDate: this.MindfulEvent.EndDate, StartDate: this.MindfulEvent.StartDate,
     //    Location: "Anywhere", Notes: this.MindfulEvent.Notes, StressLevel: this.MindfulEvent.StressLevel, UserEmail: this.MindfulEvent.UserEnail}  
-    this.MindfulEvent.Location = "anywhere";
-    console.log("mindful event (done)", this.MindfulEvent);
-    //console.log("This new mindful" ,this.new_Mindful);
-    //Adds new local event to user's calendar 
-    this.service.addEvent(this.MindfulEvent).subscribe(res=>{
-          alert(res.toString());});
-      });
+    //this.MindfulEvent.Location = "anywhere";
     
+    console.log("This new mindful" ,this.new_Mindful);
+    //Adds new local event to user's calendar 
+    console.log("mindful event (done)", this.MindfulEvent);
+    this.service.addEvent(this.MindfulEvent).subscribe(res=>{
+      alert(res.toString());});
+
+      });
+    this.refreshPagewithEvents();
+
   }
 
   /*

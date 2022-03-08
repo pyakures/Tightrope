@@ -111,8 +111,7 @@ export class EditeventComponent implements OnInit {
           this.service.updateEvent(this.EventsList[i]).subscribe(res=>{
             alert(res.toString());});
           
-            console.log(this.EventsList[i]);
-            
+            console.log(this.EventsList[i]);     
 
         }
       }
