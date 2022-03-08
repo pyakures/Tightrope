@@ -276,11 +276,16 @@ export class CalendarComponent implements OnInit {
     console.log("This new mindful" ,this.new_Mindful);
     //Adds new local event to user's calendar 
     console.log("mindful event (done)", this.MindfulEvent);
-    this.service.addEvent(this.MindfulEvent).subscribe(res=>{
-      alert(res.toString());});
+    this.service.addEvent(this.MindfulEvent).subscribe(res=>{if (res.toString() == "Failed to add event.")
+    //No stored user preferences will yield in error message for the user
+    {alert("Must have Mindfulness preferences to generate mindful event. Go to 'Mindfulness Activities' to update preferences.")}
+    else {
+      alert(res.toString());console.log("error message", res.toString());}
+      });
+      
 
       });
-    this.refreshPagewithEvents();
+    
 
   }
 
