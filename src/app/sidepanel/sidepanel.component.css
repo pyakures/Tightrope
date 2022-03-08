@@ -270,6 +270,10 @@
     letter-spacing: 0.15em;
 }
 
+.stress-summary-panel h4 {
+    padding-bottom: 1em;
+}
+
 .temp-slider {
     border-bottom: 10px;
     border-radius: 20px;
