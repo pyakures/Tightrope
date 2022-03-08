@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import {Router, RouterLink} from '@angular/router';
+import { SharedService } from '../shared.service';
 @Component({
   selector: 'app-change-mindful',
   templateUrl: './change-mindful.component.html',
@@ -11,7 +12,10 @@ export class ChangeMindfulComponent implements OnInit {
   ngOnInit(): void {
   }
   form: FormGroup;
-
+    //array for the input values to be stored
+  //format for easy retrevial for backend s
+  mindfulPreferenceIDs: any = [];
+  test: any;
   //Display all activity options 1-7
   //Hardcoded inputs at this time
   activities: Array<any> = [
@@ -31,7 +35,7 @@ export class ChangeMindfulComponent implements OnInit {
      url:' https://mindfulnessandwellbeing.com/resources/', value: 9 },
   ];
 
-  constructor(fb: FormBuilder, private AuthReRoute: Router,) {
+  constructor(fb: FormBuilder, private AuthReRoute: Router, private service:SharedService ) {
     this.form = fb.group({
      selectedActivities:  new FormArray([])
     });
@@ -47,6 +51,14 @@ export class ChangeMindfulComponent implements OnInit {
       .findIndex(x => x.value === event.target.value);
       selectedActivities.removeAt(index);
     }
+
+        //set selected array values into the mindfulIDs array
+    //isolates values from FormArray object
+    this.mindfulPreferenceIDs = selectedActivities.value;
+    
+    
+    this.test = { mindfulPreferenceIDs: this.mindfulPreferenceIDs};
+    console.log(this.test);
   }
 
   //Prints selected activities to the console at this time
@@ -55,7 +67,15 @@ export class ChangeMindfulComponent implements OnInit {
     //Will be implemented once adding a new user functionality is introduced
     this.AuthReRoute.navigate(['/home']);
     //var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-
+    this.changeMindfulPreferences();
+  }
+   //pushes the new mindfulpreferences to the backend w shared service method
+   changeMindfulPreferences():void{
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    console.log(this.test);
+    //method takes in username and the mindfulPreferenceIDs as arguments (should be just the integer array)
+    this.service.updateUserMindfulnessPreferences(currentUser.email, this.test).subscribe(res=>{alert(res.toString());});
+      
   }
   //Method allows new window to be opened when 'more-info' button is pressed
   LinktoMoreInfo(event: string){
