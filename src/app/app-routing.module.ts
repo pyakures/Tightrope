@@ -18,28 +18,31 @@ import { ChangeMindfulComponent } from './change-mindful/change-mindful.componen
 import { InitialStresssurveyComponent } from './signup/initial-stresssurvey/initial-stresssurvey.component';
 import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial-questions/initial-questions.component';
 import { LocalEventsComponent } from './local-events/local-events.component';
+import { AuthService } from './service/auth.service';
+import { Error404Component } from './error404/error404.component';
 
 //Rougting done by all members of the team manually
 const routes: Routes = [
+{path: '', redirectTo: '/home', pathMatch: 'full'},
 {path:'login',component:LoginComponent},
-{path:'home',component:CalendarComponent},
+{path:'home',component:CalendarComponent, canActivate: [AuthService]},
 {path:'signup',component:SignupComponent},
 {path:'forgot-password',component:ForgotPasswordComponent},
 {path:'about',component:AboutComponent},
-{path: 'newevent',component:NeweventComponent},
+{path: 'newevent',component:NeweventComponent, canActivate: [AuthService]},
 {path: 'contact', component:ContactComponent},
 {path: 'features', component:FeaturesComponent},
-{path: 'editevent', component:EditeventComponent},
-{path: 'account', component:AccountComponent},
-{path: 'streak', component:StreakComponent},
-{path: 'stresssurvey', component:StresssurveyComponent},
-{path: 'questions', component:QuestionsComponent},
-{path: 'initialMindful', component: InitialMindfulComponent},
-{path: 'changeMindful', component:ChangeMindfulComponent},
-{path: 'initialStresssurvey', component: InitialStresssurveyComponent},
-{path: 'initialQuestions', component: InitialQuestionsComponent},
-{path: 'localEvents', component: LocalEventsComponent},
-{path: '', redirectTo: '/login', pathMatch: 'full'}, //this is routing the main page of our website to the login page, this is temporary as i am not sure what we are going to be adding on the main page yet
+{path: 'editevent', component:EditeventComponent, canActivate: [AuthService]},
+{path: 'account', component:AccountComponent, canActivate: [AuthService]},
+{path: 'streak', component:StreakComponent, canActivate: [AuthService]},
+{path: 'stresssurvey', component:StresssurveyComponent, canActivate: [AuthService]},
+{path: 'questions', component:QuestionsComponent, canActivate: [AuthService]},
+{path: 'initialMindful', component: InitialMindfulComponent, canActivate: [AuthService]},
+{path: 'changeMindful', component:ChangeMindfulComponent, canActivate: [AuthService]},
+{path: 'initialStresssurvey', component: InitialStresssurveyComponent, canActivate: [AuthService]},
+{path: 'initialQuestions', component: InitialQuestionsComponent, canActivate: [AuthService]},
+{path: 'localEvents', component: LocalEventsComponent, canActivate: [AuthService]},
+{path: '**', component:Error404Component},
 
 
 ];

@@ -37,6 +37,7 @@ import { ChangeMindfulComponent } from './change-mindful/change-mindful.componen
 import { InitialStresssurveyComponent } from './signup/initial-stresssurvey/initial-stresssurvey.component';
 import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial-questions/initial-questions.component';
 import { LocalEventsComponent } from './local-events/local-events.component';
+import { Error404Component } from './error404/error404.component';
 
 
 
@@ -63,6 +64,7 @@ import { LocalEventsComponent } from './local-events/local-events.component';
     InitialStresssurveyComponent,
     InitialQuestionsComponent,
     LocalEventsComponent,
+    Error404Component,
 
 
   ],
