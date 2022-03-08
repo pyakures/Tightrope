@@ -272,13 +272,14 @@ export class CalendarComponent implements OnInit {
     //    Location: "Anywhere", Notes: this.MindfulEvent.Notes, StressLevel: this.MindfulEvent.StressLevel, UserEmail: this.MindfulEvent.UserEnail}  
     //this.MindfulEvent.Location = "anywhere";
     
-    //console.log("This new mindful" ,this.new_Mindful);
+    console.log("This new mindful" ,this.new_Mindful);
     //Adds new local event to user's calendar 
     console.log("mindful event (done)", this.MindfulEvent);
     this.service.addEvent(this.MindfulEvent).subscribe(res=>{
       alert(res.toString());});
 
       });
+    this.refreshPagewithEvents();
 
   }
 
