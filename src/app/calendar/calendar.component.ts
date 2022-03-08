@@ -225,13 +225,14 @@ export class CalendarComponent implements OnInit {
         var timehourend:number = Number(hourstringend);
         var timeminutesend = Number(minutestringend);
 
+        //regular events
         var EventColor= colors.green;
     
-
+        //mindfulness activities
         if(this.EventsList[i].EventType=="2"){
           var EventColor = colors.lightBlue;
         }
-        else if(this.EventsList[i].EventType=="0"){
+        else if(this.EventsList[i].EventType=="0"){ //work events
           var EventColor= colors.orange;
         }
         
