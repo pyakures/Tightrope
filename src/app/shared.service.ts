@@ -86,7 +86,7 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   }
 
 
-  //supposedly adds event to the user's mindfulness preferences
+  // adds event to the user's mindfulness preferences
   //val is the user preference and is a dictionary value: dictionary = {mindfulPrefereneIDs: array_of_integers}
   postUserMindfulnessPreferences(userEmail:any, val:any){
     console.log(val)
@@ -102,6 +102,13 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
       })
     )
   }
+
+  //updates user's mindfulness preferences
+  //val is the user preference and is a dictuonary value: 
+  updateUserMindfulnessPreferences(userEmail: any, val:any){
+    return this.http.put<any[]>(this.APIUrl + 'mindfulpreference/' + userEmail, val)
+  }
+
 
   //Post initial stress survey data
   //takes in dictionary for val from survey: dictionary = {Useremail:"", SurveySum:""}
@@ -127,6 +134,8 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   getMindfulEvents(useremail:any){
     return this.http.get<any[]>(this.APIUrl + "mindfulnessrecommender/" + useremail, useremail)
   }
+
+
 
   //This API will get the current users account information (password is hashed)
   //This will likely not be used by the front end but the following lines of code will allow access to the user profile info

@@ -205,13 +205,13 @@
     background-color: white;
     font-size: 1em;
     font-weight: bold;
-    color: black;
-    border: none;
-    border-left: #7fba02;
+    color: white;
+    letter-spacing: 0.75px;
+    /*border-left: #7fba02;
     border-left-style: solid;
     border-left-width: 0.5em;
     border-radius: 0px;
-    color: black, white;
+    border: 3px solid black; */
 
 }
 
@@ -234,6 +234,9 @@
     display: none;
 
 }
+
+::ng-deep .cal-hour {}
+
 
 
 @media only screen and (max-width: 800px){
