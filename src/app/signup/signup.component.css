@@ -36,16 +36,11 @@ a, a:active, a:focus, a:hover{
 
 .wrapper {
     height: 100vh;
-    position: absolute;
     clear: both;
+    overflow: auto;
     margin-bottom: 10vh;
 }
 
-.wrapper::after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 .tagline {
     width: 50%;
