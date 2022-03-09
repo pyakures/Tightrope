@@ -37,8 +37,10 @@ export class LoginComponent implements OnInit {
                               var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
                               //If the users entered info and the currentuser info match, redirect to the homepage
                               if(currentUser.email == this.f.username.value){    
-                                this.router.navigate(['/home'])
-                                } 
+                                this.router.navigate(['/home']);
+                              } else {
+                                alert("Incorrect email address and password combination. Try again.");
+                              }
                             }
                   )
       

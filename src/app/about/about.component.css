@@ -17,12 +17,12 @@
 }
 
 .teamInfo {
-  width: 50%;
+  width: 70%;
   margin: auto;
 }
 
 .advisorInfo {
-  width: 50%;
+  width: 70%;
   margin: auto;
   margin-top: 7em;
 }
@@ -53,6 +53,7 @@
     margin-bottom: 16px;
     padding: 1em;
   }
+
   
   /* Display the columns below each other instead of side by side on small screens */
   @media screen and (max-width: 650px) {
@@ -140,7 +141,7 @@ h3 {
   color: black;
   font-size: 1.9em;
   text-align: left;
-  width: 50%;
+  width: 70%;
   margin: auto;
   line-height: 1;
   padding: 2em;
