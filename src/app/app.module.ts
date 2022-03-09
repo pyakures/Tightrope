@@ -38,6 +38,7 @@ import { InitialStresssurveyComponent } from './signup/initial-stresssurvey/init
 import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial-questions/initial-questions.component';
 import { LocalEventsComponent } from './local-events/local-events.component';
 import { Error404Component } from './error404/error404.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -65,6 +66,7 @@ import { Error404Component } from './error404/error404.component';
     InitialQuestionsComponent,
     LocalEventsComponent,
     Error404Component,
+    FooterComponent,
 
 
   ],

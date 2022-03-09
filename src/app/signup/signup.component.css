@@ -35,8 +35,16 @@ a, a:active, a:focus, a:hover{
 }*/
 
 .wrapper {
-    height: 100%;
-    position: relative;
+    height: 100vh;
+    position: absolute;
+    clear: both;
+    margin-bottom: 10vh;
+}
+
+.wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .tagline {
@@ -69,6 +77,7 @@ a, a:active, a:focus, a:hover{
     top: 27%;
     left: 57.5%;
     position: absolute;
+    overflow: auto;
 }
 
 .login-form h2 {
