@@ -41,19 +41,19 @@ export class AccountComponent implements OnInit {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     if(this.firstName_u!= undefined){
       let changeVal = {first_name: this.firstName_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response); alert(response.toString())});
     }
     if(this.lastName_u!= undefined){
       let changeVal = {last_name: this.lastName_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString())});
     }
     if(this.userName_u!=undefined){
       let changeVal = {email: this.userName_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString())});
     }
     if(this.password_u!=undefined){
       let changeVal = {password: this.password_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);});
+      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString())});
     }
     this.AuthReRoute.navigate(['/home']);
   }
