@@ -9,16 +9,16 @@
   <div class="neweventwrapper">
     <h1>Add a new event</h1><br>
     <form class="neweventForm" (ngSubmit)="onSubmit()">
-      <input class="EventName" type="text" id="Eventname" name="Eventname" [(ngModel)]="Eventname" placeholder="Event Name"><br>
-      <input type="text" id="StartDate" name="StartDate" [(ngModel)]="StartDate"placeholder="Start Date"
+      <input class="EventName" type="text" id="Eventname" name="Eventname" [(ngModel)]="Eventname" placeholder="Event Name" required ><br>
+      <input type="text" id="StartDate" name="StartDate" [(ngModel)]="StartDate"placeholder="Start Date" required
         onfocus="(this.type='datetime-local')"><br>
-        <input type="text" id="EndDate" name="EndDate" [(ngModel)]="EndDate"placeholder="End Date"
+        <input type="text" id="EndDate" name="EndDate" [(ngModel)]="EndDate"placeholder="End Date" required
         onfocus="(this.type='datetime-local')"><br>
       <input type="text" id="Location" name="Location" [(ngModel)]="Location" placeholder="Location"><br>
       <label for="stress">Stress Level: &nbsp;</label>
       <!-- input type="number" id="levelofstress" name="levelofstress" [(ngModel)]="levelofstress" min="1" max="3" placeholder="Stress Level"><br-->
       <!-- Executive decision to only put numbers for stress and event type-->
-      <select  name="first" [(ngModel)]="levelofstress">
+      <select  name="first" [(ngModel)]="levelofstress" required>
         <option value="0">No Stress</option>
         <option value="1" selected="selected">Low Stress</option>
         <option value="2">Medium Stress</option>
@@ -27,7 +27,7 @@
 
       <label for="category">Type: &nbsp;</label>
       <!-- input type="number" id="typeofevent" name="typeofevent" [(ngModel)]="typeofevent" min="0" max="2" placeholder="Event Type"><br-->
-      <select  name="first" [(ngModel)]="typeofevent">
+      <select  name="first" [(ngModel)]="typeofevent" required>
         <option value="0">Work</option>
         <option value="1" selected="selected">Leisure</option>
         <option value="2">Mindfulness</option>

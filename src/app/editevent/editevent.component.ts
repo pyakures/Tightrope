@@ -86,10 +86,12 @@ export class EditeventComponent implements OnInit {
   deleteCurrentEvent(){
 
     this.service.deleteEvent(this.service.sharedid).subscribe(res=>{
-      alert(res.toString());});
+      alert(res.toString());
+      this.AuthReRoute.navigate(['/home']);
+      this.getEventInfo();
+    });
 
-    this.AuthReRoute.navigate(['/home']);
-    this.getEventInfo();
+    
   }
 
   updateCurrentEvent(){
@@ -100,6 +102,30 @@ export class EditeventComponent implements OnInit {
     
       for(var i=0; i< this.EventsList.length; i++){
         if(this.EventsList[i].EventID == this.service.sharedid){
+
+            if(this.Eventname_u==undefined){
+              this.Eventname_u = this.EventsList[i].EventName;
+            }
+            
+            if(this.StartDate_u==undefined){
+              this.StartDate_u = this.EventsList[i].StartDate;
+            }
+            if(this.EndDate_u==undefined){
+              this.EndDate_u = this.EventsList[i].EndDate;
+            }
+            if(this.Location_u==undefined){
+              this.Location_u = this.EventsList[i].Location;
+            }
+            if(this.levelofstress==undefined){
+              this.levelofstress = this.EventsList[i].StressLevel;
+            }
+            if(this.typeofevent==undefined){
+              this.typeofevent = this.EventsList[i].EventType;
+            }
+            if(this.Notes_u==undefined){
+              this.Notes_u = this.EventsList[i].Notes;
+            }
+
           this.EventsList[i].EventName = this.Eventname_u;
           this.EventsList[i].StartDate = this.StartDate_u;
           this.EventsList[i].EndDate = this.EndDate_u;
@@ -111,16 +137,18 @@ export class EditeventComponent implements OnInit {
           this.service.updateEvent(this.EventsList[i]).subscribe(res=>{
             alert(res.toString());});
           
-            console.log(this.EventsList[i]);     
+            console.log(this.EventsList[i]);    
+            
+             //Returns user to calendar after submitting changes
+              this.AuthReRoute.navigate(['/home']);
+              this.getEventInfo();
 
         }
       }
     
     }); 
 
-    //Returns user to calendar after submitting changes
-    this.AuthReRoute.navigate(['/home']);
-    this.getEventInfo();
+   
   }
 }
 

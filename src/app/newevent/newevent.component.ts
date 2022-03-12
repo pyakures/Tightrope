@@ -45,35 +45,47 @@ export class NeweventComponent implements OnInit {
 
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     var newEvent:any;
-    newEvent = {'UserEmail' : currentUser.email, 
-                'EventName' : this.Eventname, 
-                'StartDate' : this.StartDate, 
-                'EndDate' : this.EndDate, 
-                'Location' : this.Location, 
-                'EventType' : this.typeofevent, 
-                'StressLevel' : this.levelofstress, 
-                'Notes' : this.Notes};
 
-    /*this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
-          this.EventsList[0].EventName = this.Eventname;
-          this.EventsList[0].StartDate = this.StartDate;
-          this.EventsList[0].EndDate = this.EndDate;
-          this.EventsList[0].UserEmail = currentUser.email;
-          this.EventsList[0].EventType = this.typeofevent;
-          this.EventsList[0].Location = this.Location;
-          this.EventsList[0].Notes = this.Notes;
-          this.EventsList[0].StressLevel = this.levelofstress;
 
-          this.service.addEvent(this.EventsList[0]).subscribe(res=>{
-            alert(res.toString());});
-        });*/
-        console.log(newEvent);
-        console.log(currentUser);
-        
-        this.service.addEvent(newEvent).subscribe(res=>{
-            alert(res.toString());});
+    if(this.Eventname == undefined || this.StartDate == undefined || this.EndDate==undefined||this.typeofevent==undefined||this.levelofstress==undefined){
+
+      alert("Please fill out the Event name, Start Date, End Date, Stress Level, and Type to continue.");
+
+
+
+    }
+    else{
+
+      if(this.Location == undefined){
+        this.Location= "Location";
+      }
+
+      if(this.Notes == undefined){
+        this.Notes= "Notes";
+      }
+
+
+        newEvent = {'UserEmail' : currentUser.email, 
+        'EventName' : this.Eventname, 
+        'StartDate' : this.StartDate, 
+        'EndDate' : this.EndDate, 
+        'Location' : this.Location, 
+        'EventType' : this.typeofevent, 
+        'StressLevel' : this.levelofstress, 
+        'Notes' : this.Notes};
+
+      console.log(newEvent);
+      console.log(currentUser);
+
+      this.service.addEvent(newEvent).subscribe(res=>{
+      alert(res.toString());
       this.AuthReRoute.navigate(['/home']);
+    });
       
+
+
+    }
+
 
 }
 }
