@@ -71,14 +71,10 @@ export class CalendarComponent implements OnInit {
       this.setView(CalendarView.Day);
     } 
     this.refreshPagewithEvents();
-
-    
-    
-    
-
-
-
   }
+
+
+
   //Method will pull of Events pertaining to a user from the user table
   refreshEventList():void{
     //Grab the current user out of local storage, parse the package into strings and assign it to the currentUser var
@@ -90,10 +86,6 @@ export class CalendarComponent implements OnInit {
     this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data;console.log(this.EventsList)
     
     }); 
-
-    
-
-  
   }
 
 
@@ -286,7 +278,7 @@ export class CalendarComponent implements OnInit {
       
     
       });
-    
+    window.location.reload();
 
   }
 
