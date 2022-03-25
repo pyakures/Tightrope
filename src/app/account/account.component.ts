@@ -49,7 +49,7 @@ export class AccountComponent implements OnInit {
     }
     if(this.userName_u!=undefined){
       let changeVal = {email: this.userName_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString())});
+      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString());alert("Changing the username may result in the lost of data!");});
     }
     if(this.password_u!=undefined){
       let changeVal = {password: this.password_u};
