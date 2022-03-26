@@ -384,6 +384,10 @@ meter::-moz-meter-bar {
     
 }
 
+.streaksbutton{
+    width: max-content;
+}
+
 dp-day-calendar {
     line-height: 0px;
     margin: 0;

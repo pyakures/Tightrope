@@ -4,7 +4,7 @@ import { CalendarService } from '../calendar.service';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
 import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes, setDate } from 'date-fns';
 import { Subject } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Time } from '@angular/common';
@@ -27,7 +27,7 @@ import {SharedService} from 'src/app/shared.service';
 export class SidepanelComponent implements OnInit {
 
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
-  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){}
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService, private modalService: NgbModal){}
   userVar:any;
   stresslevel:any;
   stressfullDay:any;
@@ -148,5 +148,30 @@ export class SidepanelComponent implements OnInit {
   
     }); 
   }
+
+
+
+  /////stress popup algos
+
+  closeResult = '';
+  
+  open(content:any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
 }
 
