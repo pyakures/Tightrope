@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedService} from 'src/app/shared.service';
 
 @Component({
   selector: 'app-streak',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StreakComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:SharedService) { }
 
   ngOnInit(): void {
   }

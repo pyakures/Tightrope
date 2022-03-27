@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, throwError } from  'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { ObjectType } from 'typescript';
 
 //This little variable right here lets us send authentication along side our requests 
 const httpOptions = {
@@ -18,8 +19,8 @@ export class SharedService {
 
   sharedid:any;
 //Django API URL
-readonly APIUrl = "https://tightropeapi.herokuapp.com/"
-//readonly APIUrl = 'http://127.0.0.1:8000/'
+//readonly APIUrl = "https://tightropeapi.herokuapp.com/"
+readonly APIUrl = 'http://127.0.0.1:8000/'
 
   constructor(private http:HttpClient) { }
   //Send a get method (called using the users email)
@@ -212,4 +213,69 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
     httpOptions.headers = httpOptions.headers.set('Authorization','Token ' + token);
     return this.http.delete<any[]>(this.APIUrl + 'accounts/profile/', httpOptions)
   }
+
+
+  //This API will return a list object, contiaing two instances of list objects, the user data of the passed user email
+  //and the mindfulness events that have occured since their last Login
+  //
+  //This API should be called when the user logs in
+  //
+  //Required fields: No HTTP body is needed (over the normal), only the user email attached to the URL as shown
+  //
+  //Additional Notes for Integration: The following lines of code are a way that this could be implemented.
+  //I RECOMMEND AGAINST IT
+  //This puts all mindful events into local storage (could be very large) as well as the streaks record
+  //Im just not good enough at TS to get this to run other ways
+  //I would suggest putting the Streaks user data in local storage and doing something else with the mindful event data
+  //
+  //this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response))});
+  //
+  //NOTE: There will be two data points (as outlined above) in a list that you will need to sort through
+  //something like [[userdata],[allEligibleEvents]], so handling that may be a bit more tricky
+  //I suggest saving the userdata portion to local storage for acces by the PUT method later
+  getStreaks(userEmail:any): Observable<any>{
+    return this.http.get<any[]>(this.APIUrl + 'streaks/' + userEmail)
+  }
+
+  //This API will take in the current users email and use it to create a default, inital streaks record for them
+  //Required fields: user email, which is passed in the body and in the URL even though its only needed in the URL, POST operations must have a body ¯\_(ツ)_/¯
+  //
+  //THIS API MUST BE CALLED WHEN THE USER CREATES THEIR ACCOUNT ALL IT NEEDS IS THEIR EMAIL, i manually added a profile for test@test.com
+  //
+  //Additional Notes for Integration: the solution should go fine if called when a user makes a profile
+  //this.service.addStreaks(currentUser.email).subscribe(response =>{console.log('server response: ', response);});
+  addStreaks(userEmail:any){
+    return this.http.post<any[]>(this.APIUrl + 'streaks/' + userEmail,userEmail)
+    .pipe(
+      catchError((err) => {
+        console.log('error caught in service')
+        console.error(err);
+
+        //Handle the error here
+
+        return throwError(err);    //Rethrow it back to component
+      })
+    )
+  } 
+  //This API will take in the current version of the User Streak Data that is obtained from the GET method and updates it with the new streak count (post login)
+  //Reqiured fields: UserID, UserEmail, StreakCount, LastLogin
+  //
+  //Additional Notes for Integration: this is a possible solution, most likely will need to be adapted
+  //var streaksData = { "UserID": 1,
+  //                    "UserEmail": "test@test.com",
+  //                    "StreakCount": 27,
+  //                    "LastLogin": "2022-03-10T00:30:00Z"};
+  //console.log(streaksData);
+  //this.service.updateStreaks(streaksData).subscribe(response =>{console.log('server response: ', response);});
+  updateStreaks(userStreaksData:any){
+    return this.http.put<any[]>(this.APIUrl + 'streaks/', userStreaksData)
+  }
+
+  //This API is for deleting user records in this table, dont worry about it for the front end ;)
+  deleteStreakRecord(UserID:number){
+    return this.http.delete<any[]>(this.APIUrl + 'streaks/' + UserID)
+  } 
+
+
 }
+
