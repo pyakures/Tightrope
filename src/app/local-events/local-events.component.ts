@@ -33,9 +33,9 @@ export class LocalEventsComponent implements OnInit {
   displayLocalEvents(){
     console.log("Display Local Events:");
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getLocalEvents(currentUser.email).subscribe(data=>{this.LocalEventsList=data});
-
+    this.service.getLocalEvents(currentUser.email).subscribe(data=>{this.LocalEventsList=data; console.log(this.LocalEventsList);} );
     
+
   }
   
   //Method allows new window to be opened when 'more-info' button is pressed

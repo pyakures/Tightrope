@@ -14,8 +14,7 @@
     <h1>Local Events</h1><br>
     <h2>What's happening near you?</h2>
     <h3>Ticketed Events</h3>
-    <h4>Description of event table....</h4><br>
-    <h4>It may take a while for events to load(be patient)</h4>
+    <h4>It may take a while for events to load...</h4>
 
     <!-- List upcoming events in a table -->
     <table class="table table-striped">
@@ -28,14 +27,20 @@
             <th></th>
         </thead>
         <tbody *ngFor="let event of LocalEventsList">
-            <tr *ngFor="let data of event">
+                <td>{{event.EventName}}</td>
+                <td>{{event.StartDate}}</td>
+                <td>{{event.EndDate}}</td>
+                <td>{{event.Location}}</td>
+                <td><button type="button" class="change-button" (click)="LinktoMoreInfo(event.Notes)">More Info</button></td>
+                <td><button type="button" class="change-button" (click)="addLocalEvent(event)">Add To Calendar</button></td>
+            <!-- <tr *ngFor="let data of event">
                 <td>{{data.EventName}}</td>
                 <td>{{data.StartDate}}</td>
                 <td>{{data.EndDate}}</td>
                 <td>{{data.Location}}</td>
                 <td><button type="button" class="change-button" (click)="LinktoMoreInfo(data.Notes)">More Info</button></td>
                 <td><button type="button" class="change-button" (click)="addLocalEvent(data)">Add To Calendar</button></td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 
