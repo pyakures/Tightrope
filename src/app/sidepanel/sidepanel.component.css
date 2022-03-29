@@ -76,7 +76,7 @@
 }
 
 .stress-guage:hover .stress-summary-panel, .stress-guage:focus .stress-summary-panel {
-    transition-delay: 0.7s;
+    transition-delay: 0.5s;
     visibility: visible;
     z-index: 2;
 }
@@ -231,7 +231,7 @@
 }
 
 .streak-message:hover .streak-summary-panel, .streak-message:focus .streak-summary-panel {
-    transition-delay: 0.7s;
+    transition-delay: 0.5s;
     visibility: visible;
     z-index: 2;
 }
