@@ -518,6 +518,18 @@ dp-day-calendar.dp-material .dp-selected:hover{background:#106CC8}dp-day-calenda
 
 /* STREAKS POPUP STYLING BELOW */
 
+.modal-content {
+    border-radius: 20px !important;
+    padding: 1rem !important;
+    border: 0px !important;
+}
+
+::ng-template let-modal .modal-dialog .modal-content {
+    border-radius: 20px !important;
+    padding: 1rem !important;
+    border: 0px !important;
+}
+
 .streak-msg-button-complete, .streak-msg-button-cancel {
     border-radius: 25px;
     min-width: fit-content;
