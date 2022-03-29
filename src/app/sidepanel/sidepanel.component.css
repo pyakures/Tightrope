@@ -220,7 +220,7 @@
     padding-bottom: 0;
     /* Position the tooltip */
     position: absolute;
-    top: 19em;
+    top: 17em;
     left: -400px;
     height: max-content; /* 20em */
     transition: 0.1s;
@@ -246,11 +246,6 @@
     letter-spacing: 0.15em;
 }
 
-.streak-summary-panel h4 {
-    padding-bottom: 1em;
-    
-}
-
 .temp-slider {
     border-bottom: 10px;
     border-radius: 20px;
@@ -274,8 +269,8 @@
     background-color: #7fba02;
     border: 2px solid #ebebeb;
     height: 0.9em;
-    width: 70%;
-    margin-bottom: 1.5em;
+    width: 95%;
+    margin-bottom: 0;
     padding-bottom: 0;
     overflow: auto;
 }
