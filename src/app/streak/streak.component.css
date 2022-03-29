@@ -32,7 +32,7 @@
 }
 
 .content-wrapper h2 {
-    font-size: 4em;
+    font-size: 3em; /* 4em */
     color: #7fba02;
     font-weight: 700;
 }

@@ -206,6 +206,113 @@
     border-bottom: 2px dotted;
 }
 
+/* STREAK SUMMARY PANEL */
+/* ------------------------------------------------------------------- */
+
+.streak-message .streak-summary-panel {
+    visibility: hidden;
+    width: max-content; /* 20em */
+    background-color: #7fba02;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: -2em 1em 11em -2em black;
+    padding: 1em;
+    padding-bottom: 0;
+    /* Position the tooltip */
+    position: absolute;
+    top: 19em;
+    left: -400px;
+    height: max-content; /* 20em */
+    transition: 0.1s;
+    z-index: 2;
+    overflow: auto;
+    text-align: left;
+}
+
+.streak-message:hover .streak-summary-panel, .streak-message:focus .streak-summary-panel {
+    visibility: visible;
+    z-index: 2;
+}
+
+.streak-summary-panel h1 {
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+.streak-summary-panel h3 {
+    font-weight: bold;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.streak-summary-panel h4 {
+    padding-bottom: 1em;
+    
+}
+
+.temp-slider {
+    border-bottom: 10px;
+    border-radius: 20px;
+    background-color: #ebebeb;
+    height: 0.9em;
+    width: 50%;
+    margin-bottom: 1.7em;
+}
+
+.streak-summary-panel p {
+    font-size: 0.9em;
+    margin-top: 0px;
+    padding-top: 0;
+    margin-right: 1em;
+    overflow: auto;
+    margin-bottom: 1.5em;
+}
+
+.streak-summary-panel progress {
+    border-radius: 20px;
+    background-color: #7fba02;
+    border: 2px solid #ebebeb;
+    height: 0.9em;
+    width: 70%;
+    margin-bottom: 1.5em;
+    padding-bottom: 0;
+    overflow: auto;
+}
+
+.streak-summary-panel progress::-webkit-progress-bar {
+    border-radius: 20px;
+    background-color: #7fba02;
+}
+
+.streak-summary-panel progress::-webkit-progress-value {
+    border-radius: 20px;
+    background-color: #ebebeb;
+}
+
+.streak-summary-panel progress::-moz-progress-bar {
+    border-radius: 20px;
+    background-color: #ebebeb
+}
+
+meter {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    --background: #ebebeb;
+}
+
+meter::-webkit-meter-bar {
+    background: none;
+    background-color: #ebebeb;
+}
+
+meter::-moz-meter-bar {
+    -moz-appearance: meterchunk;
+    border-radius: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
 /*
 .activities-area a {
     background-color: #7fba02;

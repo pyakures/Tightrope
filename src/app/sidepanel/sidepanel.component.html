@@ -105,8 +105,24 @@
         <div class="streak-message">
             <h5>Mindfulness Streak</h5>
             <h4>27 Activities</h4>
-            <a routerLink="/streak">Change Streak Goal ➜</a><br>
+            <!-- a routerLink="/streak">Change Streak Goal ➜</a><br -->
             <a (click)="open(StreaksPopUP)">Mindfulness Check-In</a>
+        
+
+            <div class="streak-summary-panel">
+                <h1>Mindfulness Streak</h1>
+                <h3>Total Mindfulness Events Scheduled</h3>
+                <!-- <div class="temp-slider"></div> -->
+                <p>{{stressfullCount}} events</p>
+                <!-- progress class="stress-summary-meters" value="{{stressfullCount}}" min="0" max="10">2 events</progress -->
+                
+                <h3>Mindfulness Events Completed</h3>
+                <!-- Upper bound determined by 8 hr work day -->
+                <p>{{totalStress}} hours</p>
+                <!-- progress class="stress-summary-meters" value="{{totalStress}}" min="0" max="8">2 events</progress -->
+
+                
+            </div>
         </div>
 
         <!--p  class="infotext">You've got a 4 week streak of doing three or more relaxing activities. <br>Way to go!</p>
