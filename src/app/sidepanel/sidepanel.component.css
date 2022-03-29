@@ -427,7 +427,6 @@ dp-day-calendar {
     border: 1px solid #ebebeb !important;
     font-size: 1.5em;
 
-
 }
 
 ::ng-deep dp-day-calendar.dp-material .dp-current-day{
