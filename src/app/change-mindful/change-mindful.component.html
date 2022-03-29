@@ -14,9 +14,9 @@
     <a class="back-link" routerLink='../home'>❮ Back to calendar</a>
     <h1>Preferred Mindful Activities</h1>
     <h2>How do you want to practice mindfulness?</h2>
-    <h4>Below are the mindfulness activities you selected on signup.</h4>
+    <!-- h4>Below are the mindfulness activities you selected on signup.</h4 -->
     <br>
-    <h4>Feel free to change your mindfulness activity preferences below.</h4>
+    <h4>Select your mindfulness activity preferences below.</h4>
     <div class="activity-selection">
     <section>
         
@@ -28,13 +28,14 @@
 
           <label for="form-checkbox"> {{ activity.name}}</label>
           
-          <div class="tooltip-content">
-                <p>Duration: {{activity.duration}}</p>
-                <p>Description: {{activity.description}}</p>
-                <p><button type="button" class="change-button" (click)="LinktoMoreInfo(activity.url)">More Info</button></p>
-          </div> 
+           
           <!-- input is entered into form array 'selectedActivities' based on ts description -->
         </div>
+          <div class="tooltip-content">
+            <p>Duration: {{activity.duration}}</p>
+            <p>Description: {{activity.description}}</p>
+            <p><button type="button" class="more-info-button" (click)="LinktoMoreInfo(activity.url)">More Info</button></p>
+          </div>
         </div> 
         <button class="change-button" type="submit">Submit</button>
       </form>
