@@ -3,6 +3,7 @@ import { FormGroup, FormControl} from '@angular/forms';
 import {AuthService} from '../service/auth.service'
 import {first} from 'rxjs/operators'
 import {Router} from '@angular/router';
+import { SharedService } from '../shared.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   myForm!: FormGroup;
   //This defines use of the AuthService Class (in service component)
   //As well as the router class for use of re routing once
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private service:SharedService) { }
   //Run this function on start up and intialize local storage
   ngOnInit(): void {
     this.myForm = new FormGroup({
@@ -37,6 +38,9 @@ export class LoginComponent implements OnInit {
                               var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
                               //If the users entered info and the currentuser info match, redirect to the homepage
                               if(currentUser.email == this.f.username.value){    
+                                //get info about streaks when a user logs in
+                                this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response)); console.log("info:",JSON.stringify(response))});
+                                
                                 this.router.navigate(['/home']);
                               } else {
                                 alert("Incorrect email address and password combination. Try again.");

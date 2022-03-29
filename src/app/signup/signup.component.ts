@@ -39,7 +39,8 @@ export class SignupComponent implements OnInit {
       let userVar = {username: this.email, first_name: this.firstName, last_name: this.lastName, email: this.email, password: this.password};
       this.service.addProfile(userVar).subscribe(response =>{
         console.log('server response: ', response);
-        
+        //add streaks api call when user first creates an account
+        this.service.addStreaks(this.email);
         this.authService.login(this.email, this.password).pipe(first())
         .subscribe( data => {
                               console.log(data);

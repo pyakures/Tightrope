@@ -112,13 +112,10 @@
       
       <label for="form-checkbox"> {{ activity.name}}</label>
       <div class="tooltip-content">
-        <table class="activity-descriptions">
-          <thead>
-            <tr>Duration: {{activity.duration}}</tr>
-            <tr>Description: {{activity.description}}</tr>
-            <td><button type="button" class="change-button" (click)="LinktoMoreInfo(activity.url)">More Info</button></td>
-          </thead>
-        </table>
+            <p>Duration: {{activity.duration}}</p>
+            <p>Description: {{activity.description}}</p>
+            <p><button type="button" class="change-button" (click)="LinktoMoreInfo(activity.url)">More Info</button></p>
+
       </div> 
       
       <!-- input is entered into form array 'selectedActivities' based on ts description -->

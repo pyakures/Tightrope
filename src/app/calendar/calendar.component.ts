@@ -256,31 +256,32 @@ export class CalendarComponent implements OnInit {
  
   generateMindfulEvent(){
     console.log("generate mindful event selected:");
-    /*
+    
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    Pulls mindful info from user preferences for mindful activities
+    //Pulls mindful info from user preferences for mindful activities
     this.service.getMindfulEvents(currentUser.email).subscribe(data=>{this.MindfulEvent=data; console.log(this.MindfulEvent);
-    Parses event data from selected event to the new event so userEmail can be added to the object 
-    Needs to add information to Mindful event 'Location' attribute 
-    this.new_Mindful = {EventName: this.MindfulEvent.EventName, EventType: this.MindfulEvent.EventType, EndDate: this.MindfulEvent.EndDate, StartDate: this.MindfulEvent.StartDate,
-       Location: "Anywhere", Notes: this.MindfulEvent.Notes, StressLevel: this.MindfulEvent.StressLevel, UserEmail: this.MindfulEvent.UserEnail}  
-    this.MindfulEvent.Location = "anywhere";
+    //Parses event data from selected event to the new event so userEmail can be added to the object 
+    //Needs to add information to Mindful event 'Location' attribute 
+    //this.new_Mindful = {EventName: this.MindfulEvent.EventName, EventType: this.MindfulEvent.EventType, EndDate: this.MindfulEvent.EndDate, StartDate: this.MindfulEvent.StartDate,
+    //   Location: "Anywhere", Notes: this.MindfulEvent.Notes, StressLevel: this.MindfulEvent.StressLevel, UserEmail: this.MindfulEvent.UserEnail}  
+    //this.MindfulEvent.Location = "anywhere";
     
     console.log("This new mindful" ,this.new_Mindful);
-    Adds new local event to user's calendar 
+  
+    //Adds new local event to user's calendar 
     console.log("mindful event (done)", this.MindfulEvent);
     this.service.addEvent(this.MindfulEvent).subscribe(res=>{if (res.toString() == "Failed to add event.")
-    No stored user preferences will yield in error message for the user
+    //No stored user preferences will yield in error message for the user
     {alert("Must have Mindfulness preferences to generate mindful event. Go to 'Mindfulness Activities' to update preferences.")}
     else {
       alert(res.toString());console.log("error message", res.toString());}
       this.AuthReRoute.navigate(['/home']);
       });
       
-    
+      window.location.reload();
     });
-    */
-    window.location.reload();
+    
+    //window.location.reload();
 
   }
 
