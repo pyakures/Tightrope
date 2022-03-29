@@ -78,19 +78,29 @@
         </div>
 
         <!--STREAKS POPUOS-->
-        <ng-template #StreaksPopUP let-modal>
-            <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">Completed Mindfulness Events</h4>
-            
-            </div>
-            <div class="modal-body">
+        <div class="streak-msg-popup">
+            <ng-template #StreaksPopUP let-modal>
+                <div class="modal-header">
+                <h3 class="modal-title" id="modal-basic-title">Mindfulness Check-In</h3>
+                
+                </div>
+                <div class="modal-body">
 
-                <!--PUT THE LIST OF EVENTS BODY CODE HERE-->
+                    <h4>Have you completed your mindfulness activities?</h4><br>
+                    <h6>Select the from your previously scheduled activities below to mark them as complete and update your Mindfulness Streak.</h6><br>
 
-                <button type="button" class="streaksbutton" aria-label="Close" (click)="modal.dismiss('Cross click')">Close</button>
+                    <!--PUT THE LIST OF EVENTS BODY CODE HERE-->
+                    <input type="checkbox" name="mindfulness-activities" value="Walking" class="streak-msg-checkbox"> Walking<br>
+                    <input type="checkbox" name="mindfulness-activities" value="Meditation" class="streak-msg-checkbox"> Meditation<br>
+                    <input type="checkbox" name="mindfulness-activities" value="Breathing" class="streak-msg-checkbox"> Breathing<br><br>
 
-            </div>
-        </ng-template>
+                    <button type="button" class="streak-msg-button-complete" aria-label="Close" (click)="modal.dismiss('Cross click')">Complete Activities</button>
+                    <button type="button" class="streak-msg-button-cancel" aria-label="Close" (click)="modal.dismiss('Cross click')">Skip</button>
+
+
+                </div>
+            </ng-template>
+        </div>
 
         <div class="streak-message">
             <h5>Mindfulness Streak</h5>

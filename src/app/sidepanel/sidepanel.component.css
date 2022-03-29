@@ -384,9 +384,7 @@ meter::-moz-meter-bar {
     
 }
 
-.streaksbutton{
-    width: max-content;
-}
+
 
 dp-day-calendar {
     line-height: 0px;
@@ -516,3 +514,32 @@ dp-day-calendar.dp-material .dp-calendar-wrapper{border:1px solid #E0E0E0}dp-day
 dp-day-calendar.dp-material .dp-calendar-month:hover,dp-day-calendar.dp-material .dp-calendar-day:hover{background:#E0E0E0}
 dp-day-calendar.dp-material .dp-selected{background:#106CC8;color:#fff}
 dp-day-calendar.dp-material .dp-selected:hover{background:#106CC8}dp-day-calendar.dp-material .dp-current-day{border:1px solid #106CC8} */
+
+
+/* STREAKS POPUP STYLING BELOW */
+
+.streak-msg-button-complete, .streak-msg-button-cancel {
+    border-radius: 25px;
+    min-width: fit-content;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.streak-msg-button-cancel {
+    background-color: white;
+    color: #8b8b8b;
+    border: 2px solid #8b8b8b;
+}
+
+.modal-body h6 {
+    color: #8b8b8b;
+}
+
+.modal-body h4 {
+    color: #7fba02;
+}
+
+.streak-msg-checkbox input[type="checkbox"] {
+    padding: 1em;
+}
+
