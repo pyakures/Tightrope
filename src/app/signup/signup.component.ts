@@ -46,6 +46,7 @@ export class SignupComponent implements OnInit {
                               console.log(data);
                               var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
                               if(currentUser.email == this.email){    
+                                //this.service.addStreaks(currentUser.email).subscribe(response =>{console.log('server response: ', response);});
                                 this.AuthReRoute.navigate(['/initialMindful'])
                               }
                             }

@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, Hos
 import { CalendarService } from '../calendar.service';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
 import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes } from 'date-fns';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +12,8 @@ import { AuthService } from '../service/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
+import { saveAs } from 'file-saver';
+
 
 @Component({
   selector: 'app-account',
@@ -74,4 +76,10 @@ export class AccountComponent implements OnInit {
     this.authService.logout();
     this.AuthReRoute.navigate(['/login'])
   }
+  exportcal(){
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getIcs(currentUser.email).subscribe(data => saveAs(data));
+  }
+
+
 }

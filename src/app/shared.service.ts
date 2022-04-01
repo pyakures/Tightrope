@@ -276,6 +276,10 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
     return this.http.delete<any[]>(this.APIUrl + 'streaks/' + UserID)
   } 
 
+  getIcs(userEmail:any): Observable<any>{
+    return this.http.get<any[]>(this.APIUrl + 'ics/' + userEmail, userEmail)
+  }
+  
 
 }
 

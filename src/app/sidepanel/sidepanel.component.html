@@ -94,8 +94,36 @@
                     <input type="checkbox" name="mindfulness-activities" value="Meditation" class="streak-msg-checkbox"> Meditation<br>
                     <input type="checkbox" name="mindfulness-activities" value="Breathing" class="streak-msg-checkbox"> Breathing<br><br>
 
-                    <button type="button" class="streak-msg-button-complete" aria-label="Close" (click)="modal.dismiss('Cross click')">Complete Activities</button>
-                    <button type="button" class="streak-msg-button-cancel" aria-label="Close" (click)="modal.dismiss('Cross click')">Skip</button>
+
+                    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+                        <!-- loops through list of events to display them with a checkbox next to it -->
+                      <div class="checkbox-stuff" *ngFor="let activity of streaksactivities; let i=index">
+                        <div class="tooltip-wrap">
+                        <input type="checkbox" id="form-checkbox" formArrayName="selectedActivities" [value]="activity.value" >
+                        
+                        <label for="form-checkbox"> {{activity.EventName}}</label>
+                        <!--div class="tooltip-content">
+                          <table class="activity-descriptions">
+                            <thead>
+                              <tr>Duration: {{activity.duration}}</tr>
+                              <tr>Description: {{activity.description}}</tr>
+                              <td><button type="button" class="change-button" (click)="LinktoMoreInfo(activity.url)">More Info</button></td>
+                            </thead>
+                          </table>
+                        </div--> 
+                        
+                        <!-- input is entered into form array 'selectedActivities' based on ts description -->
+                      </div>
+                      </div>
+                      <!--button class="change-button" type="submit">Submit</button-->
+                      <button type="submit" class="streak-msg-button-complete" aria-label="Close" >Complete Activities</button>
+                        <button type="button" class="streak-msg-button-cancel" aria-label="Close" (click)="modal.dismiss('Cross click')">Skip</button>
+                    </form>
+
+
+
+
+                    
 
 
                 </div>
@@ -104,30 +132,9 @@
 
         <div class="streak-message">
             <h5>Mindfulness Streak</h5>
-            <h4>12 Activities</h4>
-            <!-- a routerLink="/streak">Change Streak Goal ➜</a><br -->
+            <h4>27 Activities</h4>
+            <a routerLink="/streak">Change Streak Goal ➜</a><br>
             <a (click)="open(StreaksPopUP)">Mindfulness Check-In</a>
-        
-
-            <div class="streak-summary-panel">
-                <h1>Mindfulness Streak</h1>
-                <h3>Total Mindfulness Events Scheduled</h3>
-                <!-- <div class="temp-slider"></div> -->
-                <p>{{stressfullCount}} activities</p>
-                <!-- progress class="stress-summary-meters" value="{{stressfullCount}}" min="0" max="10">2 events</progress -->
-                
-                <h3>Mindfulness Events Completed</h3>
-                <!-- Upper bound determined by 8 hr work day -->
-                <p>{{12}} activities</p>
-                <!-- progress class="stress-summary-meters" value="{{totalStress}}" min="0" max="8">2 events</progress -->
-
-                <progress class="streak-summary-meters" value="86" min="0" max="100"></progress>
-                <p>You've completed 86% of your scheduled<br>mindfulness activities. Nice job!</p>
-
-                <button type="button" class="streak-reset-button">Reset Streak</button>
-
-                
-            </div>
         </div>
 
         <!--p  class="infotext">You've got a 4 week streak of doing three or more relaxing activities. <br>Way to go!</p>

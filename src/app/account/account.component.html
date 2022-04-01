@@ -17,6 +17,7 @@
       <input class="userName" type="email" id="userName" name="userName" [(ngModel)]="userName_u" placeholder="Change Email ➜"><br>
       <input class="Password" type="text" id="password" name="password" [(ngModel)]="password_u" placeholder="Change Password ➜"
         onfocus="(this.type='password')"><br>
+      <input type="button" id="exportcalendar" value="Export Calendar" (click)="exportcal()">
       <input type="submit" value="Update">
       <input type="button" class="button-cancel" value="Cancel" routerLink='../home'>
       <input type="button" class="deactivateAccount" value="Deactivate Account" (click)="deactivate()" >

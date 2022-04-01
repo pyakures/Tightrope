@@ -6,7 +6,7 @@ import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay
 import { Subject } from 'rxjs';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { Time } from '@angular/common';
 import { DayCalendarComponent } from 'ng2-date-picker';
 import { AuthService } from '../service/auth.service';
@@ -27,7 +27,13 @@ import {SharedService} from 'src/app/shared.service';
 export class SidepanelComponent implements OnInit {
 
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
-  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService, private modalService: NgbModal){}
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService, private modalService: NgbModal, fb: FormBuilder){
+    this.form = fb.group({
+      selectedActivities:  new FormArray([])
+     });
+  }
+
+
   userVar:any;
   stresslevel:any;
   stressfullDay:any;
@@ -40,6 +46,8 @@ export class SidepanelComponent implements OnInit {
   lastName:any;
   fullName:any;
   monthALLCAPS:any;
+
+  
 
   //constructor() { }
 
@@ -61,6 +69,7 @@ export class SidepanelComponent implements OnInit {
     //Calendar display methods 
     this.displayCurrentUser();
     this.displayCurrentMonth();
+    this.getStreaksdata();
 
   }
   
@@ -153,6 +162,36 @@ export class SidepanelComponent implements OnInit {
 
   /////stress popup algos
 
+  form: FormGroup;
+  streaksevents:any;
+  streaksactivities:any;
+  streakcount:any;
+
+  getStreaksdata(){
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response))});
+    this.streaksevents = JSON.parse(localStorage.getItem('streaksData') as string);
+    //console.log(this.streaksevents[0][0].UserEmail);
+    console.log(this.streaksevents);
+    this.streaksactivities= this.streaksevents[1];
+    console.log(this.streaksactivities);
+    this.streakcount= this.streaksevents[0][0].StreakCount;
+    console.log(this.streakcount);
+    
+    
+
+  }
+
+
+
+
+
+
+
+  
+
+  //Modal
+
   closeResult = '';
   
   open(content:any) {
@@ -171,6 +210,36 @@ export class SidepanelComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  //If the box is status is changed then the activity is added/removed from selected activities
+  /*onCheckboxChange(event: any) {
+    const selectedActivities = (this.form.controls.selectedActivities as FormArray);
+    if (event.target.checked) {
+      selectedActivities.push(new FormControl(event.target.value));
+    } else {
+      const index = selectedActivities.controls
+      .findIndex(x => x.value === event.target.value);
+      selectedActivities.removeAt(index);
+    }
+
+    console.log(selectedActivities);
+    //set selected array values into the mindfulIDs array
+    //isolates values from FormArray object
+    this.mindfulPreferenceIDs = selectedActivities.value;
+    
+    
+    this.test = { mindfulPreferenceIDs: this.mindfulPreferenceIDs};
+    console.log(this.test);
+
+  }*/
+
+
+
+
+
+  submit(){
+
   }
 
 }
