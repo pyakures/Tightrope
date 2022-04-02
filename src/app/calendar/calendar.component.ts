@@ -32,11 +32,11 @@ export class CalendarComponent implements OnInit {
   MindfulEvent: any=[];
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
   //SharedService is for accessing the methods in that file - must be .service to denote appropriate method
-  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService){
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService, private calendarService:CalendarService){
   }
 
   /*Outsourced code from https://github.com/mattlewis92/angular-calendar#getting-started*/
-  viewDate: Date = new Date();
+  viewDate: Date = this.calendarService.thisDay;
   view: CalendarView = CalendarView.Week;
   CalendarView = CalendarView;
   /*End of outsourced code*/
@@ -66,11 +66,14 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit():void{
     //On page start up, call all events of the user and put them in the "EventsList" variable
+    this.setView(this.calendarService.thisCalView);
+    this.calendarService.thisCalView =CalendarView.Week;
     this.refreshEventList();
     if(window.innerWidth < 800){
       this.setView(CalendarView.Day);
     } 
     this.refreshPagewithEvents();
+    this.calendarService.thisDay = new Date();
   }
 
 
@@ -101,6 +104,8 @@ export class CalendarComponent implements OnInit {
 
   eventClicked({ event }: { event: CalendarEvent }): void {
     //WHAT HAPPENS WHEN AN EVENT IS CLICKED
+    this.calendarService.thisCalView= this.view;
+    this.calendarService.thisDay = this.viewDate;
     this.service.sharedid = event.id; 
     this.AuthReRoute.navigate(['../editevent']);
   }
@@ -302,6 +307,7 @@ export class CalendarComponent implements OnInit {
 
 
 /*End of custom code section*/
+
 
 
 } 
