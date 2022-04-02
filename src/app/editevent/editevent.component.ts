@@ -57,6 +57,11 @@ export class EditeventComponent implements OnInit {
 
 
   getEventInfo():void{
+    if(this.service.sharedid==undefined){
+      this.AuthReRoute.navigate(['/home']);
+    }
+
+
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getEvents(currentUser.email).subscribe(data=>{this.EventsList=data; 
     
