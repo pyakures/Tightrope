@@ -33,6 +33,7 @@ export class AccountComponent implements OnInit {
   lastName:any;
   fullName:any;
   Useremail:any;
+  fileName:any;
 
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService) { }
 
@@ -78,8 +79,28 @@ export class AccountComponent implements OnInit {
   }
   exportcal(){
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getIcs(currentUser.email).subscribe(data => saveAs(data));
+    window.open(this.service.APIUrl + 'ics/' + currentUser.email);
+   // this.service.getIcs(currentUser.email, {responseType: 'blob'}).subscribe(data => saveAs(data));
   }
 
+  selectedFile: any = null;
+
+  onFileSelected(event:any){
+    this.selectedFile = <File>event.target.files[0];
+    console.log(this.selectedFile);
+    
+  }
+   
+  onUpload(){
+
+    const fd= new FormData;
+    fd.append('calendar',this.selectedFile, this.selectedFile.Name )
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.importIcs(currentUser.email,this.selectedFile).subscribe(response =>{console.log('server response: ', response);});;
+    
+  }
+
+
+  
 
 }

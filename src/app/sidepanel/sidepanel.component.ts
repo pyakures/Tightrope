@@ -77,6 +77,7 @@ export class SidepanelComponent implements OnInit {
   //Call /service/AuthService logout function
   logout() {
     this.authService.logout();
+    localStorage.clear();
     //Reroute to the login page
     this.AuthReRoute.navigate(['/login'])
   }

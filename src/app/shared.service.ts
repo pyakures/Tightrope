@@ -280,6 +280,10 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
     return this.http.get<any[]>(this.APIUrl + 'ics/' + userEmail, userEmail)
   }
   
+  importIcs(userEmail:any, val:any){
+    return this.http.post<any[]>(this.APIUrl + 'ics/' + userEmail,val)
+  }
+
 
 }
 
