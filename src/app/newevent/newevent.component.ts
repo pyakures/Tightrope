@@ -33,7 +33,7 @@ export class NeweventComponent implements OnInit {
 
   EventsList:any=[];
 
-  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService) { }
+  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService, private calendarService:CalendarService) { }
   
   ngOnInit(): void {
 
@@ -79,6 +79,7 @@ export class NeweventComponent implements OnInit {
 
       this.service.addEvent(newEvent).subscribe(res=>{
       alert(res.toString());
+      this.calendarService.thisDay= new Date(this.StartDate);
       this.AuthReRoute.navigate(['/home']);
     });
       
