@@ -170,7 +170,8 @@ export class SidepanelComponent implements OnInit {
 
   getStreaksdata(){
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response))});
+    this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response))
+  
     this.streaksevents = JSON.parse(localStorage.getItem('streaksData') as string);
     //console.log(this.streaksevents[0][0].UserEmail);
     console.log(this.streaksevents);
@@ -179,6 +180,9 @@ export class SidepanelComponent implements OnInit {
     this.streakcount= this.streaksevents[0][0].StreakCount;
     console.log(this.streakcount);
     
+  }
+    );
+   
     
 
   }
