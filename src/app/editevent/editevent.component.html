@@ -9,7 +9,12 @@
   <app-sidepanel class="sidepannelview"></app-sidepanel>
 
   <div class="wrapper">
-    <h1>Edit Event</h1><br>
+    <div class="pageTitle">
+      <h1>Edit Event</h1><br>
+      <!--button type="button" class="shareEvent">&#x21e9;</button-->
+    </div>
+  
+   
     
     <form class="neweventForm" (ngSubmit)="updateCurrentEvent()">
     <!-- gets users input for event name -->
@@ -46,6 +51,7 @@
     <input type="submit" value="Save"> 
     <button type="button" class="buttonDelete" (click)="deleteCurrentEvent()">Delete</button>
     <button type="button" class="cancelButton" routerLink='../home' >Cancel</button>
+    <button type="button" class="shareEvent" (click)="shareThisEvent()">&#x21e9;</button>
     </form>
   </div>
 

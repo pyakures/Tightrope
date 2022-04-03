@@ -12,6 +12,7 @@ import { AuthService } from '../service/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-editevent',
@@ -154,6 +155,23 @@ export class EditeventComponent implements OnInit {
     }); 
 
    
+  }
+
+  shareThisEvent(){
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    var tempevent = {
+      'EventID' : this.service.sharedid
+    }
+
+    this.service.getIndividualIcs(currentUser.email, tempevent).subscribe((response: any) => { //when you use stricter type checking
+			let blob:any = new Blob([response], { type: 'text/calendar; charset=utf-8' });
+      //console.log(blob);
+			const url = window.URL.createObjectURL(blob);
+			//window.open(url);
+      var nameoffile:string = 'Tightrope_event.ics';
+      saveAs(blob,nameoffile);
+    });
+
   }
 }
 

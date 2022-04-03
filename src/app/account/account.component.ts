@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener } from '@angular/core';
 import { CalendarService } from '../calendar.service';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
-import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes } from 'date-fns';
+import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes, lightFormat } from 'date-fns';
 import { Observable, Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
@@ -79,8 +79,16 @@ export class AccountComponent implements OnInit {
   }
   exportcal(){
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    window.open(this.service.APIUrl + 'ics/' + currentUser.email);
-   // this.service.getIcs(currentUser.email, {responseType: 'blob'}).subscribe(data => saveAs(data));
+    
+    this.service.getIcs(currentUser.email).subscribe((response: any) => { //when you use stricter type checking
+			let blob:any = new Blob([response], { type: 'text/calendar; charset=utf-8' });
+      //console.log(blob);
+			const url = window.URL.createObjectURL(blob);
+			//window.open(url);
+      var nameoffile:string = currentUser.email + '_calendar.ics';
+      saveAs(blob,nameoffile);
+
+    });
   }
 
   selectedFile: any = null;

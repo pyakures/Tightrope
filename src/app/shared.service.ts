@@ -277,11 +277,16 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   } 
 
   getIcs(userEmail:any): Observable<any>{
-    return this.http.get<any[]>(this.APIUrl + 'ics/' + userEmail, userEmail)
+    return this.http.get(this.APIUrl + 'ics/' + userEmail, {responseType: 'blob'});
+  }
+
+  getIndividualIcs(userEmail:any, val:any): Observable<any>{
+    return this.http.put(this.APIUrl + 'ics/' + userEmail, val, {responseType: 'blob'});
   }
   
+  
   importIcs(userEmail:any, val:any){
-    return this.http.post<any[]>(this.APIUrl + 'ics/' + userEmail,val)
+    return this.http.post(this.APIUrl + 'ics/' + userEmail,val, {responseType:'blob'});
   }
 
 
