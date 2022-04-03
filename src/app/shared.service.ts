@@ -276,15 +276,17 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
     return this.http.delete<any[]>(this.APIUrl + 'streaks/' + UserID)
   } 
 
+  //This API works and its good to code, do not change it as doing so might break the functionality
   getIcs(userEmail:any): Observable<any>{
     return this.http.get(this.APIUrl + 'ics/' + userEmail, {responseType: 'blob'});
   }
 
+  //This API works and its good to code, do not change it as doing so might break the functionality
   getIndividualIcs(userEmail:any, val:any): Observable<any>{
     return this.http.put(this.APIUrl + 'ics/' + userEmail, val, {responseType: 'blob'});
   }
   
-  
+  //still working on this tho
   importIcs(userEmail:any, val:any){
     return this.http.post(this.APIUrl + 'ics/' + userEmail,val, {responseType:'blob'});
   }
