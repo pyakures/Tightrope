@@ -287,8 +287,10 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   }
   
   //still working on this tho
-  importIcs(userEmail:any, val:any){
-    return this.http.post(this.APIUrl + 'ics/' + userEmail,val, {responseType:'blob'});
+  importIcs(userEmail:any, file: File): Observable<any>{
+    const calendar: FormData = new FormData();
+    calendar.append('calendar', file);
+    return this.http.post(this.APIUrl + 'ics/' + userEmail,calendar, {reportProgress: true, responseType:'json'});
   }
 
 

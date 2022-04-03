@@ -13,6 +13,7 @@ import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
 import { saveAs } from 'file-saver';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -33,7 +34,6 @@ export class AccountComponent implements OnInit {
   lastName:any;
   fullName:any;
   Useremail:any;
-  fileName:any;
 
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService) { }
 
@@ -79,7 +79,7 @@ export class AccountComponent implements OnInit {
   }
   exportcal(){
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    
+
     this.service.getIcs(currentUser.email).subscribe((response: any) => { //when you use stricter type checking
 			let blob:any = new Blob([response], { type: 'text/calendar; charset=utf-8' });
       //console.log(blob);
@@ -91,20 +91,54 @@ export class AccountComponent implements OnInit {
     });
   }
 
-  selectedFile: any = null;
+  selectedFiles?: FileList;
+  currentFile?: File;
+  filename:any= "Import Calendar";
+  message = '';
+  fileInfos?: Observable<any>;
 
-  onFileSelected(event:any){
+  selectFile(event: any): void {
+    this.selectedFiles = event.target.files;
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+      if(file){
+        this.currentFile= file;
+        this.filename = this.currentFile.name;
+      }
+    }
+  }
+
+  /*onFileSelected(event:any){
     this.selectedFile = <File>event.target.files[0];
     console.log(this.selectedFile);
     
-  }
+  }*/
    
-  onUpload(){
-
-    const fd= new FormData;
-    fd.append('calendar',this.selectedFile, this.selectedFile.Name )
+  onUpload(): void{
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.importIcs(currentUser.email,this.selectedFile).subscribe(response =>{console.log('server response: ', response);});;
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+      if (file) {
+        this.currentFile = file;
+        this.service.importIcs(currentUser.email, this.currentFile).subscribe(
+          (event: any) => {
+            if (event instanceof HttpResponse) {
+              this.message = event.body.message;
+            }
+            alert("Event have been imported to the calendar!");
+          },
+          (err: any) => {
+            console.log(err);
+            if (err.error && err.error.message) {
+              this.message = err.error.message;
+            } else {
+              this.message = 'Could not upload the file!';
+            }
+            this.currentFile = undefined;
+          });
+      }
+      this.selectedFiles = undefined;
+    }
     
   }
 

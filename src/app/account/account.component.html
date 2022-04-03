@@ -13,24 +13,34 @@
     <h2>{{fullName}}</h2>
     <h3>{{Useremail}}</h3>
 
-    
-    <form class="updateAccount" (ngSubmit)="onSubmit()">
-      <input class="firstName" type="text" id="firstName" name="firstName" [(ngModel)]="firstName_u" placeholder="Change First name ➜"><br>
-      <input class="lastName" type="text" id="lastName" name="lastName" [(ngModel)]="lastName_u" placeholder="Change Last name ➜"><br>
-      <input class="userName" type="email" id="userName" name="userName" [(ngModel)]="userName_u" placeholder="Change Email ➜"><br>
-      <input class="Password" type="text" id="password" name="password" [(ngModel)]="password_u" placeholder="Change Password ➜"
-        onfocus="(this.type='password')"><br>
-     
-      <input type="submit" value="Update">
-      <input type="button" class="button-cancel" value="Cancel" routerLink='../home'>
-      <input type="button" class="deactivateAccount" value="Deactivate Account" (click)="deactivate()" >
-    </form><br>
+    <div class="import-exportCal">
+      <a class="exportcalendar" id="exportcalendar" name= "Export Calendar" value="Export Calendar" (click)="exportcal()"><img src="../../assets/Tightrope-Logo-Icon.png" alt="miniCal"> Export Calendar</a><br><br>
+      <label class="custom-file-upload">
+        <input type="file" accept=".ics" class="file-input" (change)="selectFile($event)" #fileUpload> <img src="../../assets/Tightrope-Logo-Icon.png" alt="miniCal"> {{filename}}
+      </label>
 
-    <a id="exportcalendar" name= "Export Calendar" value="Export Calendar" (click)="exportcal()">Export Calendar</a><br><br>
-    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
-    <button (click)="onUpload()" class="btn btn-success">
-      Upload
-    </button>
+      <button [disabled]="!selectedFiles" (click)="onUpload()" class="importbutton">
+        Upload
+      </button>
+
+    </div>
+
+    <div class="userAccountChange">
+      <form class="updateAccount" (ngSubmit)="onSubmit()">
+        <input class="firstName" type="text" id="firstName" name="firstName" [(ngModel)]="firstName_u" placeholder="Change First name ➜"><br>
+        <input class="lastName" type="text" id="lastName" name="lastName" [(ngModel)]="lastName_u" placeholder="Change Last name ➜"><br>
+        <input class="userName" type="email" id="userName" name="userName" [(ngModel)]="userName_u" placeholder="Change Email ➜"><br>
+        <input class="Password" type="text" id="password" name="password" [(ngModel)]="password_u" placeholder="Change Password ➜"
+          onfocus="(this.type='password')"><br>
+      
+        <input type="submit" value="Update">
+        <input type="button" class="button-cancel" value="Cancel" routerLink='../home'>
+        <input type="button" class="deactivateAccount" value="Deactivate Account" (click)="deactivate()" >
+      </form><br>
+  </div>
+
+   
+    
 
      
   </div>
