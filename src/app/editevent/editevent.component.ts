@@ -170,6 +170,7 @@ export class EditeventComponent implements OnInit {
 			//window.open(url);
       var nameoffile:string = 'Tightrope_event.ics';
       saveAs(blob,nameoffile);
+      
     });
 
   }

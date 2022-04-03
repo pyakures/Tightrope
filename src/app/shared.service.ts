@@ -286,7 +286,7 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
     return this.http.put(this.APIUrl + 'ics/' + userEmail, val, {responseType: 'blob'});
   }
   
-  //still working on this tho
+  //This API works and its good to code, do not change it as doing so might break the functionality
   importIcs(userEmail:any, file: File): Observable<any>{
     const calendar: FormData = new FormData();
     calendar.append('calendar', file);
