@@ -39,9 +39,10 @@ export class LoginComponent implements OnInit {
                               //If the users entered info and the currentuser info match, redirect to the homepage
                               if(currentUser.email == this.f.username.value){    
                                 //get info about streaks when a user logs in
-                                this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response)); console.log("info:",JSON.stringify(response))});
-                                
+                                this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response));
                                 this.router.navigate(['/home']);
+                              });
+                              
                               } else {
                                 alert("Incorrect email address and password combination. Try again.");
                               }
