@@ -1,5 +1,5 @@
 //Custom Code by Sahil Pyakurel
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener, ElementRef } from '@angular/core';
 import { CalendarService } from '../calendar.service';
 import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
 import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes, setDate } from 'date-fns';
@@ -13,7 +13,10 @@ import { AuthService } from '../service/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
+import { waitForAsync } from '@angular/core/testing';
 //import { Console } from 'console';
+
+
 
 
 @Component({
@@ -26,11 +29,17 @@ import {SharedService} from 'src/app/shared.service';
 })
 export class SidepanelComponent implements OnInit {
 
+
+  @ViewChild('StreaksPopUP') streakpop!: TemplateRef<any>;
+ 
+
+
   //AuthService is for the logout, AuthReRoute is to route the page after logout is pressed
   constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService, private modalService: NgbModal, fb: FormBuilder){
     this.form = fb.group({
       selectedActivities:  new FormArray([])
      });
+  
   }
 
 
@@ -165,25 +174,27 @@ export class SidepanelComponent implements OnInit {
 
   form: FormGroup;
   streaksevents:any;
+  userdata:any;
   streaksactivities:any;
-  streakcount:any;
+  streakcount:any = 0;
 
   getStreaksdata(){
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response))
+    this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response));
   
     this.streaksevents = JSON.parse(localStorage.getItem('streaksData') as string);
     //console.log(this.streaksevents[0][0].UserEmail);
     console.log(this.streaksevents);
+    this.userdata = this.streaksevents[0][0];
     this.streaksactivities= this.streaksevents[1];
     console.log(this.streaksactivities);
     this.streakcount= this.streaksevents[0][0].StreakCount;
     console.log(this.streakcount);
-    
-  }
-    );
-   
-    
+
+    if(this.streaksactivities[0]!=undefined){
+      this.open(this.streakpop);
+    }
+    });
 
   }
 
@@ -199,7 +210,7 @@ export class SidepanelComponent implements OnInit {
 
   closeResult = '';
   
-  open(content:any) {
+  open(content: TemplateRef<any>) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -209,8 +220,10 @@ export class SidepanelComponent implements OnInit {
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
+      this.skipCheck();
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      this.skipCheck();
       return 'by clicking on a backdrop';
     } else {
       return `with: ${reason}`;
@@ -218,33 +231,52 @@ export class SidepanelComponent implements OnInit {
   }
 
   //If the box is status is changed then the activity is added/removed from selected activities
-  /*onCheckboxChange(event: any) {
+  completedLength:any;
+
+  onCheckboxChange(event: any) {
     const selectedActivities = (this.form.controls.selectedActivities as FormArray);
     if (event.target.checked) {
       selectedActivities.push(new FormControl(event.target.value));
     } else {
-      const index = selectedActivities.controls
-      .findIndex(x => x.value === event.target.value);
+      const index = selectedActivities.controls.findIndex(x => x.value === event.target.value);
       selectedActivities.removeAt(index);
     }
-
-    console.log(selectedActivities);
-    //set selected array values into the mindfulIDs array
-    //isolates values from FormArray object
-    this.mindfulPreferenceIDs = selectedActivities.value;
+    //console.log(selectedActivities.value);
+    //console.log(selectedActivities.length);
+    this.completedLength= selectedActivities.length;
+    //console.log(this.streaksactivities.length);
     
+  }
+
+  skipCheck(){
+    this.userdata.StreakCount= 0;
+    console.log(this.userdata);
+    this.service.updateStreaks(this.userdata).subscribe(response =>{console.log('server response: ', response);
+    this.getStreaksdata();
+    this.modalService.dismissAll('Skip');
+    alert("Streaks has been reset to 0. When prompted, please select all of the mindfulness activites and click on 'Complete Activities' to add it to your streaks.");
+    });
     
-    this.test = { mindfulPreferenceIDs: this.mindfulPreferenceIDs};
-    console.log(this.test);
-
-  }*/
-
-
-
+  }
 
 
   submit(){
+    if(this.completedLength==this.streaksactivities.length){
+      this.userdata.StreakCount= this.userdata.StreakCount+this.completedLength;
 
+      console.log(this.userdata);
+      this.service.updateStreaks(this.userdata).subscribe(response =>{console.log('server response: ', response);
+    
+      this.getStreaksdata();
+      this.modalService.dismissAll('Submit');
+      alert("Streaks has been updated.");
+      });
+    }
+    else{
+      this.skipCheck();
+    }
+  
+    
   }
 
 }
