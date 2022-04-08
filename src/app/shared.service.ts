@@ -258,13 +258,16 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
     )
   } 
   //This API will take in the current version of the User Streak Data that is obtained from the GET method and updates it with the new streak count (post login)
-  //Reqiured fields: UserID, UserEmail, StreakCount, LastLogin
+  //Reqiured fields: UserID, UserEmail, StreakCount, LastLogin, and the LifetimeScheduledMindful
+  //
+  //Notes as of 4/7/22: This API call has been updated with the LifetimeScheduled Streaks, Everytime the user adds a mindful event, increment that field by one
   //
   //Additional Notes for Integration: this is a possible solution, most likely will need to be adapted
   //var streaksData = { "UserID": 1,
   //                    "UserEmail": "test@test.com",
   //                    "StreakCount": 27,
-  //                    "LastLogin": "2022-03-10T00:30:00Z"};
+  //                    "LastLogin": "2022-03-10T00:30:00Z",
+  //                    "LifetimeScheduledMindful": 145};
   //console.log(streaksData);
   //this.service.updateStreaks(streaksData).subscribe(response =>{console.log('server response: ', response);});
   updateStreaks(userStreaksData:any){
