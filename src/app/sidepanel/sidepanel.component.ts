@@ -14,6 +14,7 @@ import {Router, RouterLink} from '@angular/router';
 import { templateJitUrl } from '@angular/compiler';
 import {SharedService} from 'src/app/shared.service';
 import { waitForAsync } from '@angular/core/testing';
+//import { setTimeout } from 'timers';
 //import { Console } from 'console';
 
 
@@ -78,6 +79,8 @@ export class SidepanelComponent implements OnInit {
     //Calendar display methods 
     this.displayCurrentUser();
     this.displayCurrentMonth();
+
+    //getting the streaks data from the local storage
     this.getStreaksdata();
 
   }
@@ -170,16 +173,16 @@ export class SidepanelComponent implements OnInit {
 
 
 
-  /////stress popup algos
+  /////stress popup algos and variables
 
   form: FormGroup;
   streaksevents:any;
   userdata:any;
   streaksactivities:any;
   streakcount:any = 0;
+  LifetimeMindful:any =  0;
 
   getStreaksdata(){
-  
   
     this.streaksevents = JSON.parse(localStorage.getItem('streaksData') as string);
     //console.log(this.streaksevents[0][0].UserEmail);
@@ -189,9 +192,15 @@ export class SidepanelComponent implements OnInit {
     console.log(this.streaksactivities);
     this.streakcount= this.streaksevents[0][0].StreakCount;
     console.log(this.streakcount);
+    this.LifetimeMindful= this.streaksevents[0][0].LifetimeScheduledMindful;
+
 
     if(this.streaksactivities[0]!=undefined){
-      this.open(this.streakpop);
+      var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+      setTimeout( () => this.open(this.streakpop), 2000 );
+      /*this.service.getStressPredict(currentUser.email).subscribe(response =>{
+        this.open(this.streakpop);
+      });*/
     }
     
 
@@ -209,6 +218,8 @@ export class SidepanelComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+
+    
   }
 
   private getDismissReason(reason: any): string {
@@ -242,27 +253,70 @@ export class SidepanelComponent implements OnInit {
   }
 
   skipCheck(){
-    this.userdata.StreakCount= 0;
-    console.log(this.userdata);
-    this.service.updateStreaks(this.userdata).subscribe(response =>{console.log('server response: ', response);
+    this.streaksevents[0][0].StreakCount= 0;
+    var tempEventList:any = {};
+    this.streaksevents[1] = tempEventList;
+    console.log(this.streaksevents);
+   
+    this.service.updateStreaks(this.streaksevents[0][0]).subscribe(response =>{console.log('server response: ', response);
+
+    /*var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response));
+
     this.getStreaksdata();
+    alert("Streaks has been reset to 0. When prompted, please select all of the mindfulness activites and click on 'Complete Activities' to add it to your streaks.");
+
+    });*/
+    localStorage.setItem("streaksData",JSON.stringify(this.streaksevents));
     this.modalService.dismissAll('Skip');
     alert("Streaks has been reset to 0. When prompted, please select all of the mindfulness activites and click on 'Complete Activities' to add it to your streaks.");
+    this.getStreaksdata();
     });
     
+  }
+
+  resetStreaks(){
+    this.streaksevents[0][0].StreakCount= 0;
+    this.streaksevents[0][0].LifetimeScheduledMindful= 0;
+    console.log(this.streaksevents[0][0]);
+   
+    this.service.updateStreaks(this.streaksevents[0][0]).subscribe(response =>{console.log('server response: ', response);
+
+    /*var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response));
+
+    this.getStreaksdata();
+    alert("Streaks has been reset to 0. When prompted, please select all of the mindfulness activites and click on 'Complete Activities' to add it to your streaks.");
+
+    });*/
+    localStorage.setItem("streaksData",JSON.stringify(this.streaksevents));
+    alert("All streaks data has been reset to 0.");
+    this.getStreaksdata();
+    });
+
   }
 
 
   submit(){
     if(this.completedLength==this.streaksactivities.length){
-      this.userdata.StreakCount= this.userdata.StreakCount+this.completedLength;
+      this.streaksevents[0][0].StreakCount= this.streaksevents[0][0].StreakCount+this.completedLength;
+      var tempEventList:any = {};
+      this.streaksevents[1] = tempEventList;
 
-      console.log(this.userdata);
-      this.service.updateStreaks(this.userdata).subscribe(response =>{console.log('server response: ', response);
+      console.log(this.streaksevents);
+      this.service.updateStreaks(this.streaksevents[0][0]).subscribe(response =>{console.log('server response: ', response);
+      /*var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+      this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response)); 
+        this.getStreaksdata();
+        this.modalService.dismissAll('Submit');
+        alert("Streaks has been updated.");
+      
     
-      this.getStreaksdata();
-      this.modalService.dismissAll('Submit');
-      alert("Streaks has been updated.");
+        });*/
+        localStorage.setItem("streaksData",JSON.stringify(this.streaksevents));
+        this.modalService.dismissAll('Submit');
+        this.getStreaksdata();
+        alert("Streaks has been updated.");
       });
     }
     else{
@@ -271,6 +325,7 @@ export class SidepanelComponent implements OnInit {
   
     
   }
+
 
 }
 

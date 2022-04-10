@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
                               var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
                               //If the users entered info and the currentuser info match, redirect to the homepage
                               if(currentUser.email == this.f.username.value){    
-                                //get info about streaks when a user logs in
+                                //get info about streaks when a user logs in and stores in local storage
                                 this.service.getStreaks(currentUser.email).subscribe(response =>{localStorage.setItem("streaksData", JSON.stringify(response));
                                 this.router.navigate(['/home']);
                               });
