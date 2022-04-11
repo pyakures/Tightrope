@@ -182,7 +182,7 @@ export class SidepanelComponent implements OnInit {
   streakcount:any = 0;
   LifetimeMindful:any =  0;
 
-  getStreaksdata(){
+  public getStreaksdata():void{
   
     this.streaksevents = JSON.parse(localStorage.getItem('streaksData') as string);
     //console.log(this.streaksevents[0][0].UserEmail);

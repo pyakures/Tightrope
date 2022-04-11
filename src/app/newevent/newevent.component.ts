@@ -85,11 +85,16 @@ export class NeweventComponent implements OnInit {
         streaksevents[0][0].LifetimeScheduledMindful = streaksevents[0][0].LifetimeScheduledMindful+1;
         this.service.updateStreaks(streaksevents[0][0]).subscribe(response =>{console.log('server response: ', response);
           localStorage.setItem("streaksData",JSON.stringify(streaksevents));
+          this.calendarService.thisDay= new Date(this.StartDate);
+          this.AuthReRoute.navigate(['/home']);
         });
       }
+      else{
+        this.calendarService.thisDay= new Date(this.StartDate);
+        this.AuthReRoute.navigate(['/home']);
+      }
 
-      this.calendarService.thisDay= new Date(this.StartDate);
-      this.AuthReRoute.navigate(['/home']);
+     
     });
       
 
