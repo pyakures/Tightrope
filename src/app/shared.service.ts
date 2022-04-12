@@ -126,8 +126,8 @@ readonly APIUrl = "https://tightropeapi.herokuapp.com/"
   
   //Local Events Recommendations
   //only takes in user's email as a string
-  getLocalEvents(useremail:any){
-    return this.http.get<any[]>(this.APIUrl + 'localevents/' + useremail, useremail)
+  getLocalEvents(useremail:any, val:any){
+    return this.http.post<any[]>(this.APIUrl + 'localevents/' + useremail, val)
   }
   
   //Mindful Event Recommendations

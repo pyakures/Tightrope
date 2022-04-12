@@ -24,16 +24,28 @@ export class LocalEventsComponent implements OnInit {
     UserEmail: ""
   }
 
+  state: any;
+  city:any; 
 
   ngOnInit(): void {
-    this.displayLocalEvents();
+    
+  }
+
+  onSubmit(){
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    if(this.city!= undefined && this.state!= undefined){
+      let changeVal = {city: this.city, state: this.state};
+      this.displayLocalEvents(changeVal);
+      console.log(changeVal);
+    }
+    
   }
 
   //Gets local events from api and stores in local variable
-  displayLocalEvents(){
+  displayLocalEvents(changeVal:any){
     console.log("Display Local Events:");
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getLocalEvents(currentUser.email).subscribe(data=>{this.LocalEventsList=data; console.log(this.LocalEventsList);} );
+    this.service.getLocalEvents(currentUser.email, changeVal).subscribe(data=>{this.LocalEventsList=data; console.log(this.LocalEventsList);} );
     
 
   }

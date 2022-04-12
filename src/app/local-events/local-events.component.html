@@ -12,7 +12,14 @@
   <div class="content-wrapper">
     <a class="back-link" routerLink='../home'>❮ Back to calendar</a>
     <h1>Local Events</h1><br>
-    <h2>What's happening near you?</h2>
+    <h2>What's happening near you?</h2><br>
+    <h3>Enter your current Location</h3>
+    <h4>Example: Reno  NV</h4><br>
+    <form class="updateZip" (ngSubmit)="onSubmit()">
+      <input class="city" type="text" id="city" name="city" [(ngModel)]="city" placeholder="City ➜"><br>
+      <input class="state" type="text" id="state" name="state" [(ngModel)]="state" placeholder="State ➜"><br>
+      <input type="submit" value="Find Events">
+    </form><br>
     <h3>Ticketed Events</h3>
     <h4>It may take a while for events to load...</h4>
 
