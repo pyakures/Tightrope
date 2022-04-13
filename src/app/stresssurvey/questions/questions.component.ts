@@ -49,6 +49,7 @@ export class QuestionsComponent implements OnInit {
     //For now the sum is exported to the console log
     console.log('Sum: ',this.sum);
 
+
     this.putValue();
     //Reroute to home 
     this.AuthReRoute.navigate(['/home'])
@@ -60,7 +61,16 @@ export class QuestionsComponent implements OnInit {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     this.result = { UserEmail : currentUser.email, SurveyValue : this.sum};
     console.log(this.result);
-    this.service.updateSurveyData(currentUser.email, this.result).subscribe(res=>{alert(res.toString());});
+    this.service.updateSurveyData(currentUser.email, this.result).subscribe(res=>{
+      console.log("stress value:", this.sum); 
+      if(this.sum >= 0 && this.sum < 14){
+        alert("You have reported having low stress.");
+      }else if(this.sum < 26){
+        alert("You have reported having moderate stress.");
+      }else if(this.sum <= 40){
+      alert("You have reported having high stress.");
+      }
+    });
 
   }
 }
