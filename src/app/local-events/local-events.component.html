@@ -21,8 +21,6 @@
       <input type="submit" value="Find Events">
     </form><br>
     <h3>Ticketed Events</h3>
-    <h4>It may take a while for events to load...</h4>
-
     <!-- List upcoming events in a table -->
     <table class="table table-striped">
         <thead>
@@ -33,6 +31,7 @@
             <th>Event URL</th>
             <th></th>
         </thead>
+        <img *ngIf="isLoading" src="../../assets/Loading_icon.gif" alt="loading" style="width:100%">
         <tbody *ngFor="let event of LocalEventsList">
                 <td>{{event.EventName}}</td>
                 <td>{{event.StartDate}}</td>

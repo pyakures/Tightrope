@@ -41,7 +41,6 @@ import { Error404Component } from './error404/error404.component';
 import { FooterComponent } from './footer/footer.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +66,7 @@ import { FooterComponent } from './footer/footer.component';
     LocalEventsComponent,
     Error404Component,
     FooterComponent,
-
+  
 
   ],
   imports: [
