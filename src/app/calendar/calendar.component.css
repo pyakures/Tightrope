@@ -32,9 +32,10 @@
     background-color: #ebebeb;
     border-radius: 20px;
     padding: 0.5em 1em 0.5em 1em;
-    margin-top: 3.4em;
-    margin-left: 56%;
-    position: absolute;
+    margin-top: 0.4em;
+    margin-right: .5em;
+    float: right;
+    
     font-weight: 600;
     color: black;
 }

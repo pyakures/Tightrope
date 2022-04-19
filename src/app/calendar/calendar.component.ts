@@ -280,10 +280,11 @@ export class CalendarComponent implements OnInit {
     {alert("Must have Mindfulness preferences to generate mindful event. Go to 'Mindfulness Activities' to update preferences.")}
     else {
       alert(res.toString());console.log("error message", res.toString());}
-      this.AuthReRoute.navigate(['/home']);
+      //this.AuthReRoute.navigate(['/home']);
+      window.location.reload();
       });
       
-      window.location.reload();
+      
     });
     
     //window.location.reload();
