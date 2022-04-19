@@ -289,6 +289,10 @@ export class CalendarComponent implements OnInit {
     //window.location.reload();
 
   }
+  professionalHelp(){
+    window.open("https://www.unr.edu/counseling/crisis-services");
+  }
+
 
   /*
   //passes the form input values upon submitting it
