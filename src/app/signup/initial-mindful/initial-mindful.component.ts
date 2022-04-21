@@ -93,4 +93,7 @@ export class InitialMindfulComponent implements OnInit {
     window.open(event);
   }
 
+  skipMindful(){
+    this.AuthReRoute.navigate(['/initialStresssurvey']);
+  }
 }

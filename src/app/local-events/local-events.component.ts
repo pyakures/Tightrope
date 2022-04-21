@@ -30,7 +30,7 @@ export class LocalEventsComponent implements OnInit {
 
   isLoading = false;
   ngOnInit(): void {
-    
+  
   }
 
   onSubmit(){
@@ -66,9 +66,10 @@ export class LocalEventsComponent implements OnInit {
     console.log("added new event selected:", this.new_Local);
     //Adds new local event to user's calendar 
     this.service.addEvent(this.new_Local).subscribe(res=>{
-      alert(res.toString());});
+      alert(res.toString());this.AuthReRoute.navigate(['/home']);});
 
     //returns to home page
-    this.AuthReRoute.navigate(['/home']);
+    
+    
   }
 }
