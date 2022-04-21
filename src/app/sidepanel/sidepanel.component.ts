@@ -181,6 +181,7 @@ export class SidepanelComponent implements OnInit {
   streaksactivities:any;
   streakcount:any = 0;
   LifetimeMindful:any =  0;
+  streakpercent:any = 0;
 
   public getStreaksdata():void{
   
@@ -193,7 +194,7 @@ export class SidepanelComponent implements OnInit {
     this.streakcount= this.streaksevents[0][0].StreakCount;
     console.log(this.streakcount);
     this.LifetimeMindful= this.streaksevents[0][0].LifetimeScheduledMindful;
-
+    this.streakpercent= ((this.streakcount/this.LifetimeMindful)*100).toFixed(0);
 
     if(this.streaksactivities[0]!=undefined){
       var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
