@@ -1,6 +1,6 @@
 //Auto Generated module inclusion by angular
-import { NgModule,Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; 
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -22,11 +22,11 @@ import { DpDatePickerModule } from 'ng2-date-picker';
 import { NeweventComponent } from './newevent/newevent.component';
 import { ContactComponent } from './contact/contact.component';
 import { FeaturesComponent } from './features/features.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedService } from './shared.service';
 
-import{HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { EditeventComponent } from './editevent/editevent.component';
 import { AccountComponent } from './account/account.component';
 import { StreakComponent } from './streak/streak.component';
@@ -39,7 +39,6 @@ import { InitialQuestionsComponent } from './signup/initial-stresssurvey/initial
 import { LocalEventsComponent } from './local-events/local-events.component';
 import { Error404Component } from './error404/error404.component';
 import { FooterComponent } from './footer/footer.component';
-
 
 @NgModule({
   declarations: [
@@ -66,8 +65,6 @@ import { FooterComponent } from './footer/footer.component';
     LocalEventsComponent,
     Error404Component,
     FooterComponent,
-  
-
   ],
   imports: [
     BrowserModule,
@@ -87,12 +84,8 @@ import { FooterComponent } from './footer/footer.component';
     MatExpansionModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
   ],
-  providers: [
-    CalendarService,
-    SharedService
-  ],
-  bootstrap: [AppComponent]
+  providers: [CalendarService, SharedService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

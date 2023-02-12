@@ -2,10 +2,7 @@
      width: 70%;
  }
 
-
-
 .header-nav {
-
     padding: 20px;
     height: 125px;
 }
@@ -63,7 +60,6 @@ input::placeholder{
     font-size: 20px;
     font-weight: 500;
     color: grey;
-
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
@@ -158,10 +154,8 @@ input[type=file]{
     width: auto;
 }
 
-
 .importbutton:disabled{
    display: none;
-    
 }
 
 .importbutton:enabled{
@@ -175,9 +169,7 @@ input[type=file]{
     padding-right: 25px;
     width: text;
     border: 0px;
-
 }
-
 
 @media only screen and (max-width: 800px){
   

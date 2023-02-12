@@ -5,25 +5,21 @@ import { SharedService } from 'src/app/shared.service';
 @Component({
   selector: 'app-initial-stresssurvey',
   templateUrl: './initial-stresssurvey.component.html',
-  styleUrls: ['./initial-stresssurvey.component.css']
+  styleUrls: ['./initial-stresssurvey.component.css'],
 })
 export class InitialStresssurveyComponent implements OnInit {
+  constructor(private AuthReRoute: Router, private service: SharedService) {}
 
-  constructor(private AuthReRoute: Router, private service:SharedService) { }
-
-  ngOnInit(): void {
-  }
-  result:any;
+  ngOnInit(): void {}
+  result: any;
   sum: number = 0;
 
-  skipSurvey(){
+  skipSurvey() {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.result = { UserEmail : currentUser.email, SurveyValue : this.sum};
+    this.result = { UserEmail: currentUser.email, SurveyValue: this.sum };
     console.log(this.result);
     this.service.postSurveyData(currentUser.email, this.result).subscribe();
 
     this.AuthReRoute.navigate(['/home']);
-
   }
-
 }

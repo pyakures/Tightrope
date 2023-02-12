@@ -1,99 +1,117 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, HostListener } from '@angular/core';
-import { CalendarService } from '../calendar.service';
-import { CalendarView, CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDayViewComponent } from 'angular-calendar';
-import { setHours, startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours, setMinutes, lightFormat } from 'date-fns';
-import { Observable, Subject } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModalWindow } from '@ng-bootstrap/ng-bootstrap/modal/modal-window';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { Time } from '@angular/common';
-import { DayCalendarComponent } from 'ng2-date-picker';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AuthService } from '../service/auth.service';
-import {Router, RouterLink} from '@angular/router';
-import { templateJitUrl } from '@angular/compiler';
-import {SharedService} from 'src/app/shared.service';
+import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shared.service';
 import { saveAs } from 'file-saver';
-import { HttpEventType, HttpResponse } from '@angular/common/http';
-
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-account',
   changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  styleUrls: ['./account.component.css'],
 })
 export class AccountComponent implements OnInit {
+  userVar: any;
+  firstName_u: any;
+  lastName_u: any;
+  userName_u: any;
+  password_u: any;
 
-  userVar:any;
-  firstName_u:any;
-  lastName_u:any;
-  userName_u:any;
-  password_u:any;
+  firstName: any;
+  lastName: any;
+  fullName: any;
+  Useremail: any;
 
-  firstName:any;
-  lastName:any;
-  fullName:any;
-  Useremail:any;
-
-  constructor(private authService: AuthService, private AuthReRoute: Router, private service:SharedService) { }
+  constructor(
+    private authService: AuthService,
+    private AuthReRoute: Router,
+    private service: SharedService
+  ) {}
 
   ngOnInit(): void {
     this.getAccountInfo();
   }
-  onSubmit(){   
+  onSubmit() {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    if(this.firstName_u!= undefined){
-      let changeVal = {first_name: this.firstName_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response); alert(response.toString())});
+    if (this.firstName_u != undefined) {
+      let changeVal = { first_name: this.firstName_u };
+      this.service
+        .editProfile(currentUser.token, changeVal)
+        .subscribe((response) => {
+          console.log('server response: ', response);
+          alert(response.toString());
+        });
     }
-    if(this.lastName_u!= undefined){
-      let changeVal = {last_name: this.lastName_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString())});
+    if (this.lastName_u != undefined) {
+      let changeVal = { last_name: this.lastName_u };
+      this.service
+        .editProfile(currentUser.token, changeVal)
+        .subscribe((response) => {
+          console.log('server response: ', response);
+          alert(response.toString());
+        });
     }
-    if(this.userName_u!=undefined){
-      let changeVal = {email: this.userName_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString());alert("Changing the username may result in the lost of data!");});
+    if (this.userName_u != undefined) {
+      let changeVal = { email: this.userName_u };
+      this.service
+        .editProfile(currentUser.token, changeVal)
+        .subscribe((response) => {
+          console.log('server response: ', response);
+          alert(response.toString());
+          alert('Changing the username may result in the lost of data!');
+        });
     }
-    if(this.password_u!=undefined){
-      let changeVal = {password: this.password_u};
-      this.service.editProfile(currentUser.token, changeVal).subscribe(response =>{console.log('server response: ', response);alert(response.toString())});
+    if (this.password_u != undefined) {
+      let changeVal = { password: this.password_u };
+      this.service
+        .editProfile(currentUser.token, changeVal)
+        .subscribe((response) => {
+          console.log('server response: ', response);
+          alert(response.toString());
+        });
     }
     this.AuthReRoute.navigate(['/home']);
   }
-  getAccountInfo(){
+  getAccountInfo() {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getProfile(currentUser.token).subscribe(data=>{this.userVar=data;
-    this.firstName = this.userVar.userFirstName;
-    this.lastName = this.userVar.userLastName;
-    this.fullName= this.firstName + " " + this.lastName;
-    this.Useremail= this.userVar.user;
+    this.service.getProfile(currentUser.token).subscribe((data) => {
+      this.userVar = data;
+      this.firstName = this.userVar.userFirstName;
+      this.lastName = this.userVar.userLastName;
+      this.fullName = this.firstName + ' ' + this.lastName;
+      this.Useremail = this.userVar.user;
     });
-    
   }
-  deactivate(){
+  deactivate() {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.deleteProfile(currentUser.token).subscribe(response =>{console.log('server response: ', response);});
-    alert("Account Deactivated!");
+    this.service.deleteProfile(currentUser.token).subscribe((response) => {
+      console.log('server response: ', response);
+    });
+    alert('Account Deactivated!');
     this.authService.logout();
-    this.AuthReRoute.navigate(['/login'])
+    this.AuthReRoute.navigate(['/login']);
   }
-  exportcal(){
+  exportcal() {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
 
-    this.service.getIcs(currentUser.email).subscribe((response: any) => { //when you use stricter type checking
-			let blob:any = new Blob([response], { type: 'text/calendar; charset=utf-8' });
+    this.service.getIcs(currentUser.email).subscribe((response: any) => {
+      //when you use stricter type checking
+      let blob: any = new Blob([response], {
+        type: 'text/calendar; charset=utf-8',
+      });
       //console.log(blob);
-			const url = window.URL.createObjectURL(blob);
-			//window.open(url);
-      var nameoffile:string = currentUser.email + '_calendar.ics';
-      saveAs(blob,nameoffile);
-
+      const url = window.URL.createObjectURL(blob);
+      //window.open(url);
+      var nameoffile: string = currentUser.email + '_calendar.ics';
+      saveAs(blob, nameoffile);
     });
   }
 
   selectedFiles?: FileList;
   currentFile?: File;
-  filename:any= "Import Calendar";
+  filename: any = 'Import Calendar';
   message = '';
   fileInfos?: Observable<any>;
 
@@ -101,8 +119,8 @@ export class AccountComponent implements OnInit {
     this.selectedFiles = event.target.files;
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);
-      if(file){
-        this.currentFile= file;
+      if (file) {
+        this.currentFile = file;
         this.filename = this.currentFile.name;
       }
     }
@@ -113,8 +131,8 @@ export class AccountComponent implements OnInit {
     console.log(this.selectedFile);
     
   }*/
-   
-  onUpload(): void{
+
+  onUpload(): void {
     var currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
     if (this.selectedFiles) {
       const file: File | null = this.selectedFiles.item(0);
@@ -125,7 +143,7 @@ export class AccountComponent implements OnInit {
             if (event instanceof HttpResponse) {
               this.message = event.body.message;
             }
-            alert("Event have been imported to the calendar!");
+            alert('Event have been imported to the calendar!');
           },
           (err: any) => {
             console.log(err);
@@ -135,14 +153,10 @@ export class AccountComponent implements OnInit {
               this.message = 'Could not upload the file!';
             }
             this.currentFile = undefined;
-          });
+          }
+        );
       }
       this.selectedFiles = undefined;
     }
-    
   }
-
-
-  
-
 }

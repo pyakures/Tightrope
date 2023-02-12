@@ -1,2 +1,0 @@
-To add a new component: ng g c componentname
-to add a child component: ng g c componentname/componentchild

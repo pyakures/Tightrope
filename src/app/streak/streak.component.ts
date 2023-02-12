@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {SharedService} from 'src/app/shared.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-streak',
   templateUrl: './streak.component.html',
-  styleUrls: ['./streak.component.css']
+  styleUrls: ['./streak.component.css'],
 })
 export class StreakComponent implements OnInit {
+  constructor(private service: SharedService) {}
 
-  constructor(private service:SharedService) { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

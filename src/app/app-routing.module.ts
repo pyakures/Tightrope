@@ -23,32 +23,66 @@ import { Error404Component } from './error404/error404.component';
 
 //Rougting done by all members of the team manually
 const routes: Routes = [
-{path: '', redirectTo: '/home', pathMatch: 'full'},
-{path:'login',component:LoginComponent},
-{path:'home',component:CalendarComponent, canActivate: [AuthService]},
-{path:'signup',component:SignupComponent},
-{path:'forgot-password',component:ForgotPasswordComponent},
-{path:'about',component:AboutComponent},
-{path: 'newevent',component:NeweventComponent, canActivate: [AuthService]},
-{path: 'contact', component:ContactComponent},
-{path: 'features', component:FeaturesComponent},
-{path: 'editevent', component:EditeventComponent, canActivate: [AuthService]},
-{path: 'account', component:AccountComponent, canActivate: [AuthService]},
-{path: 'streak', component:StreakComponent, canActivate: [AuthService]},
-{path: 'stresssurvey', component:StresssurveyComponent, canActivate: [AuthService]},
-{path: 'questions', component:QuestionsComponent, canActivate: [AuthService]},
-{path: 'initialMindful', component: InitialMindfulComponent, canActivate: [AuthService]},
-{path: 'changeMindful', component:ChangeMindfulComponent, canActivate: [AuthService]},
-{path: 'initialStresssurvey', component: InitialStresssurveyComponent, canActivate: [AuthService]},
-{path: 'initialQuestions', component: InitialQuestionsComponent, canActivate: [AuthService]},
-{path: 'localEvents', component: LocalEventsComponent, canActivate: [AuthService]},
-{path: '**', component:Error404Component},
-
-
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: CalendarComponent, canActivate: [AuthService] },
+  { path: 'signup', component: SignupComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'about', component: AboutComponent },
+  {
+    path: 'newevent',
+    component: NeweventComponent,
+    canActivate: [AuthService],
+  },
+  { path: 'contact', component: ContactComponent },
+  { path: 'features', component: FeaturesComponent },
+  {
+    path: 'editevent',
+    component: EditeventComponent,
+    canActivate: [AuthService],
+  },
+  { path: 'account', component: AccountComponent, canActivate: [AuthService] },
+  { path: 'streak', component: StreakComponent, canActivate: [AuthService] },
+  {
+    path: 'stresssurvey',
+    component: StresssurveyComponent,
+    canActivate: [AuthService],
+  },
+  {
+    path: 'questions',
+    component: QuestionsComponent,
+    canActivate: [AuthService],
+  },
+  {
+    path: 'initialMindful',
+    component: InitialMindfulComponent,
+    canActivate: [AuthService],
+  },
+  {
+    path: 'changeMindful',
+    component: ChangeMindfulComponent,
+    canActivate: [AuthService],
+  },
+  {
+    path: 'initialStresssurvey',
+    component: InitialStresssurveyComponent,
+    canActivate: [AuthService],
+  },
+  {
+    path: 'initialQuestions',
+    component: InitialQuestionsComponent,
+    canActivate: [AuthService],
+  },
+  {
+    path: 'localEvents',
+    component: LocalEventsComponent,
+    canActivate: [AuthService],
+  },
+  { path: '**', component: Error404Component },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
