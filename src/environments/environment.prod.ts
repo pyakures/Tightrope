@@ -1,4 +1,4 @@
 export const environment = {
-  backendUrl: 'http://sahilp.pythonanywhere.com/',
+  backendUrl: 'https://sahilp.pythonanywhere.com',
   production: true,
 };
